@@ -149,6 +149,43 @@
 }
 
 /* ==========================================================================
+   SERVICES INTRO HEADER SECTION (White gap & headline before seamless grid)
+   ========================================================================== */
+
+.section-services-intro {
+  background-color: #ffffff;
+  padding: 100px 0 64px;
+  text-align: center;
+}
+
+.services-intro-eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ba141a;
+  letter-spacing: 0.03em;
+  margin-bottom: 16px;
+}
+
+.services-intro-title {
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 800;
+  color: #1a1a1c;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  max-width: 900px;
+  margin: 0 auto 18px;
+}
+
+.services-intro-subtitle {
+  font-size: 15.5px;
+  color: #5d6168;
+  line-height: 1.65;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
    SERVICES SEAMLESS LIST SECTION
    ========================================================================== */
 
