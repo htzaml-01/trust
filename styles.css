@@ -253,12 +253,35 @@ button, input, textarea {
   color: #1a1a1c;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  position: relative;
+  padding: 4px 0;
+  text-decoration: none;
   transition: color var(--transition-fast);
 }
 
-.nav-link:hover, .nav-link.active {
-  color: var(--color-red);
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #1a1a1c;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #1a1a1c;
 }
 
 .dropdown-chevron {
@@ -1747,13 +1770,14 @@ button, input, textarea {
     color: #1a1a1c !important;
     font-size: 16px;
     font-weight: 500;
-    width: 100%;
+    width: auto;
+    align-self: flex-start;
     justify-content: flex-start;
     padding: 6px 0;
   }
 
   .nav-link:hover, .nav-link.active {
-    color: var(--color-red) !important;
+    color: #1a1a1c !important;
   }
 
   .mobile-nav-backdrop {
