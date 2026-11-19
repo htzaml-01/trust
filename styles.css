@@ -205,7 +205,7 @@ button, input, textarea {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1100;
   height: 92px; /* Gedein segini persis Klara */
   display: flex;
   align-items: center;
@@ -291,9 +291,15 @@ button, input, textarea {
   border: none;
   cursor: pointer;
   padding: 8px;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   gap: 5px;
-  z-index: 1002;
+  z-index: 1120;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .mobile-toggle span {
@@ -301,6 +307,7 @@ button, input, textarea {
   width: 22px;
   height: 2px;
   background-color: #1a1a1c;
+  pointer-events: none;
   transition: background-color var(--transition-fast), transform var(--transition-fast), opacity var(--transition-fast);
 }
 
@@ -1678,7 +1685,7 @@ button, input, textarea {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .site-header {
     height: 76px;
   }
@@ -1699,9 +1706,10 @@ button, input, textarea {
   .nav-menu {
     position: fixed;
     top: 76px;
-    right: 0;
-    left: auto;
-    width: 260px;
+    right: 0 !important;
+    left: auto !important;
+    width: 270px;
+    max-width: 80vw;
     height: calc(100vh - 76px);
     background-color: var(--color-white);
     flex-direction: column;
@@ -1709,15 +1717,20 @@ button, input, textarea {
     text-align: left;
     padding: 36px 30px;
     gap: 22px;
-    box-shadow: -6px 0 24px rgba(0, 0, 0, 0.08);
+    box-shadow: -8px 0 28px rgba(0, 0, 0, 0.12);
     display: flex;
+    visibility: hidden;
+    pointer-events: none;
     transform: translateX(100%);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 1001;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+    z-index: 1090;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-menu.open {
+    visibility: visible;
+    pointer-events: auto;
     transform: translateX(0);
   }
 
@@ -1727,6 +1740,7 @@ button, input, textarea {
     font-weight: 500;
     width: 100%;
     justify-content: flex-start;
+    padding: 6px 0;
   }
 
   .nav-link:hover, .nav-link.active {
@@ -1736,9 +1750,13 @@ button, input, textarea {
   .mobile-nav-backdrop {
     display: none;
     position: fixed;
-    inset: 0;
-    background-color: transparent;
-    z-index: 1000;
+    top: 76px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 1080;
+    touch-action: manipulation;
   }
 
   .mobile-nav-backdrop.open {

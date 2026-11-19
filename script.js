@@ -27,25 +27,59 @@ document.addEventListener('DOMContentLoaded', () => {
     navMenu?.classList.remove('open');
     mobileToggle?.classList.remove('active');
     navBackdrop?.classList.remove('open');
+    document.body.style.overflow = '';
   }
 
-  function toggleMobileNav() {
-    const isOpen = navMenu?.classList.toggle('open');
-    mobileToggle?.classList.toggle('active', isOpen);
-    navBackdrop?.classList.toggle('open', isOpen);
+  function openMobileNav() {
+    navMenu?.classList.add('open');
+    mobileToggle?.classList.add('active');
+    navBackdrop?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function toggleMobileNav(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    const isCurrentlyOpen = navMenu?.classList.contains('open');
+    if (isCurrentlyOpen) {
+      closeMobileNav();
+    } else {
+      openMobileNav();
+    }
   }
 
   if (mobileToggle) {
     mobileToggle.addEventListener('click', toggleMobileNav);
+    // Add touch handler with passive: false for instant mobile tap response
+    mobileToggle.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      toggleMobileNav(e);
+    }, { passive: false });
   }
 
   if (navBackdrop) {
-    navBackdrop.addEventListener('click', closeMobileNav);
+    navBackdrop.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeMobileNav();
+    });
+    navBackdrop.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      closeMobileNav();
+    }, { passive: false });
   }
 
   // Close mobile nav when clicking a link
   navMenu?.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', closeMobileNav);
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu?.classList.contains('open')) {
+      closeMobileNav();
+    }
   });
 
   // Query parameter support for testing / headless screenshot
