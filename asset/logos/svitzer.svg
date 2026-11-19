@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 44" height="44" width="170">
+  <g transform="translate(2, 4)">
+    <polygon points="16,4 20,13 30,15 23,22 25,31 16,27 7,31 9,22 2,15 12,13" fill="#002447"/>
+    <text x="38" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" font-weight="900" fill="#002447" letter-spacing="1.5px">SVITZER</text>
+    <text x="38" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="7" font-weight="700" fill="#666666" letter-spacing="1px">MAERSK GROUP</text>
+  </g>
+</svg>

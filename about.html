@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | TRUST Corporation (PT. Trust Eadyra Line)</title>
+  <meta name="description" content="About PT Trust Eadyra Line (TRUST Corporation) - Indonesia's trusted partner for integrated marine logistics, bulk cargo transportation, and offshore engineering." />
+
+  <!-- Google Fonts: Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="about.css?v=2" />
+</head>
+<body>
+
+  <!-- STICKY NAVBAR (ALWAYS CLEAN WHITE) -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="TRUST Corporation Home">
+        <img src="asset/logo-trust.png" alt="TRUST EADYRA LINE" class="logo-img" />
+      </a>
+
+      <div class="header-right">
+        <!-- EXACT 6 LINKS ON RIGHT -->
+        <nav class="nav-menu" id="navMenu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link active">About</a>
+          <a href="index.html#services" class="nav-link">
+            Services
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </a>
+          <a href="index.html#plans" class="nav-link">Pricing</a>
+          <a href="index.html#blog" class="nav-link">Blog</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <a href="index.html#contact" class="btn btn-primary btn-sm">Get Started</a>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Buka Navigasi">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="mobile-nav-backdrop" id="navBackdrop"></div>
+
+  <main class="about-main">
+    <!-- SECTION 1: ABOUT HERO / INTRO -->
+    <section class="section section-about-hero" id="about-hero">
+      <div class="container">
+        <div class="about-intro-grid">
+          <div class="about-intro-left">
+            <span class="about-eyebrow">About TRUST Corporation</span>
+            <h1 class="about-hero-title">
+              Built On Reliability.<br />Driven By Results.
+            </h1>
+          </div>
+
+          <div class="about-intro-desc-grid">
+            <p class="about-desc-p">
+              PT. Trust Eadyra Line (TRUST Corporation) adalah perusahaan logistik maritim dan penunjang lepas pantai terintegrasi yang berdiri sejak 2010 di Jakarta, Indonesia. Berfokus pada keunggulan layanan, kami menyediakan transportasi kargo curah laut skala besar, armada tugboat &amp; tongkang 300ft, serta dukungan uji sumur migas berstandar internasional.
+            </p>
+            <p class="about-desc-p">
+              Berlandaskan moto "Innovate &amp; Transform to Deliver", kami menggabungkan keahlian maritim berpengalaman dengan standar keselamatan kelas dunia (BKI, ABS, ISO, IMO ISM Code). Bermitra strategis dengan Schlumberger dan Svitzer, TRUST berkomitmen memastikan operasional energi dan industri nasional bergerak maju tanpa henti.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2 SIDE-BY-SIDE MEDIA BOXES (VIDEO + IMAGE) -->
+        <div class="about-media-grid">
+          <div class="about-media-box">
+            <video src="asset/about/hero-train-video.mp4" class="about-media-video" autoplay loop muted playsinline></video>
+          </div>
+          <div class="about-media-box">
+            <img src="asset/about/hero-crane-sunset.png" alt="Harbor gantry crane container operations" class="about-media-img" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: CORE VALUES (DARK CRIMSON RED #940e11) -->
+    <section class="section section-about-values" id="core-values">
+      <div class="container">
+        <div class="about-values-top">
+          <div class="about-values-heading-col">
+            <span class="about-values-eyebrow">Core Values</span>
+            <h2 class="about-values-title">The Values Behind Our Success</h2>
+          </div>
+          <div class="about-values-action-col">
+            <a href="index.html#services" class="btn-outline-white">Explore Solutions</a>
+          </div>
+        </div>
+
+        <div class="about-values-content-grid">
+          <div class="about-values-media-box">
+            <img src="asset/about/values-industrial-facility.png" alt="Industrial logistics & storage terminal" loading="lazy" />
+          </div>
+
+          <div class="values-four-grid">
+            <!-- VALUE 1 -->
+            <div class="value-item">
+              <div class="value-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z" fill="#ffffff"/>
+                  <path d="M10 15.5l-3.5-3.5 1.41-1.41L10 12.67l6.09-6.09L17.5 8l-7.5 7.5z" fill="#940e11"/>
+                </svg>
+              </div>
+              <h3 class="value-item-title">Innovation &amp; Speed</h3>
+              <p class="value-item-desc">
+                Menerapkan inovasi teknologi maritim dan efisiensi rute pelayaran untuk menjaga rantai pasok industri bergerak cepat dan andal.
+              </p>
+            </div>
+
+            <!-- VALUE 2 -->
+            <div class="value-item">
+              <div class="value-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z" fill="#ffffff"/>
+                  <path d="M10 15.5l-3.5-3.5 1.41-1.41L10 12.67l6.09-6.09L17.5 8l-7.5 7.5z" fill="#940e11"/>
+                </svg>
+              </div>
+              <h3 class="value-item-title">Safety &amp; Zero Accident</h3>
+              <p class="value-item-desc">
+                Komitmen keselamatan kerja tertinggi (Zero Accident) diawasi langsung oleh Direksi serta tersertifikasi OHSAS 18001 dan IMO ISM Code.
+              </p>
+            </div>
+
+            <!-- VALUE 3 -->
+            <div class="value-item">
+              <div class="value-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z" fill="#ffffff"/>
+                  <path d="M10 15.5l-3.5-3.5 1.41-1.41L10 12.67l6.09-6.09L17.5 8l-7.5 7.5z" fill="#940e11"/>
+                </svg>
+              </div>
+              <h3 class="value-item-title">Integrity &amp; Unity</h3>
+              <p class="value-item-desc">
+                Membangun etika bisnis jangka panjang, kepatuhan tata kelola (GCG), serta kolaborasi erat bersama mitra dan klien strategis global.
+              </p>
+            </div>
+
+            <!-- VALUE 4 -->
+            <div class="value-item">
+              <div class="value-icon-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z" fill="#ffffff"/>
+                  <path d="M10 15.5l-3.5-3.5 1.41-1.41L10 12.67l6.09-6.09L17.5 8l-7.5 7.5z" fill="#940e11"/>
+                </svg>
+              </div>
+              <h3 class="value-item-title">Operational Reliability</h3>
+              <p class="value-item-desc">
+                Menyediakan armada kapal siap operasi dengan pemeliharaan docking terencana serta kepatuhan klasifikasi resmi BKI dan ABS.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: OUR DEDICATED TEAM (WHITE BACKGROUND) -->
+    <section class="section section-about-team" id="our-team">
+      <div class="container">
+        <div class="about-team-header">
+          <span class="about-team-eyebrow">Our Team</span>
+          <h2 class="about-team-title">Our Dedicated Team</h2>
+          <p class="about-team-subtitle">
+            Tim profesional maritim, perwira laut berlisensi, dan ahli rekayasa logistik yang berdedikasi mengawal keandalan setiap armada dan pelayaran operasional.
+          </p>
+        </div>
+
+        <div class="about-team-grid">
+          <!-- TEAM MEMBER 1 -->
+          <div class="team-card">
+            <div class="team-photo-wrap">
+              <img src="asset/about/team-jordan-parker.png" alt="Jordan Parker" loading="lazy" />
+            </div>
+            <h3 class="team-card-name">Jordan Parker</h3>
+            <p class="team-card-role">Marine Operations Director</p>
+          </div>
+
+          <!-- TEAM MEMBER 2 -->
+          <div class="team-card">
+            <div class="team-photo-wrap">
+              <img src="asset/about/team-max-johnson.png" alt="Max Johnson" loading="lazy" />
+            </div>
+            <h3 class="team-card-name">Max Johnson</h3>
+            <p class="team-card-role">Bulk Cargo &amp; Supply Chain Lead</p>
+          </div>
+
+          <!-- TEAM MEMBER 3 -->
+          <div class="team-card">
+            <div class="team-photo-wrap">
+              <img src="asset/about/team-drew-carlyle.png" alt="Drew Carlyle" loading="lazy" />
+            </div>
+            <h3 class="team-card-name">Drew Carlyle</h3>
+            <p class="team-card-role">Fleet Technical &amp; Engineering Manager</p>
+          </div>
+
+          <!-- TEAM MEMBER 4 -->
+          <div class="team-card">
+            <div class="team-photo-wrap">
+              <img src="asset/about/team-morgan-james.png" alt="Morgan James" loading="lazy" />
+            </div>
+            <h3 class="team-card-name">Morgan James</h3>
+            <p class="team-card-role">Offshore Projects &amp; Client Relations</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (DARK OBSIDIAN #111113) -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-left-col">
+          <a href="index.html" class="footer-brand-link" aria-label="TRUST Corporation Home">
+            <img src="asset/logo-trust-white.png" alt="TRUST Corporation" class="footer-logo-img" />
+          </a>
+          
+          <div class="footer-quick-links">
+            <h4 class="footer-links-title">Quick Links</h4>
+            <ul class="footer-nav-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-legal-row">
+            <a href="#">Privacy Policy</a>
+            <span class="legal-separator">|</span>
+            <a href="#">Terms And Conditions</a>
+          </div>
+
+          <p class="footer-copyright">© 2026 PT. Trust Eadyra Line (TRUST Corporation). All rights reserved.</p>
+        </div>
+
+        <div class="footer-right-col">
+          <div class="footer-contact-info-row">
+            <div class="footer-contact-box">
+              <span class="footer-box-label">Phone</span>
+              <p class="footer-box-val">(021)-7592-0000</p>
+            </div>
+            <div class="footer-contact-box">
+              <span class="footer-box-label">Email</span>
+              <p class="footer-box-val">operational@trusteadyraline.com</p>
+            </div>
+          </div>
+
+          <div class="footer-newsletter-wrap">
+            <h3 class="newsletter-title">Join Our Newsletter</h3>
+            <form id="newsletterForm" class="newsletter-underline-form">
+              <div class="newsletter-input-group">
+                <input type="email" placeholder="Email" required aria-label="Email Address for newsletter" />
+                <button type="submit" class="btn btn-primary btn-newsletter">Submit</button>
+              </div>
+              <div id="newsletterStatus" class="newsletter-status" style="display:none;"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

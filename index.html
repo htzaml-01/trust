@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRUST Corporation | Marine Logistics, Bulk Cargo &amp; Offshore Engineering</title>
+  <meta name="description" content="PT Trust Eadyra Line (TRUST Corporation) menyediakan transportasi kargo curah laut terintegrasi, dukungan operasi migas lepas pantai, dan keagenan kapal berstandar internasional." />
+
+  <!-- Google Fonts: Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+
+  <!-- STICKY NAVBAR (ALWAYS CLEAN WHITE) -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="TRUST Corporation Home">
+        <img src="asset/logo-trust.png" alt="TRUST EADYRA LINE" class="logo-img" />
+      </a>
+
+      <div class="header-right">
+        <!-- EXACT 6 LINKS ON RIGHT -->
+        <nav class="nav-menu" id="navMenu">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="#services" class="nav-link">
+            Services
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </a>
+          <a href="#plans" class="nav-link">Pricing</a>
+          <a href="#blog" class="nav-link">Blog</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#contact" class="btn btn-primary btn-sm">Get Started</a>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Buka Navigasi">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="mobile-nav-backdrop" id="navBackdrop"></div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <video class="hero-video-bg" autoplay muted loop playsinline preload="auto">
+        <source src="asset/hero-cargo-exact.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-container">
+        <div class="hero-bottom-grid">
+          <div class="hero-left-content">
+            <h1 class="hero-title">
+              <span class="hero-line">Logistics That Moves Your</span>
+              <span class="hero-line">Business Forward</span>
+            </h1>
+            <p class="hero-desc">
+              TRUST Corporation provides end-to-end marine logistics, offshore support, and supply chain solutions designed to support growth, efficiency, and long-term success.
+            </p>
+            <div class="hero-cta-wrap">
+              <a href="#services" class="btn btn-primary btn-hero">Explore Solutions</a>
+            </div>
+          </div>
+
+          <div class="hero-right-stats">
+            <div class="hero-stat-item">
+              <div class="hero-stat-number">14<span class="stat-plus">+</span></div>
+              <div class="hero-stat-label">Years of Experience</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-number">3k<span class="stat-plus">+</span></div>
+              <div class="hero-stat-label">Shipments Delivered</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-number">15<span class="stat-plus">+</span></div>
+              <div class="hero-stat-label">Countries We Served</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTS & STRATEGIC PARTNERS BRAND CAROUSEL (LOGOS ONLY) -->
+    <div class="partners-marquee-section" id="partners" aria-label="Trusted by leading industry partners">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <div class="marquee-brand-item"><img src="asset/brand_logos/pertamina.svg" alt="Pertamina" loading="lazy"></div>
+          <div class="marquee-brand-item"><img src="asset/brand_logos/chevron.svg" alt="Chevron" loading="lazy"></div>
+          <div class="marquee-brand-item"><img src="asset/brand_logos/slb.svg" alt="SLB Schlumberger" loading="lazy"></div>
+          <div class="marquee-brand-item"><img src="asset/brand_logos/total.svg" alt="Total" loading="lazy"></div>
+          <div class="marquee-brand-item"><img src="asset/brand_logos/conocophillips.svg" alt="ConocoPhillips" loading="lazy"></div>
+          <div class="marquee-brand-item"><img src="asset/brand_logos/bp.svg" alt="BP" loading="lazy"></div>
+          <div class="marquee-brand-item"><img src="asset/brand_logos/cnooc.svg" alt="CNOOC" loading="lazy"></div>
+          <div class="marquee-brand-item"><img src="asset/brand_logos/maersk.svg" alt="Maersk" loading="lazy"></div>
+          <div class="marquee-brand-item"><img src="asset/brand_logos/mitsui.svg" alt="Mitsui O.S.K. Lines" loading="lazy"></div>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <div class="marquee-brand-item"><img src="asset/brand_logos/pertamina.svg" alt="Pertamina" loading="lazy"></div>
+          <div class="marquee-brand-item"><img src="asset/brand_logos/chevron.svg" alt="Chevron" loading="lazy"></div>
+          <div class="marquee-brand-item"><img src="asset/brand_logos/slb.svg" alt="SLB Schlumberger" loading="lazy"></div>
+          <div class="marquee-brand-item"><img src="asset/brand_logos/total.svg" alt="Total" loading="lazy"></div>
+          <div class="marquee-brand-item"><img src="asset/brand_logos/conocophillips.svg" alt="ConocoPhillips" loading="lazy"></div>
+          <div class="marquee-brand-item"><img src="asset/brand_logos/bp.svg" alt="BP" loading="lazy"></div>
+          <div class="marquee-brand-item"><img src="asset/brand_logos/cnooc.svg" alt="CNOOC" loading="lazy"></div>
+          <div class="marquee-brand-item"><img src="asset/brand_logos/maersk.svg" alt="Maersk" loading="lazy"></div>
+          <div class="marquee-brand-item"><img src="asset/brand_logos/mitsui.svg" alt="Mitsui O.S.K. Lines" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES SECTION (01 - 06) - FULL WIDTH & IMAGES RAPET (SEAMLESS GAP 0) -->
+    <section class="section section-services" id="services">
+      <div class="services-header-wrap text-center">
+        <span class="eyebrow">Integrated Marine Logistics Services</span>
+        <h2 class="section-title">Solusi Kargo Curah Laut &amp; Rekayasa Lepas Pantai Terpadu</h2>
+        <p class="section-subtitle">Menyediakan armada kapal tunda, tongkang kargo curah, fasilitas uji sumur migas (DST Well Testing), dan keagenan kapal berstandar keunggulan internasional di seluruh kepulauan Indonesia.</p>
+      </div>
+
+      <!-- SEAMLESS SERVICES GRID (RAPET - GAP 0 - EXACT 1:1) -->
+      <div class="services-seamless-grid">
+        <!-- 01 -->
+        <article class="service-seamless-col">
+          <div class="service-col-media">
+            <img src="asset/trust/trust_p4_img2_907x524.jpeg" alt="Bulk Cargo & Ocean Barging" loading="lazy" />
+          </div>
+          <div class="service-col-content">
+            <div class="service-col-head">
+              <h3 class="service-col-title">Bulk Cargo &amp; Ocean Barging</h3>
+              <span class="service-col-num">01</span>
+            </div>
+            <p class="service-col-desc">Transportasi kargo curah laut skala besar untuk batubara, kayu HTI (pulp &amp; paper), nikel, dan mineral industri dengan armada tugboat dan tongkang 300ft bersertifikasi BKI &amp; ABS.</p>
+            <a href="#contact" class="circle-action-btn" aria-label="Explore Bulk Cargo & Ocean Barging">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 02 -->
+        <article class="service-seamless-col">
+          <div class="service-col-media">
+            <img src="asset/trust/trust_p5_img0_1159x1102.jpeg" alt="Offshore Well Testing & DST" loading="lazy" />
+          </div>
+          <div class="service-col-content">
+            <div class="service-col-head">
+              <h3 class="service-col-title">Offshore Well Testing &amp; DST</h3>
+              <span class="service-col-num">02</span>
+            </div>
+            <p class="service-col-desc">Penyediaan armada khusus DST Well Testing Barges, Work Barges, cementing, coiled-tubing, dan intervensi sumur lepas pantai dalam kemitraan terintegrasi dengan Schlumberger.</p>
+            <a href="#contact" class="circle-action-btn" aria-label="Explore Offshore Well Testing & DST">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 03 -->
+        <article class="service-seamless-col">
+          <div class="service-col-media">
+            <img src="asset/trust/trust_p7_img0_1811x1102.jpeg" alt="Offshore Support Fleet AHTS" loading="lazy" />
+          </div>
+          <div class="service-col-content">
+            <div class="service-col-head">
+              <h3 class="service-col-title">Offshore Support Fleet (AHTS)</h3>
+              <span class="service-col-num">03</span>
+            </div>
+            <p class="service-col-desc">Pengoperasian armada Anchor Handling Tug Supply (AHTS), Supply Vessels, Utility Vessels, dan Crew Boats berstandar keselamatan migas tinggi untuk eksplorasi lepas pantai.</p>
+            <a href="#contact" class="circle-action-btn" aria-label="Explore Offshore Support Fleet AHTS">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 04 -->
+        <article class="service-seamless-col">
+          <div class="service-col-media">
+            <img src="asset/trust/trust_p6_img0_906x474.jpeg" alt="Integrated Ship Management" loading="lazy" />
+          </div>
+          <div class="service-col-content">
+            <div class="service-col-head">
+              <h3 class="service-col-title">Integrated Ship Management</h3>
+              <span class="service-col-num">04</span>
+            </div>
+            <p class="service-col-desc">Manajemen teknis kapal menyeluruh, perawatan docking rutin, kepatuhan sertifikasi kelas (BKI &amp; ABS), standar keselamatan IMO ISM Code, dan penempatan awak kapal berlisensi STCW.</p>
+            <a href="#contact" class="circle-action-btn" aria-label="Explore Integrated Ship Management">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 05 -->
+        <article class="service-seamless-col">
+          <div class="service-col-media">
+            <img src="asset/trust/trust_p6_img1_907x474.jpeg" alt="Shipping Agency & Port Handling" loading="lazy" />
+          </div>
+          <div class="service-col-content">
+            <div class="service-col-head">
+              <h3 class="service-col-title">Shipping Agency &amp; Port Handling</h3>
+              <span class="service-col-num">05</span>
+            </div>
+            <p class="service-col-desc">Keagenan kapal pelabuhan terpadu, perizinan sandar otoritas pelabuhan, jasa bongkar muat kargo curah (stevedoring), freight forwarding, dan fasilitas transshipment laut cepat.</p>
+            <a href="#contact" class="circle-action-btn" aria-label="Explore Shipping Agency & Port Handling">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 06 -->
+        <article class="service-seamless-col">
+          <div class="service-col-media">
+            <img src="asset/trust/trust_p1_img0_595x288.jpeg" alt="Shore Base & Marine Salvage" loading="lazy" />
+          </div>
+          <div class="service-col-content">
+            <div class="service-col-head">
+              <h3 class="service-col-title">Shore Base &amp; Marine Salvage</h3>
+              <span class="service-col-num">06</span>
+            </div>
+            <p class="service-col-desc">Fasilitas pergudangan pangkalan pantai (shore base logistics), manajemen stockpile, serta kemitraan regional operasi darurat penyelamatan laut (salvage assistance) bersama Svitzer (Maersk Group).</p>
+            <a href="#contact" class="circle-action-btn" aria-label="Explore Shore Base & Marine Salvage">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT US SECTION (LEARN MORE ABOUT US - EXACT 1:1) -->
+    <section class="section section-about" id="about">
+      <div class="container">
+        <div class="about-two-col-grid">
+          <div class="about-visual-col">
+            <img src="asset/trust/about-trust-officer.jpg" alt="TRUST Marine Logistics Officer" class="about-tall-img" loading="lazy" />
+          </div>
+
+          <div class="about-content-col">
+            <span class="eyebrow">Learn More About Us</span>
+            <h2 class="section-title">Mitra Logistik Maritim Terpercaya Berstandar Global</h2>
+
+            <div class="about-feature-list">
+              <!-- Feature 1 -->
+              <div class="about-feature-item">
+                <div class="about-feature-head">
+                  <img src="asset/icons/icon_smart_logistics.svg" class="about-feature-svg" alt="" />
+                  <h3 class="about-feature-title">Armada Kargo &amp; Tugboat Terintegrasi</h3>
+                </div>
+                <p class="about-feature-desc">Armada tongkang 300ft dan kapal tunda bertenaga tinggi melayani transportasi kargo curah batubara, kayu HTI, dan mineral tambang di seluruh Indonesia.</p>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="about-feature-item">
+                <div class="about-feature-head">
+                  <img src="asset/icons/icon_end_to_end.svg" class="about-feature-svg" alt="" />
+                  <h3 class="about-feature-title">Rekayasa Lepas Pantai &amp; Aliansi Global</h3>
+                </div>
+                <p class="about-feature-desc">Penyedia armada khusus DST Well Testing Barges dan dukungan operasi migas lepas pantai dalam kemitraan terintegrasi dengan Schlumberger dan Svitzer.</p>
+              </div>
+
+              <!-- Feature 3 -->
+              <div class="about-feature-item">
+                <div class="about-feature-head">
+                  <img src="asset/icons/icon_performance.svg" class="about-feature-svg" alt="" />
+                  <h3 class="about-feature-title">Standar Keselamatan Tinggi (Zero Accident)</h3>
+                </div>
+                <p class="about-feature-desc">Operasional berlandaskan komitmen keselamatan tertinggi berstandar ISO 9001, ISO 14001, OHSAS 18001, IMO ISM Code, SKT Migas, serta klasifikasi BKI dan ABS.</p>
+              </div>
+            </div>
+
+            <div class="about-cta-wrap">
+              <a href="about.html" class="btn btn-primary btn-about">About Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US BANNER (FULL-BLEED PHOTO + STATS) -->
+    <section class="banner-why-us" id="why-us">
+      <div class="banner-why-overlay"></div>
+      <div class="container banner-why-container">
+        <div class="banner-why-grid">
+          <div class="banner-why-left">
+            <span class="banner-why-eyebrow">Why US</span>
+            <h2 class="banner-why-title">A Reliable Logistics Partner You Can Trust</h2>
+            <p class="banner-why-desc">
+              We combine smart logistics planning with real-time visibility to keep your shipments moving smoothly. Faster deliveries, fewer delays, and dependable results.
+            </p>
+            <a href="#contact" class="circle-action-btn" aria-label="Why Choose TRUST Logistics">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+
+          <div class="banner-why-right">
+            <div class="banner-why-certs-grid">
+              <!-- CERTIFICATE 1: ISO 9001 -->
+              <div class="banner-cert-box">
+                <div class="cert-box-logo">
+                  <img src="asset/logos/iso-9001.png" alt="ISO 9001:2008 Certified" loading="lazy">
+                </div>
+                <div class="cert-box-content">
+                  <div class="cert-box-title">ISO 9001:2008</div>
+                  <div class="cert-box-sub">Quality Management System</div>
+                </div>
+              </div>
+
+              <!-- CERTIFICATE 2: ISO 14001 -->
+              <div class="banner-cert-box">
+                <div class="cert-box-logo">
+                  <img src="asset/logos/iso-14001.png" alt="ISO 14001:2004 Environmental" loading="lazy">
+                </div>
+                <div class="cert-box-content">
+                  <div class="cert-box-title">ISO 14001:2004</div>
+                  <div class="cert-box-sub">Environmental Management</div>
+                </div>
+              </div>
+
+              <!-- CERTIFICATE 3: OHSAS 18001 -->
+              <div class="banner-cert-box">
+                <div class="cert-box-logo">
+                  <img src="asset/logos/ohsas-18001.png" alt="OHSAS 18001 Health & Safety" loading="lazy">
+                </div>
+                <div class="cert-box-content">
+                  <div class="cert-box-title">OHSAS 18001</div>
+                  <div class="cert-box-sub">Occupational Health &amp; Safety</div>
+                </div>
+              </div>
+
+              <!-- CERTIFICATE 4: IMO ISM CODE & SKT MIGAS -->
+              <div class="banner-cert-box">
+                <div class="cert-box-logo">
+                  <img src="asset/logos/imo.png" alt="IMO ISM Code & SKT Migas" loading="lazy">
+                </div>
+                <div class="cert-box-content">
+                  <div class="cert-box-title">IMO ISM Code</div>
+                  <div class="cert-box-sub">Maritime Safety &amp; SKT Migas</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING PLANS SECTION -->
+    <section class="section section-plans" id="plans">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow">Charter &amp; Contract Plans</span>
+          <h2 class="section-title">Skema Layanan Logistik &amp; Sewa Armada Fleksibel</h2>
+          <p class="section-subtitle">Pilih model charter dan skema kontrak armada maritim yang sesuai dengan target volume kargo dan jadwal operasional proyek Anda.</p>
+        </div>
+
+        <div class="plans-three-grid">
+          <!-- PLAN 1: SPOT CHARTER -->
+          <div class="plan-card plan-basic">
+            <div class="plan-head">
+              <span class="plan-tier-name">Spot &amp; Voyage Charter</span>
+              <div class="plan-price">Custom <span class="plan-unit">/ Voyage</span></div>
+            </div>
+            <ul class="plan-checklist">
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Armada Tugboat &amp; Tongkang 300ft</span>
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Transshipment &amp; Rute Domestik</span>
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Monitoring Satelit AIS 24/7</span>
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Penanganan Dokumen Pelabuhan</span>
+              </li>
+            </ul>
+            <div class="plan-footer">
+              <p class="plan-cta-note">Konsultasikan Kebutuhan Pengiriman Kargo Anda</p>
+              <a href="#contact" class="circle-action-btn" aria-label="Choose Spot & Voyage Charter">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- PLAN 2: COA CONTRACT (HIGHLIGHTED DARK CARD) -->
+          <div class="plan-card plan-standard-dark">
+            <div class="plan-head">
+              <span class="plan-tier-name">Contract of Affreightment (COA)</span>
+              <div class="plan-price">Custom <span class="plan-unit">/ Kontrak</span></div>
+            </div>
+            <div class="plan-divider"></div>
+            <ul class="plan-checklist">
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Jaminan Ketersediaan Armada Volume Besar</span>
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Prioritas Sandar &amp; Jadwal Muat Pelabuhan</span>
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Keagenan Kapal &amp; Bongkar Muat Dedicated</span>
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Sertifikasi Kelas BKI &amp; ABS Terjamin</span>
+              </li>
+            </ul>
+            <div class="plan-footer">
+              <p class="plan-cta-note">Solusi Kontrak Jangka Panjang Terbaik Industri</p>
+              <a href="#contact" class="circle-action-btn circle-action-btn-white" aria-label="Choose Contract of Affreightment">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- PLAN 3: OFFSHORE FLEET & PROJECT -->
+          <div class="plan-card plan-premium">
+            <div class="plan-head">
+              <span class="plan-tier-name">Offshore Support &amp; Engineering</span>
+              <div class="plan-price">Custom <span class="plan-unit">/ Proyek</span></div>
+            </div>
+            <ul class="plan-checklist">
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Tongkang Uji Sumur Migas (DST Well Testing)</span>
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Armada AHTS, Supply Vessels &amp; Crew Boat</span>
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Manajemen Proyek Terpadu (Aliansi SLB)</span>
+              </li>
+              <li>
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Standar K3 Ketat IMO ISM &amp; SKT Migas</span>
+              </li>
+            </ul>
+            <div class="plan-footer">
+              <p class="plan-cta-note">Diskusikan Rekayasa &amp; Dukungan Offshore Anda</p>
+              <a href="#contact" class="circle-action-btn" aria-label="Choose Offshore Support & Engineering">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR PROCESS (2 COLUMNS) -->
+    <section class="section section-process" id="process">
+      <div class="container">
+        <div class="process-two-col-grid">
+          <div class="process-left-col">
+            <span class="eyebrow">Our Process</span>
+            <h2 class="section-title">Moving Your Business Forward, One Step at a Time</h2>
+            <p class="section-subtitle text-left">A simple, transparent process designed to keep your shipments moving efficiently and reliably.</p>
+          </div>
+
+          <div class="process-right-col">
+            <div class="process-step-item">
+              <div class="step-icon-square">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+              </div>
+              <div class="step-details">
+                <h3 class="step-title">Book Your Shipment</h3>
+                <p class="step-desc">We assess shipment requirements, timelines, and routes to create an efficient logistics plan.</p>
+              </div>
+            </div>
+
+            <div class="process-step-item">
+              <div class="step-icon-square">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                </svg>
+              </div>
+              <div class="step-details">
+                <h3 class="step-title">Pickup &amp; Handling</h3>
+                <p class="step-desc">Cargo is collected and handled with care following safety and quality standards.</p>
+              </div>
+            </div>
+
+            <div class="process-step-item">
+              <div class="step-icon-square">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+                </svg>
+              </div>
+              <div class="step-details">
+                <h3 class="step-title">Transportation</h3>
+                <p class="step-desc">Goods are transported using optimized routes and reliable transport networks for efficient delivery.</p>
+              </div>
+            </div>
+
+            <div class="process-step-item">
+              <div class="step-icon-square">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              </div>
+              <div class="step-details">
+                <h3 class="step-title">On-Time Delivery</h3>
+                <p class="step-desc">Shipments are delivered securely and on schedule to their final destination with complete reliability.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FREQUENTLY ASKED QUESTIONS (2 COLUMNS) -->
+    <section class="section section-faq" id="faq">
+      <div class="container">
+        <div class="faq-two-col-grid">
+          <div class="faq-left-col">
+            <span class="eyebrow">Frequently Asked Questions</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle text-left">Everything you need to know before shipping with TRUST Corporation.</p>
+          </div>
+
+          <div class="faq-right-col">
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item active">
+                <button class="accordion-header" aria-expanded="true">
+                  <span class="faq-q-text">What services does TRUST Corporation provide?</span>
+                  <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-body">
+                  <p>TRUST Corporation (PT. Trust Eadyra Line) provides 4 integrated business units: Cargo Vessel &amp; Barging for bulk commodities (coal, timber, nickel), Offshore Support &amp; Engineering (DST well testing barges, cementing, AHTS), Ship Management &amp; Marine Services, and Shore Base Logistics infrastructure.</p>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                  <span class="faq-q-text">How do I get a shipping quote?</span>
+                  <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-body">
+                  <p>You can request a tailored quote directly through our contact form below or email us at operational@trusteadyraline.com. Please provide your cargo type, tonnage volume, load port (POL), discharge port (POD), and required schedule window.</p>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                  <span class="faq-q-text">Do you offer real-time shipment tracking?</span>
+                  <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-body">
+                  <p>Yes. All tugboats and transport barges in our fleet are equipped with 24/7 satellite AIS and maritime GPS tracking systems. Our operations command center provides daily noon reports and automated ETA tracking directly to clients.</p>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                  <span class="faq-q-text">Which locations do you serve?</span>
+                  <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-body">
+                  <p>We serve all major deep-water ports and coastal river terminals across the Indonesian archipelago—including Sumatra, Kalimantan, Java, Sulawesi, and Maluku—as well as international transshipment routes across Southeast Asia.</p>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false">
+                  <span class="faq-q-text">What safety and quality certifications does TRUST hold?</span>
+                  <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-body">
+                  <p>Our operations are fully audited and certified under ISO 9001:2008, ISO 14001:2004, OHSAS 18001, IMO ISM Code, SKT Migas Kementerian ESDM, and classified under BKI (Biro Klasifikasi Indonesia) and ABS (American Bureau of Shipping).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- LATEST NEWS & INSIGHTS (3 COLUMNS ON WHITE) -->
+    <section class="section section-blog" id="blog">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow">TRUST Insights &amp; Updates</span>
+          <h2 class="section-title">Latest News &amp; Insights</h2>
+          <p class="section-subtitle">Industry perspectives and operational best practices across shipping, freight forwarding, and modern supply chain infrastructure.</p>
+        </div>
+
+        <div class="blog-three-grid">
+          <article class="blog-card">
+            <div class="blog-media">
+              <img src="asset/trust/trust_p10_img0_438x272.jpeg" alt="The Future Era Of Smart Logistics Solutions" loading="lazy" />
+            </div>
+            <div class="blog-content">
+              <span class="blog-date">27 March 2022</span>
+              <h3 class="blog-title">The Future Era Of Smart Logistics Solutions</h3>
+              <a href="#contact" class="circle-action-btn" aria-label="Read article on Smart Logistics Solutions">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-media">
+              <img src="asset/trust/trust_p6_img1_907x474.jpeg" alt="Understanding Last-Mile Delivery Challenges" loading="lazy" />
+            </div>
+            <div class="blog-content">
+              <span class="blog-date">5 November 2023</span>
+              <h3 class="blog-title">Understanding Last-Mile Delivery Challenges</h3>
+              <a href="#contact" class="circle-action-btn" aria-label="Read article on Last-Mile Delivery Challenges">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-media">
+              <img src="asset/trust/trust_p1_img0_595x288.jpeg" alt="Warehousing Best Practices For Businesses" loading="lazy" />
+            </div>
+            <div class="blog-content">
+              <span class="blog-date">14 January 2025</span>
+              <h3 class="blog-title">Warehousing Best Practices For Businesses</h3>
+              <a href="#contact" class="circle-action-btn" aria-label="Read article on Warehousing Best Practices">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT US SECTION (2 COLUMNS) -->
+    <section class="section section-contact" id="contact">
+      <div class="container">
+        <div class="contact-two-col-grid">
+          <div class="contact-left-info">
+            <span class="eyebrow">Get Started</span>
+            <h2 class="section-title">Contact Us</h2>
+            <p class="contact-subtitle">Have questions or need a quote? Our team is here to help you move forward.</p>
+
+            <div class="contact-socials-row">
+              <a href="#" class="social-circle" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="#" class="social-circle" aria-label="Facebook">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+              <a href="#" class="social-circle" aria-label="Twitter">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+              </a>
+              <a href="#" class="social-circle" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+            </div>
+
+            <div class="contact-meta-block">
+              <h4 class="meta-heading">More Contact Details :</h4>
+              
+              <div class="meta-item">
+                <span class="meta-label">Address :</span>
+                <p class="meta-value">Gedung CEO Lantai 7, Jl. TB Simatupang No. 18C, Cilandak Barat, Jakarta Selatan 12430</p>
+              </div>
+
+              <div class="meta-item">
+                <span class="meta-label">Contact :</span>
+                <p class="meta-value">operational@trusteadyraline.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-right-form">
+            <h3 class="form-title">Submit Interest</h3>
+            <form id="contactForm" class="contact-form">
+              <div class="form-row-two">
+                <div class="form-group">
+                  <label for="userName">Name</label>
+                  <input type="text" id="userName" name="name" placeholder="Enter Name" required />
+                </div>
+                <div class="form-group">
+                  <label for="userPhone">Phone</label>
+                  <input type="tel" id="userPhone" name="phone" placeholder="Enter Phone" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="userEmail">Email</label>
+                <input type="email" id="userEmail" name="email" placeholder="Enter Email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="userMessage">Your Messages</label>
+                <textarea id="userMessage" name="message" rows="4" placeholder="Share Details" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block btn-submit">Submit</button>
+              <div id="formStatus" class="form-status" style="display:none;"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (DARK OBSIDIAN #111113) -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-left-col">
+          <a href="#hero" class="footer-brand-link" aria-label="TRUST Corporation Home">
+            <img src="asset/logo-trust-white.png" alt="TRUST Corporation" class="footer-logo-img" />
+          </a>
+          
+          <div class="footer-quick-links">
+            <h4 class="footer-links-title">Quick Links</h4>
+            <ul class="footer-nav-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-legal-row">
+            <a href="#">Privacy Policy</a>
+            <span class="legal-separator">|</span>
+            <a href="#">Terms And Conditions</a>
+          </div>
+
+          <p class="footer-copyright">© 2026 PT. Trust Eadyra Line (TRUST Corporation). All rights reserved.</p>
+        </div>
+
+        <div class="footer-right-col">
+          <div class="footer-contact-info-row">
+            <div class="footer-contact-box">
+              <span class="footer-box-label">Phone</span>
+              <p class="footer-box-val">(021)-7592-0000</p>
+            </div>
+            <div class="footer-contact-box">
+              <span class="footer-box-label">Email</span>
+              <p class="footer-box-val">operational@trusteadyraline.com</p>
+            </div>
+          </div>
+
+          <div class="footer-newsletter-wrap">
+            <h3 class="newsletter-title">Join Our Newsletter</h3>
+            <form id="newsletterForm" class="newsletter-underline-form">
+              <div class="newsletter-input-group">
+                <input type="email" placeholder="Email" required />
+                <button type="submit" class="btn btn-primary btn-newsletter">Submit</button>
+              </div>
+              <div id="newsletterStatus" class="newsletter-status" style="display:none;"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

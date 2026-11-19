@@ -1,0 +1,16 @@
+# Temporary files & Scratch
+scratch/
+pdf_pages/
+.gemini/
+*.log
+
+# Root screenshot and preview artifacts
+/preview-*.png
+/screenshot*.png
+/user_video_frame_*.png
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
