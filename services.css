@@ -1,0 +1,200 @@
+/* ==========================================================================
+   TRUST CORPORATION - SERVICES PAGE STYLES (services.css)
+   Exact 1:1 Replica matching reference video & Framer template
+   ========================================================================== */
+
+/* Main wrapper */
+.services-main {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-white, #ffffff);
+}
+
+/* ==========================================================================
+   SERVICES HERO SECTION (Dark full-bleed background + Left content + Right 2x2 stats)
+   ========================================================================== */
+
+.section-services-hero {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  padding: 130px 0 110px;
+  background-image: url('asset/services-hero-driver.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.services-hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 14, 20, 0.88) 0%,
+    rgba(10, 14, 20, 0.74) 48%,
+    rgba(10, 14, 20, 0.58) 100%
+  );
+  z-index: 1;
+}
+
+.services-hero-container {
+  position: relative;
+  z-index: 2;
+}
+
+.services-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 72px;
+  align-items: center;
+}
+
+/* Left Column */
+.services-hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.services-hero-eyebrow {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+  display: inline-block;
+}
+
+.services-hero-title {
+  font-size: clamp(34px, 3.8vw, 54px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin: 0 0 20px 0;
+}
+
+.services-hero-desc {
+  font-size: 15.5px;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.65;
+  max-width: 530px;
+  margin: 0 0 30px 0;
+}
+
+.circle-action-btn-red {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #ba141a;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+  text-decoration: none;
+}
+
+.circle-action-btn-red:hover {
+  transform: translateY(-2px) scale(1.05);
+  background-color: #9e1015;
+}
+
+/* Right Column (2x2 Stats Grid) */
+.services-hero-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.services-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 46px 56px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.services-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.services-stat-number {
+  font-size: clamp(48px, 4.8vw, 70px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+}
+
+.services-stat-accent {
+  color: #ba141a;
+  font-weight: 800;
+  margin-left: 2px;
+}
+
+.services-stat-label {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   SERVICES SEAMLESS LIST SECTION
+   ========================================================================== */
+
+.section-services-list {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .section-services-hero {
+    padding: 100px 0 70px;
+  }
+
+  .services-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .services-stats-grid {
+    max-width: 100%;
+    gap: 36px 44px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-services-hero {
+    padding: 85px 0 60px;
+  }
+
+  .services-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 20px;
+  }
+
+  .services-stat-number {
+    font-size: 38px;
+  }
+
+  .services-stat-label {
+    font-size: 13px;
+    white-space: normal;
+  }
+}
