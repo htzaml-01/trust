@@ -30,6 +30,63 @@ All assets (images/videos/logos) loaded via CDN: https://htzaml-01.github.io/tru
   box-sizing: border-box;
 }
 
+/* Bulletproof Protection against WordPress Theme / Elementor core image expansions */
+.elementor-trust-wrapper .brand-logo,
+.elementor-trust-wrapper a.brand-logo {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 44px !important;
+  max-height: 44px !important;
+  text-decoration: none !important;
+  flex-shrink: 0 !important;
+}
+
+.elementor-trust-wrapper .logo-img,
+.elementor-trust-wrapper img.logo-img {
+  height: 38px !important;
+  max-height: 38px !important;
+  width: auto !important;
+  max-width: 130px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.elementor-trust-wrapper .footer-brand-link,
+.elementor-trust-wrapper .footer-logo-wrap,
+.elementor-trust-wrapper a.footer-brand-link,
+.elementor-trust-wrapper a.footer-logo-wrap {
+  display: inline-block !important;
+  margin-bottom: 24px !important;
+  text-decoration: none !important;
+  flex-shrink: 0 !important;
+  max-width: 130px !important;
+}
+
+.elementor-trust-wrapper .footer-logo-img,
+.elementor-trust-wrapper img.footer-logo-img {
+  height: 38px !important;
+  max-height: 38px !important;
+  width: auto !important;
+  max-width: 130px !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 1024px) {
+  .elementor-trust-wrapper .logo-img,
+  .elementor-trust-wrapper img.logo-img {
+    height: 32px !important;
+    max-height: 32px !important;
+    max-width: 110px !important;
+  }
+  .elementor-trust-wrapper .footer-logo-img,
+  .elementor-trust-wrapper img.footer-logo-img {
+    height: 32px !important;
+    max-height: 32px !important;
+    max-width: 110px !important;
+  }
+}
+
 /* ==========================================================================
    TRUST CORPORATION - HIGH-FIDELITY SLICING REPLICA
    Clean Framer Style | Pure White Palette | Sticky Navbar
@@ -280,18 +337,29 @@ button, input, textarea {
   justify-content: space-between;
 }
 
-.brand-logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
+.brand-logo,
+.site-header .brand-logo,
+.elementor-trust-wrapper .brand-logo {
+  display: inline-flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  height: 44px !important;
+  max-height: 44px !important;
+  flex-shrink: 0 !important;
 }
 
-/* Official Color Logo: Always visible */
-.logo-img {
-  height: 38px;
-  width: auto;
-  object-fit: contain;
-  display: block;
+/* Official Color Logo: Constrained tightly against Elementor/WP overrides */
+.logo-img,
+.site-header .logo-img,
+.brand-logo .logo-img,
+.elementor-trust-wrapper .logo-img,
+img.logo-img {
+  height: 38px !important;
+  max-height: 38px !important;
+  width: auto !important;
+  max-width: 130px !important;
+  object-fit: contain !important;
+  display: block !important;
 }
 
 .logo-white {
@@ -1642,17 +1710,28 @@ button, input, textarea {
   margin-bottom: 28px;
 }
 
-.footer-brand-link {
-  display: inline-block;
-  margin-bottom: 28px;
-  text-decoration: none;
+.footer-brand-link,
+.footer-logo-wrap,
+.site-footer .footer-logo-wrap,
+.elementor-trust-wrapper .footer-logo-wrap {
+  display: inline-block !important;
+  margin-bottom: 24px !important;
+  text-decoration: none !important;
+  max-width: 130px !important;
+  flex-shrink: 0 !important;
 }
 
-.footer-logo-img {
-  height: 48px;
-  width: auto;
-  display: block;
-  object-fit: contain;
+.footer-logo-img,
+.site-footer .footer-logo-img,
+.footer-logo-wrap .footer-logo-img,
+.elementor-trust-wrapper .footer-logo-img,
+img.footer-logo-img {
+  height: 38px !important;
+  max-height: 38px !important;
+  width: auto !important;
+  max-width: 130px !important;
+  display: block !important;
+  object-fit: contain !important;
 }
 
 .footer-quick-links {
@@ -1875,8 +1954,22 @@ button, input, textarea {
     height: 72px !important;
   }
 
-  .site-header .logo-img {
-    height: 32px;
+  .site-header .logo-img,
+  .brand-logo .logo-img,
+  .elementor-trust-wrapper .logo-img,
+  img.logo-img {
+    height: 32px !important;
+    max-height: 32px !important;
+    max-width: 110px !important;
+  }
+
+  .site-footer .footer-logo-img,
+  .footer-logo-wrap .footer-logo-img,
+  .elementor-trust-wrapper .footer-logo-img,
+  img.footer-logo-img {
+    height: 32px !important;
+    max-height: 32px !important;
+    max-width: 110px !important;
   }
 
   .header-container {
@@ -2607,8 +2700,8 @@ button, input, textarea {
 <!-- STICKY NAVBAR (SOLID WHITE FOR WHITE-TOP PAGE) -->
   <header class="site-header header-solid" id="siteHeader">
     <div class="header-container">
-      <a href="index.html" class="brand-logo" aria-label="TRUST Corporation Home">
-        <img src="https://htzaml-01.github.io/trust/asset/logo-trust.png" alt="TRUST EADYRA LINE" class="logo-img" />
+      <a href="index.html" class="brand-logo" aria-label="TRUST Corporation Home" style="display:inline-flex !important; align-items:center !important; text-decoration:none !important; flex-shrink:0 !important;">
+        <img src="https://htzaml-01.github.io/trust/asset/logo-trust.png" alt="TRUST EADYRA LINE" class="logo-img" width="102" height="38" style="display:block !important; height:38px !important; max-height:38px !important; width:auto !important; max-width:130px !important; object-fit:contain !important;" />
       </a>
 
       <div class="header-right">
@@ -2702,8 +2795,8 @@ button, input, textarea {
     <div class="container footer-container">
       <div class="footer-grid">
         <div class="footer-left-col">
-          <a href="index.html" class="footer-brand-link" aria-label="TRUST Corporation Home">
-            <img src="https://htzaml-01.github.io/trust/asset/logo-trust-white.png" alt="TRUST Corporation" class="footer-logo-img" />
+          <a href="index.html" class="footer-brand-link" aria-label="TRUST Corporation Home" style="display:inline-block !important; text-decoration:none !important; flex-shrink:0 !important;">
+            <img src="https://htzaml-01.github.io/trust/asset/logo-trust-white.png" alt="TRUST Corporation" class="footer-logo-img" width="102" height="38" style="display:block !important; height:38px !important; max-height:38px !important; width:auto !important; max-width:130px !important; object-fit:contain !important;" />
           </a>
           
           <div class="footer-quick-links">

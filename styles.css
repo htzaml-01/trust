@@ -248,18 +248,29 @@ button, input, textarea {
   justify-content: space-between;
 }
 
-.brand-logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
+.brand-logo,
+.site-header .brand-logo,
+.elementor-trust-wrapper .brand-logo {
+  display: inline-flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  height: 44px !important;
+  max-height: 44px !important;
+  flex-shrink: 0 !important;
 }
 
-/* Official Color Logo: Always visible */
-.logo-img {
-  height: 38px;
-  width: auto;
-  object-fit: contain;
-  display: block;
+/* Official Color Logo: Constrained tightly against Elementor/WP overrides */
+.logo-img,
+.site-header .logo-img,
+.brand-logo .logo-img,
+.elementor-trust-wrapper .logo-img,
+img.logo-img {
+  height: 38px !important;
+  max-height: 38px !important;
+  width: auto !important;
+  max-width: 130px !important;
+  object-fit: contain !important;
+  display: block !important;
 }
 
 .logo-white {
@@ -1610,17 +1621,28 @@ button, input, textarea {
   margin-bottom: 28px;
 }
 
-.footer-brand-link {
-  display: inline-block;
-  margin-bottom: 28px;
-  text-decoration: none;
+.footer-brand-link,
+.footer-logo-wrap,
+.site-footer .footer-logo-wrap,
+.elementor-trust-wrapper .footer-logo-wrap {
+  display: inline-block !important;
+  margin-bottom: 24px !important;
+  text-decoration: none !important;
+  max-width: 130px !important;
+  flex-shrink: 0 !important;
 }
 
-.footer-logo-img {
-  height: 48px;
-  width: auto;
-  display: block;
-  object-fit: contain;
+.footer-logo-img,
+.site-footer .footer-logo-img,
+.footer-logo-wrap .footer-logo-img,
+.elementor-trust-wrapper .footer-logo-img,
+img.footer-logo-img {
+  height: 38px !important;
+  max-height: 38px !important;
+  width: auto !important;
+  max-width: 130px !important;
+  display: block !important;
+  object-fit: contain !important;
 }
 
 .footer-quick-links {
@@ -1843,8 +1865,22 @@ button, input, textarea {
     height: 72px !important;
   }
 
-  .site-header .logo-img {
-    height: 32px;
+  .site-header .logo-img,
+  .brand-logo .logo-img,
+  .elementor-trust-wrapper .logo-img,
+  img.logo-img {
+    height: 32px !important;
+    max-height: 32px !important;
+    max-width: 110px !important;
+  }
+
+  .site-footer .footer-logo-img,
+  .footer-logo-wrap .footer-logo-img,
+  .elementor-trust-wrapper .footer-logo-img,
+  img.footer-logo-img {
+    height: 32px !important;
+    max-height: 32px !important;
+    max-width: 110px !important;
   }
 
   .header-container {
