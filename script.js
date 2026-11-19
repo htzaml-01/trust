@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('siteHeader');
   
   function handleScroll() {
+    if (!header) return;
     if (window.scrollY > 40) {
       header.classList.add('scrolled');
     } else {
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('touchmove', handleScroll, { passive: true });
   handleScroll(); // Trigger initial state
 
   // 2. MOBILE MENU TOGGLE
@@ -26,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeMobileNav() {
     navMenu?.classList.remove('open');
     mobileToggle?.classList.remove('active');
+    header?.classList.remove('nav-open');
     navBackdrop?.classList.remove('open');
     document.body.style.overflow = '';
   }
@@ -33,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function openMobileNav() {
     navMenu?.classList.add('open');
     mobileToggle?.classList.add('active');
+    header?.classList.add('nav-open');
     navBackdrop?.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -87,11 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
   if (urlParams.has('menu')) {
     toggleMobileNav();
   }
+  if (urlParams.has('scrolled')) {
+    header?.classList.add('scrolled');
+  }
   const scrollTarget = urlParams.get('scroll');
   if (scrollTarget) {
     const targetEl = document.getElementById(scrollTarget);
     if (targetEl) {
       targetEl.scrollIntoView({ behavior: 'instant' });
+      handleScroll();
     }
   }
 
