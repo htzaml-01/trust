@@ -40,7 +40,7 @@ html {
 
 body {
   font-family: var(--font-family);
-  background-color: var(--color-white);
+  background-color: #0c1117;
   color: var(--color-text-main);
   line-height: 1.6;
   font-weight: 400;
@@ -207,6 +207,9 @@ button, input, textarea {
    ========================================================================== */
 
 .site-header {
+  width: 100% !important;
+  margin: 0 !important;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -222,6 +225,7 @@ button, input, textarea {
               border-color 0.35s ease,
               box-shadow 0.35s ease,
               height 0.3s ease;
+
 }
 
 /* Scrolled state: Solid clean white with subtle shadow */
@@ -4729,4 +4733,68 @@ body.admin-bar .mobile-drawer,
     top: 46px !important;
     height: calc(100% - 46px) !important;
   }
+}
+
+/* ==========================================================================
+   COMPLETE ZERO-GAP FULL-BLEED RESET (ELIMINATES SISA PUTIH DI PINGGIR & ATAS)
+   Applied globally and across all WordPress / Elementor containers
+   ========================================================================== */
+html,
+body,
+body.page,
+body.page-template-default,
+body.elementor-default,
+body.elementor-page,
+#page,
+#content,
+#primary,
+#main,
+.site,
+.site-content,
+.site-main,
+.entry-content,
+.post-inner,
+.singular,
+.hentry,
+.elementor,
+.elementor-section,
+.elementor-section-wrap,
+.elementor-container,
+.elementor-column,
+.elementor-column-wrap,
+.elementor-widget-wrap,
+.elementor-widget,
+.elementor-widget-html,
+.elementor-widget-container,
+.elementor-element,
+.elementor-element-populated,
+.e-con,
+.e-con-inner,
+.e-con-boxed,
+.e-con-full,
+.e-parent {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  --padding-top: 0px !important;
+  --padding-bottom: 0px !important;
+  --padding-left: 0px !important;
+  --padding-right: 0px !important;
+  --gap: 0px !important;
+  --container-widget-spacing: 0px !important;
+  --widgets-spacing: 0px !important;
+}
+
+.elementor-section.elementor-section-boxed > .elementor-container,
+.elementor-section-boxed > .elementor-container,
+.e-con-boxed > .e-con-inner {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }

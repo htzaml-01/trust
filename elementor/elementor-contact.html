@@ -1,10 +1,9 @@
 <!--
 ==============================================================================
-TRUST CORPORATION - ELEMENTOR PAGE TEMPLATE (SEPARATE FROM FOOTER)
+TRUST CORPORATION - COMPLETE FULL-SCREEN ELEMENTOR TEMPLATE WITH FOOTER
 Page: contact.html
-Created for: WordPress Elementor HTML Widget (Elementor Canvas template recommended)
-All assets (images/videos/logos) loaded via CDN: https://htzaml-01.github.io/trust/
-Note: Footer is separated in elementor-footer.html
+100% Edge-to-Edge Full Bleed | Zero White Edge Gaps | Includes Header & Footer
+All assets loaded via CDN: https://htzaml-01.github.io/trust/
 ==============================================================================
 -->
 
@@ -13,27 +12,101 @@ Note: Footer is separated in elementor-footer.html
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Elementor Scoped Stylesheet -->
 <style>
-/* Reset & Scope for Elementor Container */
+/* ==========================================================================
+   COMPLETE FULL-SCREEN ZERO-GAP RESET (ELIMINATES ALL WHITE GAPS & MARGINS)
+   ========================================================================== */
+html,
+body,
+body.page,
+body.page-template-default,
+body.elementor-default,
+body.elementor-page,
+#page,
+#content,
+#primary,
+#main,
+.site,
+.site-content,
+.site-main,
+.entry-content,
+.post-inner,
+.singular,
+.hentry,
+.elementor,
+.elementor-section,
+.elementor-section-wrap,
+.elementor-container,
+.elementor-column,
+.elementor-column-wrap,
+.elementor-widget-wrap,
+.elementor-widget,
+.elementor-widget-html,
+.elementor-widget-container,
+.elementor-element,
+.elementor-element-populated,
+.e-con,
+.e-con-inner,
+.e-con-boxed,
+.e-con-full,
+.e-parent {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  --padding-top: 0px !important;
+  --padding-bottom: 0px !important;
+  --padding-left: 0px !important;
+  --padding-right: 0px !important;
+  --gap: 0px !important;
+  --container-widget-spacing: 0px !important;
+  --widgets-spacing: 0px !important;
+}
+
+html {
+  background-color: #0c1117 !important;
+  overflow-x: hidden !important;
+}
+
+body {
+  background-color: #0c1117 !important;
+  overflow-x: hidden !important;
+}
+
+.elementor-section.elementor-section-boxed > .elementor-container,
+.elementor-section-boxed > .elementor-container,
+.e-con-boxed > .e-con-inner {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Main container styling */
 .elementor-trust-wrapper {
   font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: #1a1a1c;
-  background-color: #ffffff;
   line-height: 1.6;
-  width: 100%;
-  overflow-x: hidden;
-  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #ffffff;
 }
+
 .elementor-trust-wrapper *,
 .elementor-trust-wrapper *::before,
 .elementor-trust-wrapper *::after {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
 
-/* ==========================================================================
-   WORDPRESS & ELEMENTOR ADMIN BAR COMPATIBILITY (PREVENTS CUT-OFF NAVBAR)
-   ========================================================================== */
+/* WordPress Admin Bar Compatibility */
 body.admin-bar .site-header,
 .admin-bar .site-header,
 body.admin-bar .elementor-trust-wrapper .site-header,
@@ -50,7 +123,6 @@ body.admin-bar .elementor-trust-wrapper .site-header,
   }
 }
 
-/* Admin bar content top clearance (Never cut off titles or hero under header) */
 body.admin-bar .hero-section {
   padding-top: 172px !important;
 }
@@ -73,21 +145,7 @@ body.admin-bar .contact-page-main {
   }
 }
 
-body.admin-bar .mobile-drawer,
-.admin-bar .mobile-drawer {
-  top: 32px !important;
-  height: calc(100% - 32px) !important;
-}
-
-@media screen and (max-width: 782px) {
-  body.admin-bar .mobile-drawer,
-  .admin-bar .mobile-drawer {
-    top: 46px !important;
-    height: calc(100% - 46px) !important;
-  }
-}
-
-/* Protection for Header Logo */
+/* Header Logo Protection */
 .elementor-trust-wrapper .brand-logo,
 .elementor-trust-wrapper a.brand-logo {
   display: inline-flex !important;
@@ -108,7 +166,7 @@ body.admin-bar .mobile-drawer,
   display: block !important;
 }
 
-/* Protection for Hero Section & Text Wrapping */
+/* Hero Section & Text Protection */
 .elementor-trust-wrapper .hero-section {
   position: relative !important;
   width: 100% !important;
@@ -120,6 +178,7 @@ body.admin-bar .mobile-drawer,
   padding-top: 140px !important;
   padding-bottom: 80px !important;
   overflow: hidden !important;
+  margin: 0 !important;
 }
 
 .elementor-trust-wrapper .hero-line {
@@ -128,16 +187,17 @@ body.admin-bar .mobile-drawer,
   word-break: normal !important;
 }
 
-/* Elementor Strict Marquee Protection */
+/* Strict Marquee & Partners Section Protection */
 .elementor-trust-wrapper .section-brand-carousel {
   position: relative !important;
   width: 100% !important;
   background-color: #ffffff !important;
   padding: 36px 0 28px !important;
-  border-top: 1px solid var(--color-border-subtle) !important;
-  border-bottom: 1px solid var(--color-border-subtle) !important;
+  border-top: 1px solid #eeeeee !important;
+  border-bottom: 1px solid #eeeeee !important;
   overflow: hidden !important;
   display: block !important;
+  margin: 0 !important;
 }
 
 .elementor-trust-wrapper .partners-title-wrap {
@@ -154,7 +214,7 @@ body.admin-bar .mobile-drawer,
   font-weight: 700 !important;
   letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
-  color: var(--color-text-muted) !important;
+  color: #606068 !important;
 }
 
 .elementor-trust-wrapper .partners-marquee-section {
@@ -207,12 +267,79 @@ body.admin-bar .mobile-drawer,
   display: block !important;
 }
 
+/* Seamless Grid Rapet Protection */
+.elementor-trust-wrapper .services-seamless-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.elementor-trust-wrapper .service-seamless-col {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #ffffff !important;
+}
+
+.elementor-trust-wrapper .service-col-media {
+  width: 100% !important;
+  aspect-ratio: 1.50376 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.elementor-trust-wrapper .service-col-media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Footer Protection */
+.elementor-trust-wrapper .site-footer {
+  width: 100% !important;
+  margin: 0 !important;
+  background-color: #111113 !important;
+}
+
+.elementor-trust-wrapper .footer-brand-link,
+.elementor-trust-wrapper .footer-logo-wrap,
+.elementor-trust-wrapper a.footer-brand-link,
+.elementor-trust-wrapper a.footer-logo-wrap,
+a.footer-brand-link {
+  display: inline-block !important;
+  margin-bottom: 24px !important;
+  text-decoration: none !important;
+  flex-shrink: 0 !important;
+  max-width: 130px !important;
+}
+
+.elementor-trust-wrapper .footer-logo-img,
+.elementor-trust-wrapper img.footer-logo-img,
+img.footer-logo-img {
+  height: 38px !important;
+  max-height: 38px !important;
+  width: auto !important;
+  max-width: 130px !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
 @media (max-width: 1024px) {
-  .elementor-trust-wrapper .logo-img,
-  .elementor-trust-wrapper img.logo-img {
-    height: 32px !important;
-    max-height: 32px !important;
-    max-width: 110px !important;
+  .elementor-trust-wrapper .services-seamless-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .elementor-trust-wrapper .services-seamless-grid {
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -258,7 +385,7 @@ html {
 
 body {
   font-family: var(--font-family);
-  background-color: var(--color-white);
+  background-color: #0c1117;
   color: var(--color-text-main);
   line-height: 1.6;
   font-weight: 400;
@@ -425,6 +552,9 @@ button, input, textarea {
    ========================================================================== */
 
 .site-header {
+  width: 100% !important;
+  margin: 0 !important;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -440,6 +570,7 @@ button, input, textarea {
               border-color 0.35s ease,
               box-shadow 0.35s ease,
               height 0.3s ease;
+
 }
 
 /* Scrolled state: Solid clean white with subtle shadow */
@@ -4949,9 +5080,73 @@ body.admin-bar .mobile-drawer,
   }
 }
 
+/* ==========================================================================
+   COMPLETE ZERO-GAP FULL-BLEED RESET (ELIMINATES SISA PUTIH DI PINGGIR & ATAS)
+   Applied globally and across all WordPress / Elementor containers
+   ========================================================================== */
+html,
+body,
+body.page,
+body.page-template-default,
+body.elementor-default,
+body.elementor-page,
+#page,
+#content,
+#primary,
+#main,
+.site,
+.site-content,
+.site-main,
+.entry-content,
+.post-inner,
+.singular,
+.hentry,
+.elementor,
+.elementor-section,
+.elementor-section-wrap,
+.elementor-container,
+.elementor-column,
+.elementor-column-wrap,
+.elementor-widget-wrap,
+.elementor-widget,
+.elementor-widget-html,
+.elementor-widget-container,
+.elementor-element,
+.elementor-element-populated,
+.e-con,
+.e-con-inner,
+.e-con-boxed,
+.e-con-full,
+.e-parent {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  --padding-top: 0px !important;
+  --padding-bottom: 0px !important;
+  --padding-left: 0px !important;
+  --padding-right: 0px !important;
+  --gap: 0px !important;
+  --container-widget-spacing: 0px !important;
+  --widgets-spacing: 0px !important;
+}
+
+.elementor-section.elementor-section-boxed > .elementor-container,
+.elementor-section-boxed > .elementor-container,
+.e-con-boxed > .e-con-inner {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 </style>
 
-<!-- Main Page HTML Markup (Without Footer) -->
+<!-- Main Page HTML Markup (Includes Header, Content & Footer) -->
 <div class="elementor-trust-wrapper">
 <!-- STICKY NAVBAR (SOLID WHITE FOR WHITE-TOP PAGE) -->
   <header class="site-header header-solid" id="siteHeader">
@@ -5101,7 +5296,57 @@ body.admin-bar .mobile-drawer,
   </main>
 
   <!-- FOOTER (OBSIDIAN #111113 - 100% REBRANDED TRUST CORPORATION) -->
-  
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <div class="footer-left-col">
+          <a href="index.html" class="footer-brand-link" aria-label="TRUST Corporation Home" style="display:inline-block !important; text-decoration:none !important; flex-shrink:0 !important;">
+            <img src="https://htzaml-01.github.io/trust/asset/logo-trust.png" alt="TRUST Corporation" class="footer-logo-img" width="102" height="38" style="display:block !important; height:38px !important; max-height:38px !important; width:auto !important; max-width:130px !important; object-fit:contain !important;" />
+          </a>
+          
+          <div class="footer-quick-links">
+            <h4 class="footer-links-title">Quick Links</h4>
+            <ul class="footer-nav-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="industries.html">Industries</a></li>
+              <li><a href="fleet.html">Fleet</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-legal-row">
+            <a href="#">Privacy Policy</a>
+            <span class="legal-separator">|</span>
+            <a href="#">Terms And Conditions</a>
+          </div>
+
+          <p class="footer-copyright">© 2026 PT. Trust Eadyra Line (TRUST Corporation). All rights reserved.</p>
+        </div>
+
+        <div class="footer-right-col">
+          <div class="footer-contact-info-row">
+            <div class="footer-contact-box">
+              <span class="footer-box-label">Phone</span>
+              <p class="footer-box-val">(021)-7592-0000</p>
+            </div>
+            <div class="footer-contact-box">
+              <span class="footer-box-label">Email</span>
+              <p class="footer-box-val">operational@trusteadyraline.com</p>
+            </div>
+          </div>
+
+                    <div class="footer-newsletter-wrap">
+            <h3 class="newsletter-title">PT. Trust Eadyra Line</h3>
+            <p style="color: #94a3b8; font-size: 14px; line-height: 1.6; margin-top: 10px;">
+              Integrated marine logistics, large-scale bulk cargo ocean barging, and offshore engineering support with international safety standards across Indonesia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   
   <script>
@@ -5134,7 +5379,7 @@ body.admin-bar .mobile-drawer,
   </script>
 </div>
 
-<!-- Interactive Scripts (Mobile Drawer, FAQ Accordion, Navigation) -->
+<!-- Interactive Scripts -->
 <script>
 (function() {
 /**
@@ -5369,5 +5614,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+
+  // Newsletter handler
+  const form = document.getElementById('newsletterForm');
+  const status = document.getElementById('newsletterStatus');
+  if (form && status) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      status.style.display = 'block';
+      status.style.color = '#10b981';
+      status.textContent = 'Thank you for subscribing to TRUST Corporation updates!';
+      form.reset();
+    });
+  }
 })();
 </script>
