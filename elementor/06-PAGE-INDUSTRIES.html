@@ -132,13 +132,17 @@ body {
 .elementor-trust-wrapper .section-brand-carousel {
   position: relative !important;
   width: 100% !important;
+  max-width: 100vw !important;
   background-color: #ffffff !important;
   padding: 36px 0 28px !important;
   border-top: 1px solid #eeeeee !important;
   border-bottom: 1px solid #eeeeee !important;
   overflow: hidden !important;
+  overflow-x: clip !important;
+  contain: paint !important;
   display: block !important;
   margin: 0 !important;
+  box-sizing: border-box !important;
 }
 
 .elementor-trust-wrapper .partners-title-wrap {
@@ -163,12 +167,15 @@ body {
   width: 100% !important;
   max-width: 100% !important;
   overflow: hidden !important;
+  overflow-x: clip !important;
+  contain: paint !important;
   display: flex !important;
   align-items: center !important;
   padding: 0 !important;
   border: none !important;
   background: transparent !important;
   scrollbar-width: none !important;
+  box-sizing: border-box !important;
 }
 
 .elementor-trust-wrapper .partners-marquee-section::-webkit-scrollbar {
@@ -179,6 +186,7 @@ body {
   display: flex !important;
   width: max-content !important;
   overflow: visible !important;
+  contain: layout !important;
   animation: marqueeScroll 26s linear infinite !important;
 }
 
@@ -5244,6 +5252,154 @@ body.elementor-page,
   }
 }
 
+/* ==========================================================================
+   STRICT MOBILE FULL-BLEED & ZERO-HORIZONTAL-OVERFLOW ENGINE
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  position: relative !important;
+}
+
+.section-brand-carousel,
+.partners-marquee-section {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  overflow-x: clip !important;
+  contain: paint !important;
+  box-sizing: border-box !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, li, button {
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .section {
+    padding: 56px 0 !important;
+    overflow: hidden !important;
+  }
+
+  .faq-two-col-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .faq-left-col,
+  .faq-right-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .section-title {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+    margin-bottom: 12px !important;
+  }
+
+  .section-subtitle {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    word-break: break-word !important;
+  }
+
+  .accordion {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .accordion-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .accordion-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 16px 0 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .faq-q-text {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    padding-right: 12px !important;
+    word-break: break-word !important;
+  }
+
+  .accordion-icon {
+    display: inline-flex !important;
+    flex-shrink: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .accordion-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .accordion-body p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    word-break: break-word !important;
+  }
+
+  .hero-bottom-grid,
+  .services-seamless-grid,
+  .about-two-col-grid,
+  .banner-why-grid,
+  .banner-why-certs-grid,
+  .plans-three-grid,
+  .process-two-col-grid,
+  .accreditations-grid,
+  .testimonials-three-grid,
+  .blog-three-grid,
+  .contact-two-col-grid,
+  .fleet-showcase-grid,
+  .home-industries-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
 </style>
 
 <!-- Main Page HTML Markup (Content Only: No Nav Menu & No Footer) -->
@@ -5496,7 +5652,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'hidden';
   }
 
+  let lastToggleTime = 0;
   function toggleMobileNav(e) {
+    const now = Date.now();
+    if (now - lastToggleTime < 350) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      return;
+    }
+    lastToggleTime = now;
     if (e) {
       e.preventDefault();
       e.stopPropagation();
@@ -5511,11 +5677,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (mobileToggle) {
     mobileToggle.addEventListener('click', toggleMobileNav);
-    // Add touch handler with passive: false for instant mobile tap response
-    mobileToggle.addEventListener('touchend', (e) => {
-      e.preventDefault();
-      toggleMobileNav(e);
-    }, { passive: false });
+    mobileToggle.addEventListener('touchend', toggleMobileNav, { passive: false });
   }
 
   if (navBackdrop) {

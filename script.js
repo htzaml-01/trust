@@ -41,7 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'hidden';
   }
 
+  let lastToggleTime = 0;
   function toggleMobileNav(e) {
+    const now = Date.now();
+    if (now - lastToggleTime < 350) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      return;
+    }
+    lastToggleTime = now;
     if (e) {
       e.preventDefault();
       e.stopPropagation();
@@ -56,11 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (mobileToggle) {
     mobileToggle.addEventListener('click', toggleMobileNav);
-    // Add touch handler with passive: false for instant mobile tap response
-    mobileToggle.addEventListener('touchend', (e) => {
-      e.preventDefault();
-      toggleMobileNav(e);
-    }, { passive: false });
+    mobileToggle.addEventListener('touchend', toggleMobileNav, { passive: false });
   }
 
   if (navBackdrop) {

@@ -205,13 +205,17 @@ body {{
 .elementor-trust-wrapper .section-brand-carousel {{
   position: relative !important;
   width: 100% !important;
+  max-width: 100vw !important;
   background-color: #ffffff !important;
   padding: 36px 0 28px !important;
   border-top: 1px solid #eeeeee !important;
   border-bottom: 1px solid #eeeeee !important;
   overflow: hidden !important;
+  overflow-x: clip !important;
+  contain: paint !important;
   display: block !important;
   margin: 0 !important;
+  box-sizing: border-box !important;
 }}
 
 .elementor-trust-wrapper .partners-title-wrap {{
@@ -236,12 +240,15 @@ body {{
   width: 100% !important;
   max-width: 100% !important;
   overflow: hidden !important;
+  overflow-x: clip !important;
+  contain: paint !important;
   display: flex !important;
   align-items: center !important;
   padding: 0 !important;
   border: none !important;
   background: transparent !important;
   scrollbar-width: none !important;
+  box-sizing: border-box !important;
 }}
 
 .elementor-trust-wrapper .partners-marquee-section::-webkit-scrollbar {{
@@ -252,6 +259,7 @@ body {{
   display: flex !important;
   width: max-content !important;
   overflow: visible !important;
+  contain: layout !important;
   animation: marqueeScroll 26s linear infinite !important;
 }}
 
@@ -610,28 +618,30 @@ Dynamic Active Page Detection | WP Admin Bar Compatible
 /* Mobile Toggle Hamburger Button */
 .site-header .mobile-toggle {{
   display: none;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  width: 44px;
-  height: 44px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5px;
-  z-index: 100001;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 8px !important;
+  width: 48px !important;
+  height: 48px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  z-index: 1000002 !important;
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+  -webkit-tap-highlight-color: transparent !important;
+  position: relative !important;
 }}
 
 .site-header .mobile-toggle span {{
-  display: block;
-  width: 22px;
-  height: 2px;
-  background-color: #ffffff;
-  pointer-events: none;
-  transition: background-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  display: block !important;
+  width: 24px !important;
+  height: 2px !important;
+  background-color: #1a1a1c !important;
+  pointer-events: none !important;
+  transition: background-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease !important;
 }}
 
 .site-header.scrolled .mobile-toggle span,
@@ -642,28 +652,31 @@ Dynamic Active Page Detection | WP Admin Bar Compatible
 }}
 
 .site-header .mobile-toggle.active span:nth-child(1) {{
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg) !important;
 }}
 
 .site-header .mobile-toggle.active span:nth-child(2) {{
-  opacity: 0;
+  opacity: 0 !important;
 }}
 
 .site-header .mobile-toggle.active span:nth-child(3) {{
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg) !important;
 }}
 
 /* Backdrop for Mobile Drawer */
 .mobile-nav-backdrop {{
   display: none;
-  position: fixed;
-  top: 72px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 99998;
-  touch-action: manipulation;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  background-color: rgba(0, 0, 0, 0.45) !important;
+  z-index: 1000000 !important;
+  touch-action: manipulation !important;
 }}
 
 .mobile-nav-backdrop.open {{
@@ -695,28 +708,29 @@ Dynamic Active Page Detection | WP Admin Bar Compatible
   }}
 
   .site-header .nav-menu {{
-    position: fixed;
-    top: 72px;
+    position: fixed !important;
+    top: 72px !important;
     right: 0 !important;
     left: auto !important;
-    width: 270px;
-    max-width: 80vw;
-    height: calc(100vh - 72px);
-    background-color: #ffffff;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    padding: 36px 30px;
-    gap: 22px;
-    box-shadow: -8px 0 28px rgba(0, 0, 0, 0.12);
-    display: flex;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateX(100%);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
-    z-index: 100000;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    width: 280px !important;
+    max-width: 85vw !important;
+    height: calc(100vh - 72px) !important;
+    height: calc(100dvh - 72px) !important;
+    background-color: #ffffff !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    padding: 36px 30px !important;
+    gap: 22px !important;
+    box-shadow: -8px 0 28px rgba(0, 0, 0, 0.15) !important;
+    display: flex !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateX(100%) !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease !important;
+    z-index: 1000001 !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
   }}
 
   .site-header .nav-menu.open {{
@@ -874,7 +888,17 @@ body.admin-bar .mobile-nav-backdrop {{
     document.body.style.overflow = 'hidden';
   }}
 
+  let lastToggleTime = 0;
   function toggleMobileNav(e) {{
+    const now = Date.now();
+    if (now - lastToggleTime < 350) {{
+      if (e) {{
+        e.preventDefault();
+        e.stopPropagation();
+      }}
+      return;
+    }}
+    lastToggleTime = now;
     if (e) {{
       e.preventDefault();
       e.stopPropagation();
@@ -888,10 +912,7 @@ body.admin-bar .mobile-nav-backdrop {{
 
   if (mobileToggle) {{
     mobileToggle.addEventListener('click', toggleMobileNav);
-    mobileToggle.addEventListener('touchend', function(e) {{
-      e.preventDefault();
-      toggleMobileNav(e);
-    }}, {{ passive: false }});
+    mobileToggle.addEventListener('touchend', toggleMobileNav, {{ passive: false }});
   }}
 
   if (navBackdrop) {{
