@@ -31,6 +31,62 @@ Note: Footer is separated in elementor-footer.html
   box-sizing: border-box;
 }
 
+/* ==========================================================================
+   WORDPRESS & ELEMENTOR ADMIN BAR COMPATIBILITY (PREVENTS CUT-OFF NAVBAR)
+   ========================================================================== */
+body.admin-bar .site-header,
+.admin-bar .site-header,
+body.admin-bar .elementor-trust-wrapper .site-header,
+.admin-bar .elementor-trust-wrapper .site-header {
+  top: 32px !important;
+}
+
+@media screen and (max-width: 782px) {
+  body.admin-bar .site-header,
+  .admin-bar .site-header,
+  body.admin-bar .elementor-trust-wrapper .site-header,
+  .admin-bar .elementor-trust-wrapper .site-header {
+    top: 46px !important;
+  }
+}
+
+/* Admin bar content top clearance (Never cut off titles or hero under header) */
+body.admin-bar .hero-section {
+  padding-top: 172px !important;
+}
+body.admin-bar .section-about-hero,
+body.admin-bar .section-services-hero,
+body.admin-bar .industries-hero-section,
+body.admin-bar .fleet-page-main,
+body.admin-bar .contact-page-main {
+  padding-top: 172px !important;
+}
+
+@media screen and (max-width: 782px) {
+  body.admin-bar .hero-section,
+  body.admin-bar .section-about-hero,
+  body.admin-bar .section-services-hero,
+  body.admin-bar .industries-hero-section,
+  body.admin-bar .fleet-page-main,
+  body.admin-bar .contact-page-main {
+    padding-top: 186px !important;
+  }
+}
+
+body.admin-bar .mobile-drawer,
+.admin-bar .mobile-drawer {
+  top: 32px !important;
+  height: calc(100% - 32px) !important;
+}
+
+@media screen and (max-width: 782px) {
+  body.admin-bar .mobile-drawer,
+  .admin-bar .mobile-drawer {
+    top: 46px !important;
+    height: calc(100% - 46px) !important;
+  }
+}
+
 /* Protection for Header Logo */
 .elementor-trust-wrapper .brand-logo,
 .elementor-trust-wrapper a.brand-logo {
@@ -52,29 +108,85 @@ Note: Footer is separated in elementor-footer.html
   display: block !important;
 }
 
+/* Protection for Hero Section & Text Wrapping */
+.elementor-trust-wrapper .hero-section {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding-top: 140px !important;
+  padding-bottom: 80px !important;
+  overflow: hidden !important;
+}
+
+.elementor-trust-wrapper .hero-line {
+  display: block !important;
+  white-space: normal !important;
+  word-break: normal !important;
+}
 
 /* Elementor Strict Marquee Protection */
-.elementor-trust-wrapper .section-brand-carousel,
+.elementor-trust-wrapper .section-brand-carousel {
+  position: relative !important;
+  width: 100% !important;
+  background-color: #ffffff !important;
+  padding: 36px 0 28px !important;
+  border-top: 1px solid var(--color-border-subtle) !important;
+  border-bottom: 1px solid var(--color-border-subtle) !important;
+  overflow: hidden !important;
+  display: block !important;
+}
+
+.elementor-trust-wrapper .partners-title-wrap {
+  width: 100% !important;
+  text-align: center !important;
+  margin: 0 auto 22px auto !important;
+  display: block !important;
+  padding: 0 20px !important;
+}
+
+.elementor-trust-wrapper .partners-eyebrow {
+  display: inline-block !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--color-text-muted) !important;
+}
+
 .elementor-trust-wrapper .partners-marquee-section {
   position: relative !important;
   width: 100% !important;
   max-width: 100% !important;
   overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
   scrollbar-width: none !important;
 }
+
 .elementor-trust-wrapper .partners-marquee-section::-webkit-scrollbar {
   display: none !important;
 }
+
 .elementor-trust-wrapper .marquee-track {
   display: flex !important;
   width: max-content !important;
   overflow: visible !important;
+  animation: marqueeScroll 26s linear infinite !important;
 }
+
 .elementor-trust-wrapper .marquee-group {
   display: flex !important;
   align-items: center !important;
   flex-shrink: 0 !important;
 }
+
 .elementor-trust-wrapper .marquee-brand-item {
   display: flex !important;
   align-items: center !important;
@@ -83,6 +195,7 @@ Note: Footer is separated in elementor-footer.html
   height: 52px !important;
   flex-shrink: 0 !important;
 }
+
 .elementor-trust-wrapper .marquee-brand-item img {
   height: 38px !important;
   max-height: 42px !important;
@@ -92,19 +205,6 @@ Note: Footer is separated in elementor-footer.html
   opacity: 1 !important;
   filter: none !important;
   display: block !important;
-}
-
-/* Protection for Client Logos */
-.elementor-trust-wrapper .client-logo-item img,
-.elementor-trust-wrapper .marquee-brand-item img {
-  height: 38px !important;
-  max-height: 40px !important;
-  width: auto !important;
-  max-width: 160px !important;
-  display: block !important;
-  object-fit: contain !important;
-  opacity: 1 !important;
-  filter: none !important;
 }
 
 @media (max-width: 1024px) {
@@ -569,14 +669,13 @@ img.logo-img {
 .hero-section {
   position: relative;
   width: 100%;
-  height: 100vh;
-  min-height: 680px;
-  max-height: 940px;
+  min-height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding-top: 110px;
-  padding-bottom: 44px; /* Rapat ke bawah persis referensi Klara */
+  justify-content: center;
+  padding-top: 140px;
+  padding-bottom: 80px;
   overflow: hidden;
   background-color: #0c1117;
 }
@@ -636,7 +735,8 @@ img.logo-img {
 
 .hero-line {
   display: block;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: normal;
 }
 
 .hero-desc {
@@ -708,16 +808,45 @@ img.logo-img {
    CLIENTS & STRATEGIC PARTNERS BRAND CAROUSEL (LOGOS ONLY)
    ========================================================================== */
 
+.section-brand-carousel {
+  position: relative !important;
+  width: 100% !important;
+  background-color: #ffffff !important;
+  padding: 36px 0 28px !important;
+  border-top: 1px solid var(--color-border-subtle) !important;
+  border-bottom: 1px solid var(--color-border-subtle) !important;
+  overflow: hidden !important;
+  display: block !important;
+}
+
+.partners-title-wrap {
+  width: 100% !important;
+  text-align: center !important;
+  margin: 0 auto 22px auto !important;
+  display: block !important;
+  padding: 0 20px !important;
+}
+
+.partners-eyebrow {
+  display: inline-block !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--color-text-muted) !important;
+}
+
 .partners-marquee-section {
-  position: relative;
-  background-color: var(--color-white);
-  border-top: 1px solid var(--color-border-subtle);
-  border-bottom: 1px solid var(--color-border-subtle);
-  overflow: hidden;
-  padding: 24px 0;
-  display: flex;
-  align-items: center;
-  width: 100%;
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  scrollbar-width: none !important;
 }
 
 .partners-marquee-section::before,
@@ -4764,6 +4893,62 @@ textarea.form-field-input {
   }
 }
 
+/* ==========================================================================
+   WORDPRESS & ELEMENTOR ADMIN BAR COMPATIBILITY (PREVENTS CUT-OFF NAVBAR)
+   ========================================================================== */
+body.admin-bar .site-header,
+.admin-bar .site-header,
+body.admin-bar .elementor-trust-wrapper .site-header,
+.admin-bar .elementor-trust-wrapper .site-header {
+  top: 32px !important;
+}
+
+@media screen and (max-width: 782px) {
+  body.admin-bar .site-header,
+  .admin-bar .site-header,
+  body.admin-bar .elementor-trust-wrapper .site-header,
+  .admin-bar .elementor-trust-wrapper .site-header {
+    top: 46px !important;
+  }
+}
+
+/* Admin bar content top clearance (Never cut off titles or hero under header) */
+body.admin-bar .hero-section {
+  padding-top: 172px !important;
+}
+body.admin-bar .section-about-hero,
+body.admin-bar .section-services-hero,
+body.admin-bar .industries-hero-section,
+body.admin-bar .fleet-page-main,
+body.admin-bar .contact-page-main {
+  padding-top: 172px !important;
+}
+
+@media screen and (max-width: 782px) {
+  body.admin-bar .hero-section,
+  body.admin-bar .section-about-hero,
+  body.admin-bar .section-services-hero,
+  body.admin-bar .industries-hero-section,
+  body.admin-bar .fleet-page-main,
+  body.admin-bar .contact-page-main {
+    padding-top: 186px !important;
+  }
+}
+
+body.admin-bar .mobile-drawer,
+.admin-bar .mobile-drawer {
+  top: 32px !important;
+  height: calc(100% - 32px) !important;
+}
+
+@media screen and (max-width: 782px) {
+  body.admin-bar .mobile-drawer,
+  .admin-bar .mobile-drawer {
+    top: 46px !important;
+    height: calc(100% - 46px) !important;
+  }
+}
+
 </style>
 
 <!-- Main Page HTML Markup (Without Footer) -->
@@ -4827,39 +5012,41 @@ textarea.form-field-input {
     </section>
 
     <!-- CLIENTS & STRATEGIC PARTNERS BRAND CAROUSEL (LOGOS ONLY) -->
-    <div class="partners-marquee-section" id="partners" aria-label="Trusted by leading industry partners" style="position: relative !important; width: 100% !important; max-width: 100% !important; overflow: hidden !important; padding: 20px 0 !important; background: transparent !important; scrollbar-width: none !important;">
+    <section class="section-brand-carousel" id="partners" aria-label="Trusted by leading industry partners">
       <div class="container text-center partners-title-wrap">
         <span class="eyebrow partners-eyebrow">TRUSTED BY GLOBAL ENERGY &amp; MARINE LEADERS</span>
       </div>
-            <div class="marquee-track">
-        <div class="marquee-group">
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/pertamina.svg" alt="Pertamina" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/chevron.svg" alt="Chevron" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/slb.svg" alt="SLB Schlumberger" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/total.svg" alt="Total" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/conocophillips.svg" alt="ConocoPhillips" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/bp.svg" alt="BP" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/cnooc.svg" alt="CNOOC" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/maersk.svg" alt="Maersk" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/mitsui.svg" alt="Mitsui O.S.K. Lines" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/logos/svitzer.svg" alt="Svitzer Salvage" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/logos/bki.svg" alt="Biro Klasifikasi Indonesia" loading="lazy"></div>
-        </div>
-        <div class="marquee-group" aria-hidden="true">
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/pertamina.svg" alt="Pertamina" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/chevron.svg" alt="Chevron" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/slb.svg" alt="SLB Schlumberger" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/total.svg" alt="Total" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/conocophillips.svg" alt="ConocoPhillips" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/bp.svg" alt="BP" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/cnooc.svg" alt="CNOOC" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/maersk.svg" alt="Maersk" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/mitsui.svg" alt="Mitsui O.S.K. Lines" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/logos/svitzer.svg" alt="Svitzer Salvage" loading="lazy"></div>
-          <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/logos/bki.svg" alt="Biro Klasifikasi Indonesia" loading="lazy"></div>
+      <div class="partners-marquee-section">
+        <div class="marquee-track">
+          <div class="marquee-group">
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/pertamina.svg" alt="Pertamina" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/chevron.svg" alt="Chevron" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/slb.svg" alt="SLB Schlumberger" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/total.svg" alt="Total" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/conocophillips.svg" alt="ConocoPhillips" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/bp.svg" alt="BP" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/cnooc.svg" alt="CNOOC" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/maersk.svg" alt="Maersk" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/mitsui.svg" alt="Mitsui O.S.K. Lines" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/logos/svitzer.svg" alt="Svitzer Salvage" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/logos/bki.svg" alt="Biro Klasifikasi Indonesia" loading="lazy"></div>
+          </div>
+          <div class="marquee-group" aria-hidden="true">
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/pertamina.svg" alt="Pertamina" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/chevron.svg" alt="Chevron" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/slb.svg" alt="SLB Schlumberger" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/total.svg" alt="Total" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/conocophillips.svg" alt="ConocoPhillips" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/bp.svg" alt="BP" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/cnooc.svg" alt="CNOOC" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/maersk.svg" alt="Maersk" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/mitsui.svg" alt="Mitsui O.S.K. Lines" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/logos/svitzer.svg" alt="Svitzer Salvage" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/logos/bki.svg" alt="Biro Klasifikasi Indonesia" loading="lazy"></div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 <!-- SERVICES SECTION (01 - 06) - FULL WIDTH & IMAGES RAPET (SEAMLESS GAP 0) -->
     <section class="section section-services" id="services">
       <div class="services-header-wrap text-center">
@@ -5150,55 +5337,7 @@ textarea.form-field-input {
 
 
     <!-- LATEST NEWS & INSIGHTS (3 COLUMNS ON WHITE) -->
-    <section class="section section-blog" id="blog">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="eyebrow">TRUST Corporation Blog</span>
-          <h2 class="section-title">Latest News &amp; Insights</h2>
-        </div>
-
-        <div class="blog-three-grid">
-          <article class="blog-card">
-            <div class="blog-media">
-              <img src="https://htzaml-01.github.io/trust/asset/blog/blog-card-01.jpg" alt="The Future Era Of Smart Logistics Solutions" loading="lazy" />
-            </div>
-            <div class="blog-content">
-              <span class="blog-date">27 March 2022</span>
-              <h3 class="blog-title">The Future Era Of Smart Logistics Solutions</h3>
-              <a href="fleet.html" class="circle-action-btn" aria-label="Read article on Smart Logistics Solutions">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="blog-card">
-            <div class="blog-media">
-              <img src="https://htzaml-01.github.io/trust/asset/blog/blog-card-02.jpg" alt="Understanding Last-Mile Delivery Challenges" loading="lazy" />
-            </div>
-            <div class="blog-content">
-              <span class="blog-date">5 November 2023</span>
-              <h3 class="blog-title">Understanding Last-Mile Delivery Challenges</h3>
-              <a href="fleet.html" class="circle-action-btn" aria-label="Read article on Last-Mile Delivery Challenges">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="blog-card">
-            <div class="blog-media">
-              <img src="https://htzaml-01.github.io/trust/asset/blog/blog-card-03.jpg" alt="Warehousing Best Practices For Businesses" loading="lazy" />
-            </div>
-            <div class="blog-content">
-              <span class="blog-date">14 January 2025</span>
-              <h3 class="blog-title">Warehousing Best Practices For Businesses</h3>
-              <a href="fleet.html" class="circle-action-btn" aria-label="Read article on Warehousing Best Practices">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-              </a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+    
     <!-- INDUSTRIES WE SERVE SECTION (RAPET - SEAMLESS GAP 0) -->
     <section class="section section-services" id="industries" style="background-color: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; padding-top: 80px; padding-bottom: 80px;">
       <div class="services-header-wrap text-center">
