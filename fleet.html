@@ -17,167 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=20" />
-
-  <style>
-    /* Direct embedded styles to prevent any cache issues */
-    .fleet-page-main {
-      background-color: #ffffff;
-      min-height: calc(100vh - 92px);
-      padding-top: 130px;
-      padding-bottom: 100px;
-    }
-
-    .fleet-page-header {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 60px auto;
-      padding: 0 20px;
-    }
-
-    .fleet-eyebrow {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #9e0013;
-      margin-bottom: 12px;
-    }
-
-    .fleet-main-title {
-      font-size: 44px;
-      font-weight: 800;
-      line-height: 1.15;
-      color: #101014;
-      letter-spacing: -0.025em;
-      margin: 0 0 16px 0;
-    }
-
-    .fleet-main-desc {
-      font-size: 16px;
-      line-height: 1.65;
-      color: #555562;
-      margin: 0;
-    }
-
-    .fleet-showcase-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 36px;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 32px;
-    }
-
-    .fleet-showcase-card {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: inherit;
-      cursor: pointer;
-    }
-
-    .fleet-showcase-media {
-      width: 100%;
-      aspect-ratio: 1.5;
-      border-radius: 8px;
-      overflow: hidden;
-      background-color: #0f172a;
-      margin-bottom: 20px;
-    }
-
-    .fleet-showcase-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-
-    .fleet-showcase-card:hover .fleet-showcase-media img {
-      transform: scale(1.04);
-    }
-
-    .fleet-showcase-body {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .fleet-showcase-title {
-      font-size: 21px;
-      font-weight: 700;
-      line-height: 1.35;
-      color: #101014;
-      margin: 0 0 12px 0;
-      transition: color 0.2s ease;
-    }
-
-    .fleet-showcase-card:hover .fleet-showcase-title {
-      color: #9e0013;
-    }
-
-    .fleet-showcase-desc {
-      font-size: 14.5px;
-      line-height: 1.6;
-      color: #555562;
-      margin: 0 0 24px 0;
-      flex-grow: 1;
-    }
-
-    .fleet-circle-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background-color: #9e0013;
-      color: #ffffff;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.25s ease;
-      margin-top: auto;
-      border: none;
-    }
-
-    .fleet-circle-btn svg {
-      width: 18px;
-      height: 18px;
-      stroke: #ffffff;
-    }
-
-    .fleet-showcase-card:hover .fleet-circle-btn {
-      background-color: #7b000f;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(158, 0, 19, 0.28);
-    }
-
-    @media (max-width: 992px) {
-      .fleet-showcase-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 28px !important;
-        padding: 0 24px !important;
-      }
-      .fleet-main-title {
-        font-size: 36px !important;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .fleet-page-main {
-        padding-top: 100px !important;
-        padding-bottom: 60px !important;
-      }
-      .fleet-showcase-grid {
-        grid-template-columns: 1fr !important;
-        gap: 36px !important;
-        padding: 0 20px !important;
-      }
-      .fleet-main-title {
-        font-size: 28px !important;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css?v=21" />
 </head>
 <body>
 
@@ -226,135 +66,117 @@
     </nav>
   </div>
 
-  <main class="fleet-page-main">
+  <main class="fleet-page-main" style="padding-top: 130px; background-color: #ffffff;">
     
-    <header class="fleet-page-header">
-      <span class="fleet-eyebrow">OUR OPERATIONAL FLEET</span>
-      <h1 class="fleet-main-title">Modern Maritime Fleet &amp; Assets</h1>
-      <p class="fleet-main-desc">High-specification tugboats, heavy-duty deck cargo barges, and offshore work barges delivering zero-downtime reliability across Indonesian waters.</p>
-    </header>
+    <div class="services-header-wrap text-center" style="margin-bottom: 56px; padding: 0 32px;">
+      <span class="eyebrow">OUR OPERATIONAL FLEET</span>
+      <h1 class="section-title" style="font-size: 42px;">Modern Maritime Fleet &amp; Assets</h1>
+      <p class="section-subtitle">High-specification tugboats, heavy-duty deck cargo barges, and offshore work barges delivering zero-downtime reliability across Indonesian waters.</p>
+    </div>
 
-    <!-- 6 CARDS IN EXACT USER STYLE -->
-    <div class="fleet-showcase-grid">
+    <!-- SEAMLESS FLEET GRID (RAPET - GAP 0 - EXACT 1:1 LIKE SERVICES) -->
+    <div class="services-seamless-grid">
 
-      <!-- Card 1 -->
-      <article class="fleet-showcase-card">
-        <div class="fleet-showcase-media">
+      <!-- 01: Bulk Cargo & Ocean Barging -->
+      <article class="service-seamless-col">
+        <div class="service-col-media">
           <img src="asset/trust/trust_p4_img2_907x524.jpeg" alt="Bulk Cargo & Ocean Barging" loading="lazy" />
         </div>
-        <div class="fleet-showcase-body">
-          <h2 class="fleet-showcase-title">Bulk Cargo &amp; Ocean Barging</h2>
-          <p class="fleet-showcase-desc">
-            Large-scale ocean bulk cargo transportation for coal, industrial forestry timber (pulp &amp; paper), nickel, and raw minerals with modern tugboats and 300ft barges certified by BKI &amp; ABS.
-          </p>
-          <div class="fleet-circle-btn" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M7 17L17 7" />
-              <path d="M7 7h10v10" />
-            </svg>
+        <div class="service-col-content">
+          <div class="service-col-head">
+            <h3 class="service-col-title">Bulk Cargo &amp; Ocean Barging</h3>
           </div>
+          <p class="service-col-desc">Large-scale ocean bulk cargo transportation for coal, industrial forestry timber (pulp &amp; paper), nickel, and raw minerals with modern tugboats and 300ft barges certified by BKI &amp; ABS.</p>
+          <a href="contact.html" class="circle-action-btn" aria-label="Charter Bulk Cargo & Ocean Barging">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
         </div>
       </article>
 
-      <!-- Card 2 -->
-      <article class="fleet-showcase-card">
-        <div class="fleet-showcase-media">
+      <!-- 02: Offshore Well Testing & DST -->
+      <article class="service-seamless-col">
+        <div class="service-col-media">
           <img src="asset/trust/trust_p5_img0_1159x1102.jpeg" alt="Offshore Well Testing & DST" loading="lazy" />
         </div>
-        <div class="fleet-showcase-body">
-          <h2 class="fleet-showcase-title">Offshore Well Testing &amp; DST</h2>
-          <p class="fleet-showcase-desc">
-            Specialized offshore DST Well Testing Barges, Work Barges, cementing, coiled-tubing, and well intervention support delivered through an integrated partnership with Schlumberger.
-          </p>
-          <div class="fleet-circle-btn" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M7 17L17 7" />
-              <path d="M7 7h10v10" />
-            </svg>
+        <div class="service-col-content">
+          <div class="service-col-head">
+            <h3 class="service-col-title">Offshore Well Testing &amp; DST</h3>
           </div>
+          <p class="service-col-desc">Specialized offshore DST Well Testing Barges, Work Barges, cementing, coiled-tubing, and well intervention support delivered through an integrated partnership with Schlumberger.</p>
+          <a href="contact.html" class="circle-action-btn" aria-label="Charter Offshore Well Testing & DST">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
         </div>
       </article>
 
-      <!-- Card 3 -->
-      <article class="fleet-showcase-card">
-        <div class="fleet-showcase-media">
+      <!-- 03: Offshore Support Fleet (AHTS) -->
+      <article class="service-seamless-col">
+        <div class="service-col-media">
           <img src="asset/trust/trust_p1_img0_595x288.jpeg" alt="Offshore Support Fleet (AHTS)" loading="lazy" />
         </div>
-        <div class="fleet-showcase-body">
-          <h2 class="fleet-showcase-title">Offshore Support Fleet (AHTS)</h2>
-          <p class="fleet-showcase-desc">
-            Operation of Anchor Handling Tug Supply (AHTS), Platform Supply Vessels, Utility Vessels, and fast Crew Boats adhering to rigorous oil &amp; gas safety standards for offshore exploration.
-          </p>
-          <div class="fleet-circle-btn" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M7 17L17 7" />
-              <path d="M7 7h10v10" />
-            </svg>
+        <div class="service-col-content">
+          <div class="service-col-head">
+            <h3 class="service-col-title">Offshore Support Fleet (AHTS)</h3>
           </div>
+          <p class="service-col-desc">Operation of Anchor Handling Tug Supply (AHTS), Platform Supply Vessels, Utility Vessels, and fast Crew Boats adhering to rigorous oil &amp; gas safety standards for offshore exploration.</p>
+          <a href="contact.html" class="circle-action-btn" aria-label="Charter Offshore Support Fleet">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
         </div>
       </article>
 
-      <!-- Card 4 -->
-      <article class="fleet-showcase-card">
-        <div class="fleet-showcase-media">
+      <!-- 04: Heavy-Duty Deck Cargo Barges -->
+      <article class="service-seamless-col">
+        <div class="service-col-media">
           <img src="asset/trust/trust_p4_img3_813x245.jpeg" alt="Heavy-Duty Deck Cargo Barges" loading="lazy" />
         </div>
-        <div class="fleet-showcase-body">
-          <h2 class="fleet-showcase-title">Heavy-Duty Deck Cargo Barges</h2>
-          <p class="fleet-showcase-desc">
-            Flat top 300ft and 330ft deck cargo barges with high sideboards engineered for high deck load ratings (8–10 T/m²) carrying heavy machinery, transformers, and mining equipment.
-          </p>
-          <div class="fleet-circle-btn" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M7 17L17 7" />
-              <path d="M7 7h10v10" />
-            </svg>
+        <div class="service-col-content">
+          <div class="service-col-head">
+            <h3 class="service-col-title">Heavy-Duty Deck Cargo Barges</h3>
           </div>
+          <p class="service-col-desc">Flat top 300ft and 330ft deck cargo barges with high sideboards engineered for high deck load ratings (8–10 T/m²) carrying heavy machinery, transformers, and mining equipment.</p>
+          <a href="contact.html" class="circle-action-btn" aria-label="Charter Heavy-Duty Deck Cargo Barges">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
         </div>
       </article>
 
-      <!-- Card 5 -->
-      <article class="fleet-showcase-card">
-        <div class="fleet-showcase-media">
+      <!-- 05: Ocean Towage & Tugboat Series -->
+      <article class="service-seamless-col">
+        <div class="service-col-media">
           <img src="asset/trust/trust_p6_img0_906x474.jpeg" alt="Ocean Towage & Tugboat Series" loading="lazy" />
         </div>
-        <div class="fleet-showcase-body">
-          <h2 class="fleet-showcase-title">Ocean Towage &amp; Tugboat Series</h2>
-          <p class="fleet-showcase-desc">
-            Twin-screw ocean-going tugboats from 2,000 to 3,200 BHP delivering continuous bollard pull for coastal barge towing, ship-to-ship (STS) escort, and emergency salvage response.
-          </p>
-          <div class="fleet-circle-btn" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M7 17L17 7" />
-              <path d="M7 7h10v10" />
-            </svg>
+        <div class="service-col-content">
+          <div class="service-col-head">
+            <h3 class="service-col-title">Ocean Towage &amp; Tugboat Series</h3>
           </div>
+          <p class="service-col-desc">Twin-screw ocean-going tugboats from 2,000 to 3,200 BHP delivering continuous bollard pull for coastal barge towing, ship-to-ship (STS) escort, and emergency salvage response.</p>
+          <a href="contact.html" class="circle-action-btn" aria-label="Charter Ocean Towage & Tugboat Series">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
         </div>
       </article>
 
-      <!-- Card 6 -->
-      <article class="fleet-showcase-card">
-        <div class="fleet-showcase-media">
+      <!-- 06: Specialized Survey & Rapid Transfer -->
+      <article class="service-seamless-col">
+        <div class="service-col-media">
           <img src="asset/trust/trust_p10_img0_438x272.jpeg" alt="Specialized Survey & Rapid Transfer" loading="lazy" />
         </div>
-        <div class="fleet-showcase-body">
-          <h2 class="fleet-showcase-title">Specialized Survey &amp; Rapid Transfer</h2>
-          <p class="fleet-showcase-desc">
-            High-speed oceanographic bathymetry and rapid offshore crew dispatch vessels featuring certified aviation helideck and advanced multi-beam echo sounder sonar sensors.
-          </p>
-          <div class="fleet-circle-btn" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M7 17L17 7" />
-              <path d="M7 7h10v10" />
-            </svg>
+        <div class="service-col-content">
+          <div class="service-col-head">
+            <h3 class="service-col-title">Specialized Survey &amp; Rapid Transfer</h3>
           </div>
+          <p class="service-col-desc">High-speed oceanographic bathymetry and rapid offshore crew dispatch vessels featuring certified aviation helideck and advanced multi-beam echo sounder sonar sensors.</p>
+          <a href="contact.html" class="circle-action-btn" aria-label="Charter Specialized Survey & Rapid Transfer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
         </div>
       </article>
 
     </div>
 
     <!-- DIRECT CONTACT INFO (PLAIN TEXT) -->
-    <section class="section" style="padding: 70px 0 0; background-color: #ffffff; margin-top: 80px; border-top: 1px solid #e2e8f0;">
+    <section class="section" style="padding: 70px 0 0; background-color: #ffffff; border-top: 1px solid #e2e8f0;">
       <div class="container">
         <div class="contact-two-col-grid">
           <div>
