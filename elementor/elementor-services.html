@@ -2535,8 +2535,10 @@ img.footer-logo-img {
   }
 }
 
+/* ==========================================================================
+   SERVICES PAGE STYLES (Unified)
+   ========================================================================== */
 
-/* Page specific styles */
 /* ==========================================================================
    TRUST CORPORATION - SERVICES PAGE STYLES (services.css)
    Exact 1:1 Replica matching reference video & Framer template
@@ -2772,6 +2774,762 @@ img.footer-logo-img {
   .services-stat-label {
     font-size: 13px;
     white-space: normal;
+  }
+}
+
+/* ==========================================================================
+   PRICING PAGE STYLES (Unified)
+   ========================================================================== */
+
+/* ==========================================================================
+   TRUST CORPORATION - PRICING PAGE STYLES (pricing.css)
+   Exact 1:1 Replica matching reference video & Framer template
+   ========================================================================== */
+
+.pricing-main {
+  width: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.section-pricing-page {
+  padding: 140px 0 110px;
+  background-color: #ffffff;
+  min-height: 80vh;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.pricing-eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ba141a;
+  letter-spacing: 0.03em;
+  margin-bottom: 16px;
+}
+
+.pricing-title {
+  font-size: clamp(34px, 3.6vw, 48px);
+  font-weight: 800;
+  color: #1a1a1c;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  max-width: 880px;
+  margin: 0 auto 18px;
+}
+
+.pricing-subtitle {
+  font-size: 15.5px;
+  color: #5d6168;
+  line-height: 1.65;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   THREE-COLUMN PRICING GRID
+   ========================================================================== */
+
+.pricing-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  align-items: stretch;
+  margin-top: 24px;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 18px;
+  padding: 42px 32px;
+  box-sizing: border-box;
+}
+
+/* White Cards (Plan 1 & Plan 3) */
+.pricing-card-white {
+  background-color: #ffffff;
+  border: none;
+}
+
+.pricing-card-white .plan-tier-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1c;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.pricing-card-white .plan-price {
+  font-size: clamp(30px, 2.8vw, 38px);
+  font-weight: 800;
+  color: #1a1a1c;
+  letter-spacing: -0.02em;
+  margin-bottom: 30px;
+}
+
+.pricing-card-white .plan-unit {
+  font-size: 16px;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.pricing-card-white .plan-checklist li {
+  color: #334155;
+}
+
+.pricing-card-white .check-icon {
+  color: #1a1a1c;
+}
+
+.pricing-card-white .plan-cta-note {
+  color: #64748b;
+}
+
+/* Crimson Red Highlighted Card (Center Card - Exact #9e0013 as in video) */
+.pricing-card-red {
+  background-color: #9e0013;
+  color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 16px 44px rgba(158, 0, 19, 0.28);
+}
+
+.pricing-card-red .plan-tier-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.pricing-card-red .plan-price {
+  font-size: clamp(30px, 2.8vw, 38px);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 22px;
+}
+
+.pricing-card-red .plan-unit {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.pricing-card-red .plan-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.22);
+  margin-bottom: 26px;
+}
+
+.pricing-card-red .plan-checklist li {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.pricing-card-red .check-icon {
+  color: #ffffff;
+}
+
+.pricing-card-red .plan-cta-note {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.pricing-card-red .circle-action-btn-white {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #9e0013;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.pricing-card-red .circle-action-btn-white:hover {
+  transform: translateY(-2px) scale(1.08);
+  background-color: #f8fafc;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLETS & MOBILE)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .section-pricing-page {
+    padding: 100px 0 70px;
+  }
+
+  .pricing-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 40px;
+  }
+
+  .pricing-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-pricing-page {
+    padding: 85px 0 55px;
+  }
+
+  .pricing-title {
+    font-size: 26px;
+  }
+
+  .pricing-subtitle {
+    font-size: 14.5px;
+  }
+
+  .pricing-card {
+    padding: 32px 24px;
+  }
+}
+
+/* ==========================================================================
+   BLOG PAGE STYLES (Unified)
+   ========================================================================== */
+
+/* ==========================================================================
+   BLOG PAGE STYLES (EXACT 1:1 REPLICA OF KLARA BLOG)
+   ========================================================================== */
+
+.blog-page-main {
+  background-color: var(--color-white);
+  min-height: calc(100vh - 92px);
+  padding-top: 130px;
+  padding-bottom: 100px;
+}
+
+.blog-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 56px auto;
+  padding: 0 20px;
+}
+
+.blog-eyebrow {
+  display: inline-block;
+  color: #9e0013;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.blog-main-title {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #101014;
+  margin: 0;
+}
+
+/* 3-Column Blog Grid */
+.blog-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.blog-article-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.blog-card-media {
+  width: 100%;
+  aspect-ratio: 1.5;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f1f5f9;
+  margin-bottom: 20px;
+}
+
+.blog-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blog-article-card:hover .blog-card-media img {
+  transform: scale(1.04);
+}
+
+.blog-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-card-date {
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.blog-card-title {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #101014;
+  margin: 0 0 24px 0;
+  transition: color 0.2s ease;
+}
+
+.blog-article-card:hover .blog-card-title {
+  color: #9e0013;
+}
+
+.blog-circle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #9e0013;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  margin-top: auto;
+}
+
+.blog-circle-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: #ffffff;
+}
+
+.blog-article-card:hover .blog-circle-btn {
+  background-color: #7b000f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(158, 0, 19, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .blog-main-title {
+    font-size: 40px;
+  }
+
+  .blog-grid-3col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .blog-page-main {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .blog-main-title {
+    font-size: 32px;
+  }
+
+  .blog-grid-3col {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 0 20px;
+  }
+}
+
+/* ==========================================================================
+   CONTACT PAGE STYLES (Unified)
+   ========================================================================== */
+
+/* ==========================================================================
+   CONTACT PAGE STYLES (EXACT 1:1 REPLICA OF KLARA CONTACT)
+   ========================================================================== */
+
+.contact-page-main {
+  background-color: var(--color-white);
+  min-height: calc(100vh - 92px);
+  padding-top: 130px;
+  padding-bottom: 120px;
+}
+
+.contact-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* --------------------------------------------------------------------------
+   TOP SECTION: INTRO & 4 VALUE FEATURES
+   -------------------------------------------------------------------------- */
+.contact-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 72px;
+  align-items: start;
+  padding-bottom: 72px;
+}
+
+.contact-hero-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-eyebrow {
+  display: inline-block;
+  color: #9e0013;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.contact-hero-title {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #101014;
+  margin: 0 0 24px 0;
+}
+
+.contact-hero-desc {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #555562;
+  margin: 0;
+  max-width: 520px;
+}
+
+/* 4 Feature Rows */
+.contact-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contact-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.contact-feature-icon-box {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  border-radius: 12px;
+  background-color: #9e0013;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(158, 0, 19, 0.18);
+}
+
+.contact-feature-icon-box img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.contact-feature-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-feature-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #101014;
+  margin: 0 0 6px 0;
+}
+
+.contact-feature-text {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #64748b;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   BOTTOM SECTION: CONTACT INFO & SUBMIT INTEREST FORM
+   -------------------------------------------------------------------------- */
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 80px;
+  align-items: start;
+  padding-top: 72px;
+}
+
+.contact-info-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info-title {
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #101014;
+  margin: 0 0 16px 0;
+}
+
+.contact-info-subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555562;
+  margin: 0 0 28px 0;
+  max-width: 440px;
+}
+
+/* Social Row */
+.contact-social-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.contact-social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #111113;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.contact-social-btn img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.contact-social-btn:hover {
+  background-color: #9e0013;
+  transform: translateY(-2px);
+}
+
+/* Details Section */
+.contact-details-block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-details-heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #101014;
+  margin: 0;
+}
+
+.contact-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-detail-label {
+  font-size: 14px;
+  color: #71717a;
+  margin: 0;
+}
+
+.contact-detail-val {
+  font-size: 16px;
+  color: #101014;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.contact-detail-val a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-detail-val a:hover {
+  color: #9e0013;
+}
+
+/* --------------------------------------------------------------------------
+   SUBMIT INTEREST FORM
+   -------------------------------------------------------------------------- */
+.contact-form-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-title {
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #101014;
+  margin: 0 0 36px 0;
+}
+
+.contact-form-card {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #101014;
+}
+
+.form-field-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1.5px solid #d4d4d8;
+  padding: 10px 0 12px 0;
+  font-family: inherit;
+  font-size: 15px;
+  color: #101014;
+  background: transparent;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-field-input::placeholder {
+  color: #a1a1aa;
+}
+
+.form-field-input:focus {
+  border-bottom-color: #9e0013;
+}
+
+textarea.form-field-input {
+  resize: vertical;
+  min-height: 50px;
+}
+
+.btn-contact-submit {
+  width: 100%;
+  background-color: #9e0013;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 18px 24px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-top: 12px;
+  box-shadow: 0 8px 24px rgba(158, 0, 19, 0.2);
+}
+
+.btn-contact-submit:hover {
+  background-color: #7b000f;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(158, 0, 19, 0.32);
+}
+
+.btn-contact-submit:active {
+  transform: translateY(0);
+}
+
+/* Status Alert */
+.contact-status-msg {
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 14px;
+  display: none;
+}
+
+.contact-status-msg.success {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .contact-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contact-form-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+    padding-top: 64px;
+  }
+
+  .contact-hero-title,
+  .contact-form-title,
+  .contact-info-title {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-page-main {
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+
+  .contact-container {
+    padding: 0 20px;
+  }
+
+  .form-row-2col {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-hero-title,
+  .contact-form-title,
+  .contact-info-title {
+    font-size: 30px;
   }
 }
 

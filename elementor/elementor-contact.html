@@ -2535,8 +2535,632 @@ img.footer-logo-img {
   }
 }
 
+/* ==========================================================================
+   SERVICES PAGE STYLES (Unified)
+   ========================================================================== */
 
-/* Page specific styles */
+/* ==========================================================================
+   TRUST CORPORATION - SERVICES PAGE STYLES (services.css)
+   Exact 1:1 Replica matching reference video & Framer template
+   ========================================================================== */
+
+/* Main wrapper */
+.services-main {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-white, #ffffff);
+}
+
+/* ==========================================================================
+   SERVICES HERO SECTION (Dark full-bleed background + Left content + Right 2x2 stats)
+   ========================================================================== */
+
+.section-services-hero {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  padding: 130px 0 110px;
+  background-image: url("https://htzaml-01.github.io/trust/asset/services-hero-driver.jpg");
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.services-hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 14, 20, 0.88) 0%,
+    rgba(10, 14, 20, 0.74) 48%,
+    rgba(10, 14, 20, 0.58) 100%
+  );
+  z-index: 1;
+}
+
+.services-hero-container {
+  position: relative;
+  z-index: 2;
+}
+
+.services-hero-grid {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Left Column */
+.services-hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 760px;
+}
+
+.services-hero-eyebrow {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+  display: inline-block;
+}
+
+.services-hero-title {
+  font-size: clamp(34px, 3.8vw, 54px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin: 0 0 20px 0;
+}
+
+.services-hero-desc {
+  font-size: 15.5px;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.65;
+  max-width: 530px;
+  margin: 0 0 30px 0;
+}
+
+.circle-action-btn-red {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #ba141a;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+  text-decoration: none;
+}
+
+.circle-action-btn-red:hover {
+  transform: translateY(-2px) scale(1.05);
+  background-color: #9e1015;
+}
+
+/* Right Column (2x2 Stats Grid) */
+.services-hero-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.services-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 46px 56px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.services-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.services-stat-number {
+  font-size: clamp(48px, 4.8vw, 70px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+}
+
+.services-stat-accent {
+  color: #ba141a;
+  font-weight: 800;
+  margin-left: 2px;
+}
+
+.services-stat-label {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   SERVICES INTRO HEADER SECTION (White gap & headline before seamless grid)
+   ========================================================================== */
+
+.section-services-intro {
+  background-color: #ffffff;
+  padding: 100px 0 64px;
+  text-align: center;
+}
+
+.services-intro-eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ba141a;
+  letter-spacing: 0.03em;
+  margin-bottom: 16px;
+}
+
+.services-intro-title {
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 800;
+  color: #1a1a1c;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  max-width: 900px;
+  margin: 0 auto 18px;
+}
+
+.services-intro-subtitle {
+  font-size: 15.5px;
+  color: #5d6168;
+  line-height: 1.65;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   SERVICES SEAMLESS LIST SECTION
+   ========================================================================== */
+
+.section-services-list {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .section-services-hero {
+    padding: 100px 0 70px;
+  }
+
+  .services-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .services-stats-grid {
+    max-width: 100%;
+    gap: 36px 44px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-services-hero {
+    padding: 85px 0 60px;
+  }
+
+  .services-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 20px;
+  }
+
+  .services-stat-number {
+    font-size: 38px;
+  }
+
+  .services-stat-label {
+    font-size: 13px;
+    white-space: normal;
+  }
+}
+
+/* ==========================================================================
+   PRICING PAGE STYLES (Unified)
+   ========================================================================== */
+
+/* ==========================================================================
+   TRUST CORPORATION - PRICING PAGE STYLES (pricing.css)
+   Exact 1:1 Replica matching reference video & Framer template
+   ========================================================================== */
+
+.pricing-main {
+  width: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.section-pricing-page {
+  padding: 140px 0 110px;
+  background-color: #ffffff;
+  min-height: 80vh;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.pricing-eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ba141a;
+  letter-spacing: 0.03em;
+  margin-bottom: 16px;
+}
+
+.pricing-title {
+  font-size: clamp(34px, 3.6vw, 48px);
+  font-weight: 800;
+  color: #1a1a1c;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  max-width: 880px;
+  margin: 0 auto 18px;
+}
+
+.pricing-subtitle {
+  font-size: 15.5px;
+  color: #5d6168;
+  line-height: 1.65;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   THREE-COLUMN PRICING GRID
+   ========================================================================== */
+
+.pricing-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  align-items: stretch;
+  margin-top: 24px;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 18px;
+  padding: 42px 32px;
+  box-sizing: border-box;
+}
+
+/* White Cards (Plan 1 & Plan 3) */
+.pricing-card-white {
+  background-color: #ffffff;
+  border: none;
+}
+
+.pricing-card-white .plan-tier-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1c;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.pricing-card-white .plan-price {
+  font-size: clamp(30px, 2.8vw, 38px);
+  font-weight: 800;
+  color: #1a1a1c;
+  letter-spacing: -0.02em;
+  margin-bottom: 30px;
+}
+
+.pricing-card-white .plan-unit {
+  font-size: 16px;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.pricing-card-white .plan-checklist li {
+  color: #334155;
+}
+
+.pricing-card-white .check-icon {
+  color: #1a1a1c;
+}
+
+.pricing-card-white .plan-cta-note {
+  color: #64748b;
+}
+
+/* Crimson Red Highlighted Card (Center Card - Exact #9e0013 as in video) */
+.pricing-card-red {
+  background-color: #9e0013;
+  color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 16px 44px rgba(158, 0, 19, 0.28);
+}
+
+.pricing-card-red .plan-tier-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.pricing-card-red .plan-price {
+  font-size: clamp(30px, 2.8vw, 38px);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 22px;
+}
+
+.pricing-card-red .plan-unit {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.pricing-card-red .plan-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.22);
+  margin-bottom: 26px;
+}
+
+.pricing-card-red .plan-checklist li {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.pricing-card-red .check-icon {
+  color: #ffffff;
+}
+
+.pricing-card-red .plan-cta-note {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.pricing-card-red .circle-action-btn-white {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #9e0013;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.pricing-card-red .circle-action-btn-white:hover {
+  transform: translateY(-2px) scale(1.08);
+  background-color: #f8fafc;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLETS & MOBILE)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .section-pricing-page {
+    padding: 100px 0 70px;
+  }
+
+  .pricing-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 40px;
+  }
+
+  .pricing-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-pricing-page {
+    padding: 85px 0 55px;
+  }
+
+  .pricing-title {
+    font-size: 26px;
+  }
+
+  .pricing-subtitle {
+    font-size: 14.5px;
+  }
+
+  .pricing-card {
+    padding: 32px 24px;
+  }
+}
+
+/* ==========================================================================
+   BLOG PAGE STYLES (Unified)
+   ========================================================================== */
+
+/* ==========================================================================
+   BLOG PAGE STYLES (EXACT 1:1 REPLICA OF KLARA BLOG)
+   ========================================================================== */
+
+.blog-page-main {
+  background-color: var(--color-white);
+  min-height: calc(100vh - 92px);
+  padding-top: 130px;
+  padding-bottom: 100px;
+}
+
+.blog-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 56px auto;
+  padding: 0 20px;
+}
+
+.blog-eyebrow {
+  display: inline-block;
+  color: #9e0013;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.blog-main-title {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: #101014;
+  margin: 0;
+}
+
+/* 3-Column Blog Grid */
+.blog-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.blog-article-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.blog-card-media {
+  width: 100%;
+  aspect-ratio: 1.5;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f1f5f9;
+  margin-bottom: 20px;
+}
+
+.blog-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blog-article-card:hover .blog-card-media img {
+  transform: scale(1.04);
+}
+
+.blog-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-card-date {
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.blog-card-title {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #101014;
+  margin: 0 0 24px 0;
+  transition: color 0.2s ease;
+}
+
+.blog-article-card:hover .blog-card-title {
+  color: #9e0013;
+}
+
+.blog-circle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #9e0013;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  margin-top: auto;
+}
+
+.blog-circle-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: #ffffff;
+}
+
+.blog-article-card:hover .blog-circle-btn {
+  background-color: #7b000f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(158, 0, 19, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .blog-main-title {
+    font-size: 40px;
+  }
+
+  .blog-grid-3col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .blog-page-main {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .blog-main-title {
+    font-size: 32px;
+  }
+
+  .blog-grid-3col {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 0 20px;
+  }
+}
+
+/* ==========================================================================
+   CONTACT PAGE STYLES (Unified)
+   ========================================================================== */
+
 /* ==========================================================================
    CONTACT PAGE STYLES (EXACT 1:1 REPLICA OF KLARA CONTACT)
    ========================================================================== */
