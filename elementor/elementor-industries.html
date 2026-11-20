@@ -1,7 +1,7 @@
 <!--
 ==============================================================================
 TRUST CORPORATION - ELEMENTOR READY HTML TEMPLATE
-Page: pricing.html
+Page: industries.html
 Created for: WordPress Elementor HTML Widget (Elementor Canvas template recommended)
 All assets (images/videos/logos) loaded via CDN: https://htzaml-01.github.io/trust/
 ==============================================================================
@@ -3533,11 +3533,320 @@ textarea.form-field-input {
   }
 }
 
+/* ==========================================================================
+   INDUSTRIES PAGE STYLES (Unified)
+   ========================================================================== */
+
+.industries-main {
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+.industries-hero-section {
+  padding: 80px 0 50px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.industries-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9e0013;
+  margin-bottom: 14px;
+}
+
+.industries-title {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0f172a;
+  max-width: 860px;
+  margin: 0 auto 20px;
+  letter-spacing: -0.02em;
+}
+
+.industries-subtitle {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #64748b;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Grid Section */
+.industries-grid-section {
+  padding: 80px 0 100px;
+}
+
+.industries-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+
+.industry-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.industry-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+.industry-card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+.industry-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.industry-card:hover .industry-card-img {
+  transform: scale(1.04);
+}
+
+.industry-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.industry-card-body {
+  padding: 32px 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.industry-card-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.industry-card-desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #475569;
+  margin-bottom: 24px;
+}
+
+.industry-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.industry-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #334155;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.industry-feature-list li .check-icon {
+  color: #9e0013;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.industry-card-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  background: transparent;
+  border: 1.5px solid #0f172a;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-outline-dark:hover {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+/* Trusted Clients Section */
+.industries-clients-section {
+  padding: 80px 0;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.industries-logos-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px 60px;
+  margin-top: 48px;
+}
+
+.client-logo-item {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  filter: grayscale(100%);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.client-logo-item:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.client-logo-item img {
+  max-height: 40px;
+  max-width: 140px;
+  object-fit: contain;
+}
+
+/* CTA Section */
+.industries-cta-section {
+  padding: 90px 0;
+  background: linear-gradient(135deg, #111113 0%, #1e293b 100%);
+  color: #ffffff;
+}
+
+.eyebrow-light {
+  color: #f87171 !important;
+}
+
+.cta-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.cta-subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+
+.cta-buttons-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .industries-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .industries-title {
+    font-size: 34px;
+  }
+  .cta-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .industries-hero-section {
+    padding: 60px 0 40px;
+  }
+  .industries-title {
+    font-size: 28px;
+  }
+  .industries-grid-section {
+    padding: 50px 0 80px;
+  }
+  .industry-card-body {
+    padding: 24px 20px;
+  }
+  .cta-buttons-wrap {
+    flex-direction: column;
+    width: 100%;
+  }
+  .cta-buttons-wrap .btn {
+    width: 100%;
+  }
+}
+
+
 </style>
 
 <!-- Main Page HTML Markup -->
 <div class="elementor-trust-wrapper">
-<!-- STICKY NAVBAR (SOLID WHITE FOR WHITE-TOP PAGE) -->
+<!-- STICKY NAVBAR (SOLID WHITE) -->
   <header class="site-header header-solid" id="siteHeader">
     <div class="header-container">
       <a href="index.html" class="brand-logo" aria-label="TRUST Corporation Home" style="display:inline-flex !important; align-items:center !important; text-decoration:none !important; flex-shrink:0 !important;">
@@ -3545,12 +3854,11 @@ textarea.form-field-input {
       </a>
 
       <div class="header-right">
-        <!-- EXACT 6 FLAT LINKS ON RIGHT -->
         <nav class="nav-menu" id="navMenu">
           <a href="index.html" class="nav-link">Home</a>
           <a href="about.html" class="nav-link">About</a>
           <a href="services.html" class="nav-link">Services</a>
-          <a href="pricing.html" class="nav-link active">Pricing</a>
+          <a href="industries.html" class="nav-link active">Industries</a>
           <a href="blog.html" class="nav-link">Blog</a>
           <a href="contact.html" class="nav-link">Contact</a>
         </nav>
@@ -3569,136 +3877,253 @@ textarea.form-field-input {
   <!-- Mobile Drawer Backdrop -->
   <div class="mobile-nav-backdrop" id="navBackdrop"></div>
 
-  <main class="pricing-main">
-    <section class="section-pricing-page">
+  <main class="industries-main">
+    <!-- HERO HEADER -->
+    <section class="industries-hero-section">
       <div class="container">
-        <!-- PRICING HEADER (EXACT AS IN VIDEO) -->
-        <div class="pricing-header">
-          <span class="pricing-eyebrow">Pricing Plans</span>
-          <h1 class="pricing-title">
-            Flexible Plans To Power Your Logistics
+        <div class="industries-header text-center">
+          <span class="industries-eyebrow">SECTORS &amp; EXPERTISE</span>
+          <h1 class="industries-title">
+            Empowering Key Industries Across the Indonesian Archipelago
           </h1>
-          <p class="pricing-subtitle">
-            Select the plan that fits your shipping needs and business goals. Transparent pricing, flexible options, and reliable logistics support every step of the way.
+          <p class="industries-subtitle">
+            From heavy mining concessions and offshore oilfield fields to forestry timber transport and coastal infrastructure, TRUST Corporation delivers specialized marine logistics, modern tug &amp; barge fleets, and uncompromising safety standards.
           </p>
         </div>
+      </div>
+    </section>
 
-        <!-- 3 PRICING CARDS (CENTER HIGHLIGHTED IN CRIMSON RED #9e0013) -->
-        <div class="pricing-cards-grid">
-          <!-- CARD 1: SPOT & VOYAGE CHARTER (WHITE) -->
-          <div class="pricing-card pricing-card-white">
-            <div class="plan-head">
-              <span class="plan-tier-name">Spot &amp; Voyage Charter</span>
-              <div class="plan-price">Custom <span class="plan-unit">/ Voyage</span></div>
-            </div>
-            <ul class="plan-checklist">
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Tugboat &amp; 300ft Barges (BKI &amp; ABS Class)</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Bulk Coal, Industrial Timber, Nickel &amp; Minerals</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Flexible Domestic Shipping Routes Across Indonesia</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>24/7 Satellite AIS &amp; Daily Noon Voyage Reports</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Dedicated Port Clearances &amp; Documentation</span>
-              </li>
-            </ul>
-            <div class="plan-footer">
-              <p class="plan-cta-note">Let's Get Started on a Better Shipping Experience</p>
-              <a href="index.html#contact" class="circle-action-btn" aria-label="Choose Spot & Voyage Charter">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-              </a>
-            </div>
-          </div>
+    <!-- 6 CORE INDUSTRY SECTOR CARDS -->
+    <section class="industries-grid-section">
+      <div class="container">
+        <div class="industries-cards-grid">
 
-          <!-- CARD 2: CONTRACT OF AFFREIGHTMENT / COA (HIGHLIGHTED CRIMSON RED #9e0013) -->
-          <div class="pricing-card pricing-card-red">
-            <div class="plan-head">
-              <span class="plan-tier-name">Contract of Affreightment (COA)</span>
-              <div class="plan-price">Custom <span class="plan-unit">/ Annual Contract</span></div>
+          <!-- INDUSTRY 1: MINING & MINERALS -->
+          <article class="industry-card">
+            <div class="industry-card-image-wrap">
+              <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p1_img0_595x288.jpeg" alt="Coal and Nickel Ore Marine Barging" class="industry-card-img" loading="lazy" />
+              <span class="industry-tag">Mining &amp; Minerals</span>
             </div>
-            <div class="plan-divider"></div>
-            <ul class="plan-checklist">
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Guaranteed High-Tonnage Fleet &amp; Barge Availability</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Continuous Multi-Year Industrial Shipping Commitments</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Priority Berthing, Jetty Coordination &amp; Stevedoring</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Direct Offshore Transshipment to Mother Vessels</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Full Compliance with BKI, ABS &amp; IMO ISM Code</span>
-              </li>
-            </ul>
-            <div class="plan-footer">
-              <p class="plan-cta-note">Let's Get Started on a Better Shipping Experience</p>
-              <a href="index.html#contact" class="circle-action-btn-white" aria-label="Choose Contract of Affreightment">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-              </a>
+            <div class="industry-card-body">
+              <h2 class="industry-card-title">Coal, Nickel Ore &amp; Mineral Barging</h2>
+              <p class="industry-card-desc">
+                High-capacity bulk transportation of thermal coal, nickel ore, iron ore, and industrial limestone across domestic inter-island routes and offshore transshipment anchorages. Operating high-side 300ft deck cargo barges capable of moving up to 10,000 DWT per shipment.
+              </p>
+              <ul class="industry-feature-list">
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>300ft Barges &amp; High-Power Tugboats (BKI / ABS Classed)</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Transshipment to Panamax &amp; Capesize Mother Vessels</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Multi-Year Contract of Affreightment (COA) &amp; Spot Charters</span>
+                </li>
+              </ul>
+              <div class="industry-card-footer">
+                <a href="contact.html" class="btn btn-outline-dark btn-sm">Consult Mining Solutions &rarr;</a>
+              </div>
             </div>
-          </div>
+          </article>
 
-          <!-- CARD 3: OFFSHORE FLEET & PROJECTS (WHITE) -->
-          <div class="pricing-card pricing-card-white">
-            <div class="plan-head">
-              <span class="plan-tier-name">Offshore Fleet &amp; Projects</span>
-              <div class="plan-price">Custom <span class="plan-unit">/ Project Term</span></div>
+          <!-- INDUSTRY 2: OIL, GAS & OFFSHORE -->
+          <article class="industry-card">
+            <div class="industry-card-image-wrap">
+              <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p4_img2_907x524.jpeg" alt="Offshore Well Testing and Marine Support" class="industry-card-img" loading="lazy" />
+              <span class="industry-tag">Energy &amp; Offshore</span>
             </div>
-            <ul class="plan-checklist">
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>DST Offshore Well Testing Barges (SLB Alliance)</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>AHTS, Platform Supply Vessels &amp; Fast Crew Boats</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Emergency Marine Salvage Assistance (Svitzer Alliance)</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Turnkey Offshore Project Management &amp; Marine Crewing</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Strict HSE Compliance (ISO 9001, OHSAS 18001 &amp; SKT Migas)</span>
-              </li>
-            </ul>
-            <div class="plan-footer">
-              <p class="plan-cta-note">Let's Get Started on a Better Shipping Experience</p>
-              <a href="index.html#contact" class="circle-action-btn" aria-label="Choose Offshore Fleet & Projects">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-              </a>
+            <div class="industry-card-body">
+              <h2 class="industry-card-title">Oil, Gas &amp; Offshore Marine Support</h2>
+              <p class="industry-card-desc">
+                Comprehensive offshore marine operations in strategic alliance with Schlumberger (SLB). Providing DST offshore well testing barges, wireline platforms, cementing units, AHTS, supply vessels, and crew transfer boats for upstream exploration and production.
+              </p>
+              <ul class="industry-feature-list">
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>DST Offshore Well Testing Barges &amp; Work Barges</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>AHTS (Anchor Handling), Supply Vessels &amp; Crew Boats</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Strict SKT Migas, IMO ISM &amp; OHSAS 18001 Compliance</span>
+                </li>
+              </ul>
+              <div class="industry-card-footer">
+                <a href="contact.html" class="btn btn-outline-dark btn-sm">Consult Offshore Solutions &rarr;</a>
+              </div>
             </div>
-          </div>
+          </article>
+
+          <!-- INDUSTRY 3: PULP, PAPER & FORESTRY -->
+          <article class="industry-card">
+            <div class="industry-card-image-wrap">
+              <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p5_img0_1159x1102.jpeg" alt="Plantation Logs and Pulpwood Transport" class="industry-card-img" loading="lazy" />
+              <span class="industry-tag">Forestry &amp; Paper</span>
+            </div>
+            <div class="industry-card-body">
+              <h2 class="industry-card-title">Plantation Logs &amp; Pulpwood Transport</h2>
+              <p class="industry-card-desc">
+                Dedicated fleet of heavy-duty log carrier barges customized for moving harvested acacia, gemelina, and mixed forest timber from remote river concessions directly to world-class pulp and paper manufacturing mills such as APRIL Group and RAPP.
+              </p>
+              <ul class="industry-feature-list">
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Specialized Heavy Stanchion Log Carrier Barges</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Shallow-Draft Tug Fleet for Inshore Concession Rivers</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>High-Frequency Cycle Deliveries to Minimize Mill Downtime</span>
+                </li>
+              </ul>
+              <div class="industry-card-footer">
+                <a href="contact.html" class="btn btn-outline-dark btn-sm">Consult Forestry Logistics &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- INDUSTRY 4: HEAVY EQUIPMENT & PROJECT CARGO -->
+          <article class="industry-card">
+            <div class="industry-card-image-wrap">
+              <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p7_img0_1811x1102.jpeg" alt="Heavy Machinery and Project Cargo Transport" class="industry-card-img" loading="lazy" />
+              <span class="industry-tag">Heavy Cargo &amp; EPC</span>
+            </div>
+            <div class="industry-card-body">
+              <h2 class="industry-card-title">Heavy Equipment &amp; Project Cargo</h2>
+              <p class="industry-card-desc">
+                Engineered marine mobilization of super-heavy mining machinery, giant hydraulic excavators, drilling rigs, oilfield casing pipes, and large industrial steel structures for major national strategic projects across remote islands in Indonesia.
+              </p>
+              <ul class="industry-feature-list">
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Reinforced Ro-Ro (Roll-on/Roll-off) Heavy Deck Barges</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Marine Cargo Lashing &amp; Naval Architecture Stability Plans</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Ballast Water Management for Precision Tidal Loading</span>
+                </li>
+              </ul>
+              <div class="industry-card-footer">
+                <a href="contact.html" class="btn btn-outline-dark btn-sm">Consult Project Cargo &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- INDUSTRY 5: PORTS & SHORE BASE INFRASTRUCTURE -->
+          <article class="industry-card">
+            <div class="industry-card-image-wrap">
+              <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p8_img0_907x565.jpeg" alt="Shore Base Logistics and Port Infrastructure" class="industry-card-img" loading="lazy" />
+              <span class="industry-tag">Ports &amp; Terminals</span>
+            </div>
+            <div class="industry-card-body">
+              <h2 class="industry-card-title">Shore Base Logistics &amp; Transshipment Hubs</h2>
+              <p class="industry-card-desc">
+                Integrated port agency, marine terminal management, and shore base logistics support. We manage coastal stockpiles, private jetty coordination, licensed stevedoring, marine provisioning, and coastal transshipment facilities with complete accountability.
+              </p>
+              <ul class="industry-feature-list">
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Shore Base Warehousing &amp; Cargo Staging Areas</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Stockpile Coordination &amp; Anchorage Transshipment</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Port Agency, Berthing Clearance &amp; Stevedoring Services</span>
+                </li>
+              </ul>
+              <div class="industry-card-footer">
+                <a href="contact.html" class="btn btn-outline-dark btn-sm">Consult Terminal Services &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- INDUSTRY 6: SALVAGE & EMERGENCY MARINE -->
+          <article class="industry-card">
+            <div class="industry-card-image-wrap">
+              <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p9_img1_741x380.jpeg" alt="Marine Salvage and Emergency Assistance" class="industry-card-img" loading="lazy" />
+              <span class="industry-tag">Salvage &amp; Support</span>
+            </div>
+            <div class="industry-card-body">
+              <h2 class="industry-card-title">Marine Salvage &amp; Technical Management</h2>
+              <p class="industry-card-desc">
+                Trusted regional partner to Svitzer Salvage BV for emergency marine salvage, refloating of stranded vessels, ocean towage, and emergency spill response. Providing end-to-end technical ship management, BKI/ABS docking supervision, and certified maritime crewing.
+              </p>
+              <ul class="industry-feature-list">
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Svitzer Global Alliance for Marine Salvage &amp; Emergency Towing</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Ship Management, Preventive Maintenance &amp; Class Docking</span>
+                </li>
+                <li>
+                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>24/7 Marine Emergency Response Fleet on Standby</span>
+                </li>
+              </ul>
+              <div class="industry-card-footer">
+                <a href="contact.html" class="btn btn-outline-dark btn-sm">Consult Marine Services &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUSTED CLIENTS STRIP -->
+    <section class="industries-clients-section">
+      <div class="container text-center">
+        <span class="eyebrow">TRUSTED BY INDUSTRY LEADERS</span>
+        <h2 class="section-title">Strategic Partners &amp; Enterprise Clients</h2>
+        <p class="section-subtitle">
+          Leading energy operators, mining conglomerates, and international paper corporations entrust their maritime supply chain to TRUST Corporation.
+        </p>
+        <div class="industries-logos-grid">
+          <div class="client-logo-item"><img src="https://htzaml-01.github.io/trust/asset/logos/pertamina.png" alt="Pertamina" loading="lazy" /></div>
+          <div class="client-logo-item"><img src="https://htzaml-01.github.io/trust/asset/logos/slb.png" alt="Schlumberger SLB" loading="lazy" /></div>
+          <div class="client-logo-item"><img src="https://htzaml-01.github.io/trust/asset/logos/total.png" alt="Total E&P" loading="lazy" /></div>
+          <div class="client-logo-item"><img src="https://htzaml-01.github.io/trust/asset/logos/conocophillips.png" alt="ConocoPhillips" loading="lazy" /></div>
+          <div class="client-logo-item"><img src="https://htzaml-01.github.io/trust/asset/logos/svitzer.png" alt="Svitzer Salvage" loading="lazy" /></div>
+          <div class="client-logo-item"><img src="https://htzaml-01.github.io/trust/asset/logos/bki.png" alt="Biro Klasifikasi Indonesia" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION SECTION -->
+    <section class="industries-cta-section">
+      <div class="container text-center">
+        <span class="eyebrow eyebrow-light">PARTNER WITH TRUST</span>
+        <h2 class="cta-title">Accelerate Your Industrial Marine Logistics Today</h2>
+        <p class="cta-subtitle">
+          Whether you need a guaranteed multi-year COA contract for bulk mining transport, offshore work barge support, or emergency salvage response, our maritime team is ready to consult.
+        </p>
+        <div class="cta-buttons-wrap">
+          <a href="contact.html" class="btn btn-primary btn-lg">Request Fleet Consultation</a>
+          <a href="services.html" class="btn btn-outline-light btn-lg">Explore All Services</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER (DARK OBSIDIAN #111113 - 100% REBRANDED TRUST CORPORATION) -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-container">
       <div class="footer-grid">
@@ -3713,7 +4138,7 @@ textarea.form-field-input {
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="services.html">Services</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="industries.html">Industries</a></li>
               <li><a href="blog.html">Blog</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>

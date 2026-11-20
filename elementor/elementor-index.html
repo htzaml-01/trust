@@ -3533,6 +3533,315 @@ textarea.form-field-input {
   }
 }
 
+/* ==========================================================================
+   INDUSTRIES PAGE STYLES (Unified)
+   ========================================================================== */
+
+.industries-main {
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+.industries-hero-section {
+  padding: 80px 0 50px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.industries-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9e0013;
+  margin-bottom: 14px;
+}
+
+.industries-title {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0f172a;
+  max-width: 860px;
+  margin: 0 auto 20px;
+  letter-spacing: -0.02em;
+}
+
+.industries-subtitle {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #64748b;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Grid Section */
+.industries-grid-section {
+  padding: 80px 0 100px;
+}
+
+.industries-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+
+.industry-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.industry-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+.industry-card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background-color: #0f172a;
+}
+
+.industry-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.industry-card:hover .industry-card-img {
+  transform: scale(1.04);
+}
+
+.industry-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.industry-card-body {
+  padding: 32px 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.industry-card-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.industry-card-desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #475569;
+  margin-bottom: 24px;
+}
+
+.industry-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.industry-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #334155;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.industry-feature-list li .check-icon {
+  color: #9e0013;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.industry-card-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  background: transparent;
+  border: 1.5px solid #0f172a;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-outline-dark:hover {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+/* Trusted Clients Section */
+.industries-clients-section {
+  padding: 80px 0;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.industries-logos-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px 60px;
+  margin-top: 48px;
+}
+
+.client-logo-item {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  filter: grayscale(100%);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.client-logo-item:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.client-logo-item img {
+  max-height: 40px;
+  max-width: 140px;
+  object-fit: contain;
+}
+
+/* CTA Section */
+.industries-cta-section {
+  padding: 90px 0;
+  background: linear-gradient(135deg, #111113 0%, #1e293b 100%);
+  color: #ffffff;
+}
+
+.eyebrow-light {
+  color: #f87171 !important;
+}
+
+.cta-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.cta-subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+
+.cta-buttons-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .industries-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .industries-title {
+    font-size: 34px;
+  }
+  .cta-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .industries-hero-section {
+    padding: 60px 0 40px;
+  }
+  .industries-title {
+    font-size: 28px;
+  }
+  .industries-grid-section {
+    padding: 50px 0 80px;
+  }
+  .industry-card-body {
+    padding: 24px 20px;
+  }
+  .cta-buttons-wrap {
+    flex-direction: column;
+    width: 100%;
+  }
+  .cta-buttons-wrap .btn {
+    width: 100%;
+  }
+}
+
+
 </style>
 
 <!-- Main Page HTML Markup -->
@@ -3550,7 +3859,7 @@ textarea.form-field-input {
           <a href="index.html" class="nav-link active">Home</a>
           <a href="about.html" class="nav-link">About</a>
           <a href="services.html" class="nav-link">Services</a>
-          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="industries.html" class="nav-link">Industries</a>
           <a href="blog.html" class="nav-link">Blog</a>
           <a href="contact.html" class="nav-link">Contact</a>
         </nav>
@@ -3847,117 +4156,7 @@ textarea.form-field-input {
       </div>
     </section>
 
-    <!-- PRICING PLANS SECTION -->
-    <section class="section section-plans" id="plans">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="eyebrow">Charter &amp; Contract Plans</span>
-          <h2 class="section-title">Flexible Fleet Chartering &amp; Marine Contracts</h2>
-          <p class="section-subtitle">Select the maritime charter model and vessel contract structure tailored to your shipment volume and project timeline.</p>
-        </div>
-
-        <div class="plans-three-grid">
-          <!-- PLAN 1: SPOT CHARTER -->
-          <div class="plan-card plan-basic">
-            <div class="plan-head">
-              <span class="plan-tier-name">Spot &amp; Voyage Charter</span>
-              <div class="plan-price">Custom <span class="plan-unit">/ Voyage</span></div>
-            </div>
-            <ul class="plan-checklist">
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Tugboat &amp; 300ft Barge Charter</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Offshore Transshipment &amp; Domestic Routes</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>24/7 AIS Satellite Vessel Tracking</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Port Clearances &amp; Documentation</span>
-              </li>
-            </ul>
-            <div class="plan-footer">
-              <p class="plan-cta-note">Consult Your Bulk Cargo Shipping Needs</p>
-              <a href="#contact" class="circle-action-btn" aria-label="Choose Spot & Voyage Charter">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- PLAN 2: COA CONTRACT (HIGHLIGHTED DARK CARD) -->
-          <div class="plan-card plan-standard-dark">
-            <div class="plan-head">
-              <span class="plan-tier-name">Contract of Affreightment (COA)</span>
-              <div class="plan-price">Custom <span class="plan-unit">/ Contract</span></div>
-            </div>
-            <div class="plan-divider"></div>
-            <ul class="plan-checklist">
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Guaranteed Tonnage &amp; Fleet Availability</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Priority Berthing &amp; Loading Schedules</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Dedicated Port Agency &amp; Stevedoring</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Guaranteed BKI &amp; ABS Class Standards</span>
-              </li>
-            </ul>
-            <div class="plan-footer">
-              <p class="plan-cta-note">Premier Long-Term Industrial Contract Solution</p>
-              <a href="#contact" class="circle-action-btn circle-action-btn-white" aria-label="Choose Contract of Affreightment">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- PLAN 3: OFFSHORE FLEET & PROJECT -->
-          <div class="plan-card plan-premium">
-            <div class="plan-head">
-              <span class="plan-tier-name">Offshore Support &amp; Engineering</span>
-              <div class="plan-price">Custom <span class="plan-unit">/ Project</span></div>
-            </div>
-            <ul class="plan-checklist">
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>DST Offshore Well Testing Barges</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>AHTS, Supply Vessels &amp; Crew Boats</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Turnkey Project Management (SLB Alliance)</span>
-              </li>
-              <li>
-                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Strict IMO ISM &amp; SKT Migas HSE Compliance</span>
-              </li>
-            </ul>
-            <div class="plan-footer">
-              <p class="plan-cta-note">Discuss Your Offshore Engineering Needs</p>
-              <a href="#contact" class="circle-action-btn" aria-label="Choose Offshore Support & Engineering">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- OUR PROCESS (2 COLUMNS) -->
+<!-- OUR PROCESS (2 COLUMNS) -->
     <section class="section section-process" id="process">
       <div class="container">
         <div class="process-two-col-grid">
@@ -4230,7 +4429,7 @@ textarea.form-field-input {
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="services.html">Services</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="industries.html">Industries</a></li>
               <li><a href="blog.html">Blog</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
