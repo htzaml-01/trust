@@ -4649,6 +4649,121 @@ textarea.form-field-input {
   margin-top: 2px;
 }
 
+
+/* ==========================================================================
+   FLEET & HOME SHOWCASE 3-COL CARDS (EXACT USER SPEC)
+   ========================================================================== */
+.fleet-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.fleet-showcase-card {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.fleet-showcase-card:hover {
+  transform: translateY(-4px);
+}
+
+.fleet-showcase-media {
+  width: 100%;
+  aspect-ratio: 1.5;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.fleet-showcase-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.fleet-showcase-card:hover .fleet-showcase-media img {
+  transform: scale(1.04);
+}
+
+.fleet-showcase-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.fleet-showcase-title {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #101014;
+  margin: 0 0 12px 0;
+  transition: color 0.2s ease;
+}
+
+.fleet-showcase-card:hover .fleet-showcase-title {
+  color: #9e0013;
+}
+
+.fleet-showcase-desc {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #555562;
+  margin: 0 0 24px 0;
+  flex-grow: 1;
+}
+
+.fleet-circle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #9e0013;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  margin-top: auto;
+  border: none;
+}
+
+.fleet-circle-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: #ffffff;
+}
+
+.fleet-showcase-card:hover .fleet-circle-btn {
+  background-color: #7b000f;
+  transform: scale(1.08);
+}
+
+@media (max-width: 992px) {
+  .fleet-showcase-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 28px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .fleet-showcase-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
 </style>
 
 <!-- Main Page HTML Markup (Without Footer) -->
@@ -4700,291 +4815,138 @@ textarea.form-field-input {
 
   <main class="fleet-page-main">
     
-    <!-- HERO HEADER -->
-    <section class="fleet-hero-section">
-      <div class="container">
-        <div class="fleet-header">
-          <span class="fleet-eyebrow">OUR OPERATIONAL FLEET &amp; ASSETS</span>
-          <h1 class="fleet-title">Engineered for High-Performance Marine Logistics</h1>
-          <p class="fleet-subtitle">
-            Maintained under rigorous Biro Klasifikasi Indonesia (BKI) and ABS classification standards, PT. Trust Eadyra Line operates modern tugboats, heavy-duty cargo barges, and offshore work barges delivering zero-downtime reliability across Indonesian waters.
+    <header class="fleet-page-header">
+      <span class="fleet-eyebrow">OUR OPERATIONAL FLEET</span>
+      <h1 class="fleet-main-title">Modern Maritime Fleet &amp; Assets</h1>
+      <p class="fleet-main-desc">High-specification tugboats, heavy-duty deck cargo barges, and offshore work barges delivering zero-downtime reliability across Indonesian waters.</p>
+    </header>
+
+    <!-- 6 CARDS IN EXACT USER STYLE -->
+    <div class="fleet-showcase-grid">
+
+      <!-- Card 1 -->
+      <article class="fleet-showcase-card">
+        <div class="fleet-showcase-media">
+          <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p4_img2_907x524.jpeg" alt="Bulk Cargo & Ocean Barging" loading="lazy" />
+        </div>
+        <div class="fleet-showcase-body">
+          <h2 class="fleet-showcase-title">Bulk Cargo &amp; Ocean Barging</h2>
+          <p class="fleet-showcase-desc">
+            Large-scale ocean bulk cargo transportation for coal, industrial forestry timber (pulp &amp; paper), nickel, and raw minerals with modern tugboats and 300ft barges certified by BKI &amp; ABS.
           </p>
-
-          <!-- Key Metrics -->
-          <div class="fleet-metrics-row">
-            <div class="fleet-metric-card">
-              <span class="fleet-metric-value">2,000 – 3,200 HP</span>
-              <span class="fleet-metric-label">Tug Engine Output</span>
-            </div>
-            <div class="fleet-metric-card">
-              <span class="fleet-metric-value">250 – 330 FT</span>
-              <span class="fleet-metric-label">Barge Dimensions</span>
-            </div>
-            <div class="fleet-metric-card">
-              <span class="fleet-metric-value">8 – 10 Ton / m²</span>
-              <span class="fleet-metric-label">Deck Strength Rating</span>
-            </div>
-            <div class="fleet-metric-card">
-              <span class="fleet-metric-value">100% BKI / ABS</span>
-              <span class="fleet-metric-label">Class &amp; ISM Code</span>
-            </div>
+          <div class="fleet-circle-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
           </div>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <!-- 6 DETAILED FLEET VESSEL CARDS -->
-    <section class="fleet-grid-section">
-      <div class="container">
-        <div class="fleet-cards-container">
-
-          <!-- VESSEL 1: TUGBOAT TRITON 501 -->
-          <article class="fleet-vessel-card">
-            <div class="fleet-media-wrap">
-              <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p1_img0_595x288.jpeg" alt="Tugboat TRITON 501 Ocean Towing" class="fleet-media-img" loading="lazy" />
-              <span class="fleet-vessel-tag">Tugboat Series</span>
-              <span class="fleet-class-pill">Class BKI</span>
-            </div>
-            <div class="fleet-vessel-body">
-              <h2 class="fleet-vessel-title">TRITON 501 &amp; TRUST OCEAN Series</h2>
-              <p class="fleet-vessel-desc">
-                High-bollard pull ocean-going tugboats designed for open-sea long-distance towing, bulk cargo barge escort, and offshore ship-to-ship (STS) tanker assistance across the Indonesian archipelago.
-              </p>
-
-              <div class="fleet-specs-strip">
-                <span class="fleet-chip"><strong>Power:</strong> 2,000 – 3,200 BHP</span>
-                <span class="fleet-chip"><strong>Bollard Pull:</strong> 28 – 45 MT</span>
-                <span class="fleet-chip"><strong>Engine:</strong> Yanmar / Mitsubishi</span>
-              </div>
-
-              <ul class="fleet-features">
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Twin-screw propulsion with high-efficiency kort nozzles</span>
-                </li>
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Full GMDSS A1+A2+A3 navigation, satellite telemetry &amp; AIS Class A</span>
-                </li>
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Heavy-duty hydraulic towing winches with automatic tension monitoring</span>
-                </li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- VESSEL 2: CARGO BARGE TRUST MEGA 333 -->
-          <article class="fleet-vessel-card">
-            <div class="fleet-media-wrap">
-              <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p4_img3_813x245.jpeg" alt="Deck Cargo Barge TRUST MEGA 333" class="fleet-media-img" loading="lazy" />
-              <span class="fleet-vessel-tag">Deck Cargo Barge</span>
-              <span class="fleet-class-pill">Class BKI</span>
-            </div>
-            <div class="fleet-vessel-body">
-              <h2 class="fleet-vessel-title">TRUST MEGA 333 &amp; 300 Series</h2>
-              <p class="fleet-vessel-desc">
-                Heavy-duty flat top deck cargo barges with reinforced sideboards, engineered for high-volume transshipment of thermal coal, nickel ore, limestone, and turnkey EPC machinery.
-              </p>
-
-              <div class="fleet-specs-strip">
-                <span class="fleet-chip"><strong>Size:</strong> 300 x 80 x 18 FT</span>
-                <span class="fleet-chip"><strong>DWT:</strong> 8,000 – 10,000 MT</span>
-                <span class="fleet-chip"><strong>Deck Load:</strong> 8 – 10 T/m²</span>
-              </div>
-
-              <ul class="fleet-features">
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Heavy reinforced sideboards (12–14 ft) designed for bulk mineral containment</span>
-                </li>
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>High deck load capacity suitable for excavators, dump trucks, and heavy transformers</span>
-                </li>
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Biro Klasifikasi Indonesia (BKI) full loadline &amp; hull integrity certification</span>
-                </li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- VESSEL 3: OFFSHORE WORK BARGE TRUST OFFSHORE -->
-          <article class="fleet-vessel-card">
-            <div class="fleet-media-wrap">
-              <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p5_img0_1159x1102.jpeg" alt="Offshore Work Barge & DST Testing Facility" class="fleet-media-img" loading="lazy" />
-              <span class="fleet-vessel-tag">Offshore Work Barge</span>
-              <span class="fleet-class-pill">ABS &amp; BKI</span>
-            </div>
-            <div class="fleet-vessel-body">
-              <h2 class="fleet-vessel-title">TRUST OFFSHORE 01 / DST Work Barge</h2>
-              <p class="fleet-vessel-desc">
-                Multi-deck offshore accommodation and well-intervention work barge, operated in strategic integrated project management with Schlumberger (SLB) and Pertamina for deepwell DST testing and rig support.
-              </p>
-
-              <div class="fleet-specs-strip">
-                <span class="fleet-chip"><strong>Capacity:</strong> 60 – 120 POB</span>
-                <span class="fleet-chip"><strong>Mooring:</strong> 4/8-Point Winches</span>
-                <span class="fleet-chip"><strong>Roles:</strong> DST, Wireline, Cementing</span>
-              </div>
-
-              <ul class="fleet-features">
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Full air-conditioned living quarters, galley, recreation, and client meeting suites</span>
-                </li>
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Dedicated well-testing deck layout compatible with SLB high-pressure manifold setups</span>
-                </li>
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>SKT Migas certified and full IMO ISM/ISPS offshore safety compliance</span>
-                </li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- VESSEL 4: AHTS & RIG SUPPORT -->
-          <article class="fleet-vessel-card">
-            <div class="fleet-media-wrap">
-              <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p6_img1_907x474.jpeg" alt="AHTS and Offshore Rig Support Vessel" class="fleet-media-img" loading="lazy" />
-              <span class="fleet-vessel-tag">AHTS &amp; Support</span>
-              <span class="fleet-class-pill">Class BKI</span>
-            </div>
-            <div class="fleet-vessel-body">
-              <h2 class="fleet-vessel-title">TRUST ENTERPRISE AHTS &amp; Support</h2>
-              <p class="fleet-vessel-desc">
-                Anchor Handling Tug Supply vessel engineered for exploratory drilling rig moves, platform resupply, external firefighting (FiFi 1), and deep-sea emergency containment operations.
-              </p>
-
-              <div class="fleet-specs-strip">
-                <span class="fleet-chip"><strong>Rating:</strong> 5,150 – 6,500 BHP</span>
-                <span class="fleet-chip"><strong>Deck Space:</strong> 350 m² Clear Deck</span>
-                <span class="fleet-chip"><strong>Safety:</strong> FiFi 1 Deluge</span>
-              </div>
-
-              <ul class="fleet-features">
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>150 MT double-drum anchor handling and heavy towing winch system</span>
-                </li>
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Bulk tank capacities for fuel oil, potable water, drill water, and liquid mud</span>
-                </li>
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Dynamic positioning support for high-precision offshore platform approaches</span>
-                </li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- VESSEL 5: DREDGING & COASTAL ENGINEERING -->
-          <article class="fleet-vessel-card">
-            <div class="fleet-media-wrap">
-              <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p4_img2_907x524.jpeg" alt="Marine Dredging and Engineering Support" class="fleet-media-img" loading="lazy" />
-              <span class="fleet-vessel-tag">Marine Engineering</span>
-              <span class="fleet-class-pill">Class BKI</span>
-            </div>
-            <div class="fleet-vessel-body">
-              <h2 class="fleet-vessel-title">TRUST DREDGE &amp; Coastal Engineering</h2>
-              <p class="fleet-vessel-desc">
-                Specialized coastal engineering and marine dredging assets used for river mouth navigation channel deepening, jetty construction, and offshore pipeline trench backfilling.
-              </p>
-
-              <div class="fleet-specs-strip">
-                <span class="fleet-chip"><strong>Equipment:</strong> Heavy Crawler Crane</span>
-                <span class="fleet-chip"><strong>Spuds:</strong> Hydraulic Legs</span>
-                <span class="fleet-chip"><strong>Depth:</strong> Up to 22 Meters</span>
-              </div>
-
-              <ul class="fleet-features">
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Equipped with heavy clamshell and backhoe configurations for hard-bed clearing</span>
-                </li>
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Maintains river draft for coal and bauxite barges during dry season operations</span>
-                </li>
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Certified for shallow-water coastal work in Kalimantan, Sumatra, and Sulawesi</span>
-                </li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- VESSEL 6: HYDROGRAPHIC SURVEY & RAPID TRANSFER -->
-          <article class="fleet-vessel-card">
-            <div class="fleet-media-wrap">
-              <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p10_img0_438x272.jpeg" alt="Specialized Survey Vessel with Helideck" class="fleet-media-img" loading="lazy" />
-              <span class="fleet-vessel-tag">Survey &amp; Crew Transfer</span>
-              <span class="fleet-class-pill">Class ABS</span>
-            </div>
-            <div class="fleet-vessel-body">
-              <h2 class="fleet-vessel-title">TRUST SURVEY &amp; Rapid Dispatch</h2>
-              <p class="fleet-vessel-desc">
-                High-speed oceanographic survey and rapid offshore personnel transfer vessel, outfitted with helideck landing capabilities and multi-beam bathymetric seabed mapping sensors.
-              </p>
-
-              <div class="fleet-specs-strip">
-                <span class="fleet-chip"><strong>Speed:</strong> 18 – 22 Knots</span>
-                <span class="fleet-chip"><strong>Aviation:</strong> Helideck Equipped</span>
-                <span class="fleet-chip"><strong>POB:</strong> 36 Specialist Pax</span>
-              </div>
-
-              <ul class="fleet-features">
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Multi-beam echo sounder &amp; side-scan sonar for seabed route bathymetry</span>
-                </li>
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Aviation helideck certified for medium helicopter offshore medevac and transfers</span>
-                </li>
-                <li>
-                  <svg class="fleet-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>High-speed transit capability for urgent technical crew dispatch to offshore fields</span>
-                </li>
-              </ul>
-            </div>
-          </article>
-
+      <!-- Card 2 -->
+      <article class="fleet-showcase-card">
+        <div class="fleet-showcase-media">
+          <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p5_img0_1159x1102.jpeg" alt="Offshore Well Testing & DST" loading="lazy" />
         </div>
-
-        <!-- FLEET STANDARDS BANNER -->
-        <div class="fleet-standards-card">
-          <h3 class="fleet-standards-title">Vessel Maintenance &amp; Safety Compliance Standards</h3>
-          <div class="fleet-standards-grid">
-            <div class="fleet-std-item">
-              <h4>Planned Maintenance System (PMS)</h4>
-              <p>Every vessel operates under strict computerised maintenance schedules to ensure zero unscheduled voyage downtime during long-term charter contracts.</p>
-            </div>
-            <div class="fleet-std-item">
-              <h4>Class Survey &amp; Vetting Audits</h4>
-              <p>Our fleet undergoes routine annual drydocking, hull thickness gauging, and intermediate class audits certified by Biro Klasifikasi Indonesia (BKI) and ABS.</p>
-            </div>
-            <div class="fleet-std-item">
-              <h4>24/7 Vessel AIS Monitoring</h4>
-              <p>Real-time satellite AIS tracking, fuel consumption telemetry, and weather routing managed continuously by our Jakarta central operations desk.</p>
-            </div>
+        <div class="fleet-showcase-body">
+          <h2 class="fleet-showcase-title">Offshore Well Testing &amp; DST</h2>
+          <p class="fleet-showcase-desc">
+            Specialized offshore DST Well Testing Barges, Work Barges, cementing, coiled-tubing, and well intervention support delivered through an integrated partnership with Schlumberger.
+          </p>
+          <div class="fleet-circle-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
           </div>
         </div>
+      </article>
 
-      </div>
-    </section>
+      <!-- Card 3 -->
+      <article class="fleet-showcase-card">
+        <div class="fleet-showcase-media">
+          <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p1_img0_595x288.jpeg" alt="Offshore Support Fleet (AHTS)" loading="lazy" />
+        </div>
+        <div class="fleet-showcase-body">
+          <h2 class="fleet-showcase-title">Offshore Support Fleet (AHTS)</h2>
+          <p class="fleet-showcase-desc">
+            Operation of Anchor Handling Tug Supply (AHTS), Platform Supply Vessels, Utility Vessels, and fast Crew Boats adhering to rigorous oil &amp; gas safety standards for offshore exploration.
+          </p>
+          <div class="fleet-circle-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
+          </div>
+        </div>
+      </article>
 
-    <!-- DIRECT CONTACT SECTION (PLAIN TEXT - NO BUTTONS) -->
-    <section class="section" style="padding: 60px 0 90px; background-color: #ffffff; border-top: 1px solid #e2e8f0;">
+      <!-- Card 4 -->
+      <article class="fleet-showcase-card">
+        <div class="fleet-showcase-media">
+          <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p4_img3_813x245.jpeg" alt="Heavy-Duty Deck Cargo Barges" loading="lazy" />
+        </div>
+        <div class="fleet-showcase-body">
+          <h2 class="fleet-showcase-title">Heavy-Duty Deck Cargo Barges</h2>
+          <p class="fleet-showcase-desc">
+            Flat top 300ft and 330ft deck cargo barges with high sideboards engineered for high deck load ratings (8–10 T/m²) carrying heavy machinery, transformers, and mining equipment.
+          </p>
+          <div class="fleet-circle-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="fleet-showcase-card">
+        <div class="fleet-showcase-media">
+          <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p6_img0_906x474.jpeg" alt="Ocean Towage & Tugboat Series" loading="lazy" />
+        </div>
+        <div class="fleet-showcase-body">
+          <h2 class="fleet-showcase-title">Ocean Towage &amp; Tugboat Series</h2>
+          <p class="fleet-showcase-desc">
+            Twin-screw ocean-going tugboats from 2,000 to 3,200 BHP delivering continuous bollard pull for coastal barge towing, ship-to-ship (STS) escort, and emergency salvage response.
+          </p>
+          <div class="fleet-circle-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="fleet-showcase-card">
+        <div class="fleet-showcase-media">
+          <img src="https://htzaml-01.github.io/trust/asset/trust/trust_p10_img0_438x272.jpeg" alt="Specialized Survey & Rapid Transfer" loading="lazy" />
+        </div>
+        <div class="fleet-showcase-body">
+          <h2 class="fleet-showcase-title">Specialized Survey &amp; Rapid Transfer</h2>
+          <p class="fleet-showcase-desc">
+            High-speed oceanographic bathymetry and rapid offshore crew dispatch vessels featuring certified aviation helideck and advanced multi-beam echo sounder sonar sensors.
+          </p>
+          <div class="fleet-circle-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17L17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- DIRECT CONTACT INFO (PLAIN TEXT) -->
+    <section class="section" style="padding: 70px 0 0; background-color: #ffffff; margin-top: 80px; border-top: 1px solid #e2e8f0;">
       <div class="container">
         <div class="contact-two-col-grid">
           <div>
             <span class="eyebrow">CHARTER INQUIRIES</span>
-            <h2 class="section-title" style="font-size: 34px;">Charter Our Fleet</h2>
+            <h2 class="section-title" style="font-size: 32px;">Charter Our Fleet</h2>
             <p style="color: #64748b; font-size: 15.5px; line-height: 1.6; max-width: 460px; margin-bottom: 24px;">
               Contact our commercial chartering team for vessel availability, daily time-charter rates (TC), freight voyage contracts (FC), or long-term multi-year contracts of affreightment (COA).
             </p>
