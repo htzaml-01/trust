@@ -2,18 +2,14 @@ import os, re
 
 CDN_BASE = "https://htzaml-01.github.io/trust/"
 
-# Output directories
 os.makedirs("elementor", exist_ok=True)
-os.makedirs("elementor/no-header-footer", exist_ok=True)
 
-# Load CSS and JS
 with open("styles.css", "r", encoding="utf-8") as f:
     css_content = f.read()
 
 with open("script.js", "r", encoding="utf-8") as f:
     js_content = f.read()
 
-# Replace asset URLs in CSS with CDN
 css_cdn = re.sub(
     r'url\([\'"]?asset/([^\'")]+)[\'"]?\)',
     lambda m: f'url("{CDN_BASE}asset/{m.group(1)}")',
@@ -21,24 +17,22 @@ css_cdn = re.sub(
 )
 
 PAGES = [
-    ("index.html", "Home Page (Content Only)"),
-    ("about.html", "About Us Page (Content Only)"),
-    ("services.html", "Services Page (Content Only)"),
-    ("industries.html", "Industries Page (Content Only)"),
-    ("fleet.html", "Fleet Page (Content Only)"),
-    ("contact.html", "Contact Page (Content Only)"),
+    ("index.html", "03-PAGE-HOME.html", "Home Page"),
+    ("about.html", "04-PAGE-ABOUT.html", "About Us Page"),
+    ("services.html", "05-PAGE-SERVICES.html", "Services Page"),
+    ("industries.html", "06-PAGE-INDUSTRIES.html", "Industries Page"),
+    ("fleet.html", "07-PAGE-FLEET.html", "Fleet Page"),
+    ("contact.html", "08-PAGE-CONTACT.html", "Contact Page"),
 ]
 
 def extract_main_content(html_file):
     with open(html_file, "r", encoding="utf-8") as f:
         html_raw = f.read()
 
-    # Extract strictly from <main to </main>
     main_match = re.search(r'(<main[^>]*>.*?</main>)', html_raw, re.DOTALL)
     if main_match:
         content = main_match.group(1)
     else:
-        # Fallback: strip header, backdrop, drawer, footer
         body_match = re.search(r'<body[^>]*>(.*?)</body>', html_raw, re.DOTALL)
         content = body_match.group(1) if body_match else html_raw
         content = re.sub(r'<header[^>]*>.*?</header>', '', content, flags=re.DOTALL)
@@ -46,42 +40,36 @@ def extract_main_content(html_file):
         content = re.sub(r'<div[^>]*class=["\'][^"\']*mobile-drawer[^"\']*["\'][^>]*>.*?</div>', '', content, flags=re.DOTALL)
         content = re.sub(r'<footer[^>]*>.*?</footer>', '', content, flags=re.DOTALL)
 
-    # Strip script tags inside main if any
     content = re.sub(r'<script\s+src="script\.js[^"]*"[^>]*></script>', '', content)
 
-    # Replace local asset/ paths with CDN
     content = re.sub(
         r'(src|href)=["\']asset/([^"\']+)["\']',
         lambda m: f'{m.group(1)}="{CDN_BASE}asset/{m.group(2)}"',
         content
     )
 
-    # Convert .html links to WordPress clean permalinks
     content = re.sub(r'href=["\']index\.html["\']', 'href="/"', content)
     content = re.sub(r'href=["\']about\.html["\']', 'href="/about/"', content)
     content = re.sub(r'href=["\']services\.html["\']', 'href="/services/"', content)
     content = re.sub(r'href=["\']industries\.html["\']', 'href="/industries/"', content)
     content = re.sub(r'href=["\']fleet\.html["\']', 'href="/fleet/"', content)
     content = re.sub(r'href=["\']contact\.html["\']', 'href="/contact/"', content)
-
-    # Specific anchor permalinks
     content = re.sub(r'href=["\']services\.html(#service-[0-9]+)["\']', r'href="/services/\1"', content)
 
     return content.strip()
 
-def build_content_only_page(html_file, title_desc):
+def build_content_only_page(html_file, out_name, title_desc):
     body_content = extract_main_content(html_file)
-    page_slug = os.path.splitext(html_file)[0]
 
     output = f"""<!--
 ==============================================================================
 TRUST CORPORATION - ELEMENTOR CONTENT TEMPLATE (NO HEADER, NO FOOTER)
-Page: {html_file} ({title_desc})
+File: {out_name} ({title_desc})
 100% Edge-to-Edge Full Bleed | Zero White Edge Gaps | Content Only
-WordPress Clean Permalinks: Home (/), About (/about/), Services (/services/),
+Clean Permalinks: Home (/), About (/about/), Services (/services/),
 Industries (/industries/), Fleet (/fleet/), Contact (/contact/)
 All assets loaded via CDN: {CDN_BASE}
-Ideal for: Elementor Theme Builder Header & Footer, or Default Theme Header/Footer
+Paste into: Page Editor (Elementor Full Width)
 ==============================================================================
 -->
 
@@ -390,42 +378,18 @@ body {{
 }})();
 </script>
 """
-
-    # 1. Output to elementor/no-header-footer/elementor-{slug}.html
-    path1 = f"elementor/no-header-footer/elementor-{page_slug}.html"
-    with open(path1, "w", encoding="utf-8") as f:
+    target_path = os.path.join("elementor", out_name)
+    with open(target_path, "w", encoding="utf-8") as f:
         f.write(output)
-    print(f"Generated {path1} ({len(output)} bytes)")
-
-    # 2. Output to elementor/elementor-{slug}-no-nav-footer.html
-    path2 = f"elementor/elementor-{page_slug}-no-nav-footer.html"
-    with open(path2, "w", encoding="utf-8") as f:
-        f.write(output)
-    print(f"Generated {path2} ({len(output)} bytes)")
-
-    # 3. Output to elementor/elementor-{slug}-content.html
-    path3 = f"elementor/elementor-{page_slug}-content.html"
-    with open(path3, "w", encoding="utf-8") as f:
-        f.write(output)
-    print(f"Generated {path3} ({len(output)} bytes)")
+    print(f"Generated {target_path} ({len(output)} bytes)")
 
 
-def generate_header_template(mode="smart"):
-    """
-    mode: 'smart' (default - transparent on dark hero, solid white on subpages/blog),
-          'transparent' (transparent at top, solid on scroll),
-          'solid' (always solid white)
-    """
-    header_class = "site-header"
-    if mode == "solid":
-        header_class += " header-solid"
-
+def generate_header_template():
     CDN_LOGO = f"{CDN_BASE}asset/logo-trust.png"
-
-    html_output = f"""<!--
+    return f"""<!--
 ==============================================================================
-TRUST CORPORATION - ROYAL ELEMENTOR KIT / ELEMENTOR THEME BUILDER HEADER
-Mode: {mode.upper()}
+TRUST CORPORATION - ROYAL ELEMENTOR KIT / THEME BUILDER HEADER
+File: 01-HEADER.html
 100% Responsive | Full Bleed Zero Margin | Mobile Slide Drawer | CDN Logo
 Clean Permalinks: Home (/), About (/about/), Services (/services/),
 Industries (/industries/), Fleet (/fleet/), Contact (/contact/)
@@ -476,7 +440,7 @@ Dynamic Active Page Detection | WP Admin Bar Compatible
 }}
 
 /* ==========================================================================
-   STICKY NAVBAR - PURE FRAMER REPLICA
+   STICKY NAVBAR
    ========================================================================== */
 .site-header {{
   font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -696,9 +660,7 @@ Dynamic Active Page Detection | WP Admin Bar Compatible
   display: block !important;
 }}
 
-/* ==========================================================================
-   MOBILE & TABLET RESPONSIVE (MAX-WIDTH: 1024PX)
-   ========================================================================== */
+/* Mobile Responsive */
 @media (max-width: 1024px) {{
   .site-header {{
     height: 72px;
@@ -722,7 +684,6 @@ Dynamic Active Page Detection | WP Admin Bar Compatible
     display: flex !important;
   }}
 
-  /* Mobile Drawer Menu (Slides in from right) */
   .site-header .nav-menu {{
     position: fixed;
     top: 72px;
@@ -769,9 +730,7 @@ Dynamic Active Page Detection | WP Admin Bar Compatible
   }}
 }}
 
-/* ==========================================================================
-   WORDPRESS ADMIN BAR COMPATIBILITY
-   ========================================================================== */
+/* WordPress Admin Bar Compatibility */
 body.admin-bar .site-header {{
   top: 32px !important;
 }}
@@ -801,10 +760,7 @@ body.admin-bar .mobile-nav-backdrop {{
 }}
 </style>
 
-<!-- ==========================================================================
-     NAVBAR HTML MARKUP
-     ========================================================================== -->
-<header class="{header_class}" id="siteHeader">
+<header class="site-header" id="siteHeader">
   <div class="header-container">
     <a href="/" class="brand-logo" aria-label="TRUST Corporation Home">
       <img src="{CDN_LOGO}" alt="TRUST EADYRA LINE" class="logo-img" width="102" height="38" />
@@ -831,9 +787,6 @@ body.admin-bar .mobile-nav-backdrop {{
 
 <div class="mobile-nav-backdrop" id="navBackdrop"></div>
 
-<!-- ==========================================================================
-     INTERACTIVE SCRIPT (SCROLL, ACTIVE LINK DETECTION & MOBILE DRAWER)
-     ========================================================================== -->
 <script>
 (function() {{
   const header = document.getElementById('siteHeader');
@@ -843,14 +796,11 @@ body.admin-bar .mobile-nav-backdrop {{
 
   if (!header) return;
 
-  // 1. SMART ADAPTIVE HEADER (Detects dark hero vs white page / blog)
-  const isSolidByDefault = header.classList.contains('header-solid');
+  // 1. SMART ADAPTIVE HEADER
   function checkHeroPresence() {{
-    if (isSolidByDefault) return;
     const hasDarkHero = document.querySelector('.hero-section, .hero-video-bg, .section-about-hero, .section-services-hero');
     if (!hasDarkHero) {{
       header.classList.add('header-solid');
-      // If normal page without hero padding, add top clearance
       if (!document.body.classList.contains('has-header-clearance')) {{
         document.body.classList.add('has-header-clearance');
         const currentPad = parseInt(window.getComputedStyle(document.body).paddingTop, 10) || 0;
@@ -861,7 +811,7 @@ body.admin-bar .mobile-nav-backdrop {{
   checkHeroPresence();
   window.addEventListener('load', checkHeroPresence);
 
-  // 2. STICKY SCROLL BEHAVIOR
+  // 2. STICKY SCROLL
   function handleScroll() {{
     if (window.scrollY > 40) {{
       header.classList.add('scrolled');
@@ -873,7 +823,7 @@ body.admin-bar .mobile-nav-backdrop {{
   window.addEventListener('touchmove', handleScroll, {{ passive: true }});
   handleScroll();
 
-  // 3. DYNAMIC ACTIVE PAGE LINK HIGHLIGHTING
+  // 3. DYNAMIC ACTIVE PAGE LINK
   try {{
     const currentPath = window.location.pathname.replace(/\\/+$/, '') || '/';
     const navLinks = header.querySelectorAll('.nav-link');
@@ -889,7 +839,6 @@ body.admin-bar .mobile-nav-backdrop {{
       }}
     }});
 
-    // Fallback: If on homepage
     if (!matched && (currentPath === '/' || currentPath === '')) {{
       const homeLink = header.querySelector('.nav-link[href="/"]');
       if (homeLink) homeLink.classList.add('active');
@@ -898,7 +847,7 @@ body.admin-bar .mobile-nav-backdrop {{
     console.warn('Nav active link detection:', e);
   }}
 
-  // 4. MOBILE DRAWER CONTROLS
+  // 4. MOBILE DRAWER
   function closeMobileNav() {{
     navMenu?.classList.remove('open');
     mobileToggle?.classList.remove('active');
@@ -946,12 +895,10 @@ body.admin-bar .mobile-nav-backdrop {{
     }}, {{ passive: false }});
   }}
 
-  // Close when clicking nav link
   header.querySelectorAll('.nav-link').forEach(link => {{
     link.addEventListener('click', closeMobileNav);
   }});
 
-  // Close on Escape key
   document.addEventListener('keydown', function(e) {{
     if (e.key === 'Escape' && navMenu?.classList.contains('open')) {{
       closeMobileNav();
@@ -960,45 +907,130 @@ body.admin-bar .mobile-nav-backdrop {{
 }})();
 </script>
 """
-    return html_output
 
+def generate_footer_template():
+    with open("index.html", "r", encoding="utf-8") as f:
+        html_raw = f.read()
 
-def build_elementor_headers():
-    """Build dedicated standalone navbar templates for Royal Elementor Kit Theme Builder."""
-    # 1. Smart Adaptive Nav (default for Theme Builder Header)
-    smart_nav = generate_header_template(mode="smart")
-    with open("elementor/elementor-nav.html", "w", encoding="utf-8") as f:
-        f.write(smart_nav)
-    with open("elementor/elementor-header.html", "w", encoding="utf-8") as f:
-        f.write(smart_nav)
-    print("Generated elementor/elementor-nav.html & elementor/elementor-header.html")
+    footer_match = re.search(r'(<footer\s+class="site-footer">.*?</footer>)', html_raw, re.DOTALL)
+    if not footer_match:
+        return ""
+    footer_content = footer_match.group(1)
+    footer_content = re.sub(r'(src|href)=["\']asset/([^"\']+)["\']', lambda m: f'{m.group(1)}="{CDN_BASE}asset/{m.group(2)}"', footer_content)
 
-    # 2. Transparent Nav (specifically for transparent hero / Home)
-    trans_nav = generate_header_template(mode="transparent")
-    with open("elementor/elementor-nav-transparent.html", "w", encoding="utf-8") as f:
-        f.write(trans_nav)
-    print("Generated elementor/elementor-nav-transparent.html")
+    footer_content = re.sub(r'href=["\']index\.html["\']', 'href="/"', footer_content)
+    footer_content = re.sub(r'href=["\']about\.html["\']', 'href="/about/"', footer_content)
+    footer_content = re.sub(r'href=["\']services\.html["\']', 'href="/services/"', footer_content)
+    footer_content = re.sub(r'href=["\']industries\.html["\']', 'href="/industries/"', footer_content)
+    footer_content = re.sub(r'href=["\']fleet\.html["\']', 'href="/fleet/"', footer_content)
+    footer_content = re.sub(r'href=["\']contact\.html["\']', 'href="/contact/"', footer_content)
 
-    # 3. Solid White Nav (specifically for white subpages / blog)
-    solid_nav = generate_header_template(mode="solid")
-    with open("elementor/elementor-nav-solid.html", "w", encoding="utf-8") as f:
-        f.write(solid_nav)
-    print("Generated elementor/elementor-nav-solid.html")
+    return f"""<!--
+==============================================================================
+TRUST CORPORATION - ELEMENTOR STANDALONE FOOTER TEMPLATE
+File: 02-FOOTER.html
+WordPress Clean Permalinks: Home (/), About (/about/), Services (/services/),
+Industries (/industries/), Fleet (/fleet/), Contact (/contact/)
+All assets loaded via CDN: {CDN_BASE}
+==============================================================================
+-->
 
+<!-- Google Fonts: Manrope -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* Zero Gap Reset for Footer */
+.elementor-section,
+.elementor-container,
+.elementor-column,
+.elementor-widget-wrap,
+.elementor-widget-container,
+.e-con,
+.e-con-inner,
+.e-con-boxed,
+.e-parent {{
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  --padding-top: 0px !important;
+  --padding-bottom: 0px !important;
+  --padding-left: 0px !important;
+  --padding-right: 0px !important;
+  --gap: 0px !important;
+}}
+
+.elementor-trust-wrapper .footer-brand-link,
+.elementor-trust-wrapper .footer-logo-wrap,
+.elementor-trust-wrapper a.footer-brand-link,
+.elementor-trust-wrapper a.footer-logo-wrap,
+a.footer-brand-link {{
+  display: inline-block !important;
+  margin-bottom: 24px !important;
+  text-decoration: none !important;
+  flex-shrink: 0 !important;
+  max-width: 130px !important;
+}}
+
+.elementor-trust-wrapper .footer-logo-img,
+.elementor-trust-wrapper img.footer-logo-img,
+img.footer-logo-img {{
+  height: 38px !important;
+  max-height: 38px !important;
+  width: auto !important;
+  max-width: 130px !important;
+  display: block !important;
+  object-fit: contain !important;
+}}
+
+{css_cdn}
+</style>
+
+<div class="elementor-trust-wrapper">
+{footer_content}
+</div>
+
+<script>
+(function() {{
+  const form = document.getElementById('newsletterForm');
+  const status = document.getElementById('newsletterStatus');
+  if (form && status) {{
+    form.addEventListener('submit', function(e) {{
+      e.preventDefault();
+      status.style.display = 'block';
+      status.style.color = '#10b981';
+      status.textContent = 'Thank you for subscribing to TRUST Corporation updates!';
+      form.reset();
+    }});
+  }}
+}})();
+</script>
+"""
 
 def main():
     print("=" * 70)
-    print("BUILDING ELEMENTOR PACK (NO NAV MENU & NO FOOTER - CONTENT ONLY)")
+    print("BUILDING CLEAN ELEMENTOR PACK (EXACTLY 8 NUMBERED FILES)")
     print("=" * 70)
 
-    for html_file, desc in PAGES:
-        build_content_only_page(html_file, desc)
+    # 1. Header
+    with open("elementor/01-HEADER.html", "w", encoding="utf-8") as f:
+        f.write(generate_header_template())
+    print("Generated elementor/01-HEADER.html")
 
-    # Also build standalone headers for Royal Elementor Kit Theme Builder
-    build_elementor_headers()
+    # 2. Footer
+    with open("elementor/02-FOOTER.html", "w", encoding="utf-8") as f:
+        f.write(generate_footer_template())
+    print("Generated elementor/02-FOOTER.html")
+
+    # 3-8. Pages
+    for html_file, out_name, desc in PAGES:
+        build_content_only_page(html_file, out_name, desc)
 
     print("=" * 70)
-    print("SUCCESS! All content-only Elementor templates have been generated.")
+    print("SUCCESS! Only the 8 numbered files exist in elementor/.")
     print("=" * 70)
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 <!--
 ==============================================================================
-TRUST CORPORATION - ROYAL ELEMENTOR KIT / ELEMENTOR THEME BUILDER HEADER
-Mode: SMART
+TRUST CORPORATION - ROYAL ELEMENTOR KIT / THEME BUILDER HEADER
+File: 01-HEADER.html
 100% Responsive | Full Bleed Zero Margin | Mobile Slide Drawer | CDN Logo
 Clean Permalinks: Home (/), About (/about/), Services (/services/),
 Industries (/industries/), Fleet (/fleet/), Contact (/contact/)
@@ -52,7 +52,7 @@ Dynamic Active Page Detection | WP Admin Bar Compatible
 }
 
 /* ==========================================================================
-   STICKY NAVBAR - PURE FRAMER REPLICA
+   STICKY NAVBAR
    ========================================================================== */
 .site-header {
   font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -272,9 +272,7 @@ Dynamic Active Page Detection | WP Admin Bar Compatible
   display: block !important;
 }
 
-/* ==========================================================================
-   MOBILE & TABLET RESPONSIVE (MAX-WIDTH: 1024PX)
-   ========================================================================== */
+/* Mobile Responsive */
 @media (max-width: 1024px) {
   .site-header {
     height: 72px;
@@ -298,7 +296,6 @@ Dynamic Active Page Detection | WP Admin Bar Compatible
     display: flex !important;
   }
 
-  /* Mobile Drawer Menu (Slides in from right) */
   .site-header .nav-menu {
     position: fixed;
     top: 72px;
@@ -345,9 +342,7 @@ Dynamic Active Page Detection | WP Admin Bar Compatible
   }
 }
 
-/* ==========================================================================
-   WORDPRESS ADMIN BAR COMPATIBILITY
-   ========================================================================== */
+/* WordPress Admin Bar Compatibility */
 body.admin-bar .site-header {
   top: 32px !important;
 }
@@ -377,9 +372,6 @@ body.admin-bar .mobile-nav-backdrop {
 }
 </style>
 
-<!-- ==========================================================================
-     NAVBAR HTML MARKUP
-     ========================================================================== -->
 <header class="site-header" id="siteHeader">
   <div class="header-container">
     <a href="/" class="brand-logo" aria-label="TRUST Corporation Home">
@@ -407,9 +399,6 @@ body.admin-bar .mobile-nav-backdrop {
 
 <div class="mobile-nav-backdrop" id="navBackdrop"></div>
 
-<!-- ==========================================================================
-     INTERACTIVE SCRIPT (SCROLL, ACTIVE LINK DETECTION & MOBILE DRAWER)
-     ========================================================================== -->
 <script>
 (function() {
   const header = document.getElementById('siteHeader');
@@ -419,14 +408,11 @@ body.admin-bar .mobile-nav-backdrop {
 
   if (!header) return;
 
-  // 1. SMART ADAPTIVE HEADER (Detects dark hero vs white page / blog)
-  const isSolidByDefault = header.classList.contains('header-solid');
+  // 1. SMART ADAPTIVE HEADER
   function checkHeroPresence() {
-    if (isSolidByDefault) return;
     const hasDarkHero = document.querySelector('.hero-section, .hero-video-bg, .section-about-hero, .section-services-hero');
     if (!hasDarkHero) {
       header.classList.add('header-solid');
-      // If normal page without hero padding, add top clearance
       if (!document.body.classList.contains('has-header-clearance')) {
         document.body.classList.add('has-header-clearance');
         const currentPad = parseInt(window.getComputedStyle(document.body).paddingTop, 10) || 0;
@@ -437,7 +423,7 @@ body.admin-bar .mobile-nav-backdrop {
   checkHeroPresence();
   window.addEventListener('load', checkHeroPresence);
 
-  // 2. STICKY SCROLL BEHAVIOR
+  // 2. STICKY SCROLL
   function handleScroll() {
     if (window.scrollY > 40) {
       header.classList.add('scrolled');
@@ -449,7 +435,7 @@ body.admin-bar .mobile-nav-backdrop {
   window.addEventListener('touchmove', handleScroll, { passive: true });
   handleScroll();
 
-  // 3. DYNAMIC ACTIVE PAGE LINK HIGHLIGHTING
+  // 3. DYNAMIC ACTIVE PAGE LINK
   try {
     const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
     const navLinks = header.querySelectorAll('.nav-link');
@@ -465,7 +451,6 @@ body.admin-bar .mobile-nav-backdrop {
       }
     });
 
-    // Fallback: If on homepage
     if (!matched && (currentPath === '/' || currentPath === '')) {
       const homeLink = header.querySelector('.nav-link[href="/"]');
       if (homeLink) homeLink.classList.add('active');
@@ -474,7 +459,7 @@ body.admin-bar .mobile-nav-backdrop {
     console.warn('Nav active link detection:', e);
   }
 
-  // 4. MOBILE DRAWER CONTROLS
+  // 4. MOBILE DRAWER
   function closeMobileNav() {
     navMenu?.classList.remove('open');
     mobileToggle?.classList.remove('active');
@@ -522,12 +507,10 @@ body.admin-bar .mobile-nav-backdrop {
     }, { passive: false });
   }
 
-  // Close when clicking nav link
   header.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', closeMobileNav);
   });
 
-  // Close on Escape key
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && navMenu?.classList.contains('open')) {
       closeMobileNav();

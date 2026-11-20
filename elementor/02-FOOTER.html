@@ -1,12 +1,10 @@
 <!--
 ==============================================================================
-TRUST CORPORATION - ELEMENTOR CONTENT TEMPLATE (NO HEADER, NO FOOTER)
-Page: contact.html (Contact Page (Content Only))
-100% Edge-to-Edge Full Bleed | Zero White Edge Gaps | Content Only
+TRUST CORPORATION - ELEMENTOR STANDALONE FOOTER TEMPLATE
+File: 02-FOOTER.html
 WordPress Clean Permalinks: Home (/), About (/about/), Services (/services/),
 Industries (/industries/), Fleet (/fleet/), Contact (/contact/)
 All assets loaded via CDN: https://htzaml-01.github.io/trust/
-Ideal for: Elementor Theme Builder Header & Footer, or Default Theme Header/Footer
 ==============================================================================
 -->
 
@@ -16,242 +14,49 @@ Ideal for: Elementor Theme Builder Header & Footer, or Default Theme Header/Foot
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* ==========================================================================
-   COMPLETE FULL-SCREEN ZERO-GAP RESET (ELIMINATES ALL WHITE GAPS & MARGINS)
-   ========================================================================== */
-html,
-body,
-body.page,
-body.page-template-default,
-body.elementor-default,
-body.elementor-page,
-#page,
-#content,
-#primary,
-#main,
-.site,
-.site-content,
-.site-main,
-.entry-content,
-.post-inner,
-.singular,
-.hentry,
-.elementor,
+/* Zero Gap Reset for Footer */
 .elementor-section,
-.elementor-section-wrap,
 .elementor-container,
 .elementor-column,
-.elementor-column-wrap,
 .elementor-widget-wrap,
-.elementor-widget,
-.elementor-widget-html,
 .elementor-widget-container,
-.elementor-element,
-.elementor-element-populated,
 .e-con,
 .e-con-inner,
 .e-con-boxed,
-.e-con-full,
 .e-parent {
   margin: 0 !important;
   padding: 0 !important;
   border: 0 !important;
-  outline: 0 !important;
-  box-shadow: none !important;
   max-width: 100% !important;
   width: 100% !important;
-  box-sizing: border-box !important;
   --padding-top: 0px !important;
   --padding-bottom: 0px !important;
   --padding-left: 0px !important;
   --padding-right: 0px !important;
   --gap: 0px !important;
-  --container-widget-spacing: 0px !important;
-  --widgets-spacing: 0px !important;
 }
 
-html {
-  overflow-x: hidden !important;
-}
-
-body {
-  overflow-x: hidden !important;
-}
-
-.elementor-section.elementor-section-boxed > .elementor-container,
-.elementor-section-boxed > .elementor-container,
-.e-con-boxed > .e-con-inner {
-  max-width: 100% !important;
-  width: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Main container wrapper */
-.elementor-trust-wrapper {
-  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  color: #1a1a1c;
-  line-height: 1.6;
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow-x: hidden !important;
-  box-sizing: border-box !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background-color: transparent;
-}
-
-.elementor-trust-wrapper *,
-.elementor-trust-wrapper *::before,
-.elementor-trust-wrapper *::after {
-  box-sizing: border-box !important;
-}
-
-/* Hero Section & Text Protection */
-.elementor-trust-wrapper .hero-section {
-  position: relative !important;
-  width: 100% !important;
-  min-height: 100vh !important;
-  height: auto !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  padding-top: 140px !important;
-  padding-bottom: 80px !important;
-  overflow: hidden !important;
-  margin: 0 !important;
-}
-
-.elementor-trust-wrapper .hero-line {
-  display: block !important;
-  white-space: normal !important;
-  word-break: normal !important;
-}
-
-/* Strict Marquee & Partners Section Protection */
-.elementor-trust-wrapper .section-brand-carousel {
-  position: relative !important;
-  width: 100% !important;
-  background-color: #ffffff !important;
-  padding: 36px 0 28px !important;
-  border-top: 1px solid #eeeeee !important;
-  border-bottom: 1px solid #eeeeee !important;
-  overflow: hidden !important;
-  display: block !important;
-  margin: 0 !important;
-}
-
-.elementor-trust-wrapper .partners-title-wrap {
-  width: 100% !important;
-  text-align: center !important;
-  margin: 0 auto 22px auto !important;
-  display: block !important;
-  padding: 0 20px !important;
-}
-
-.elementor-trust-wrapper .partners-eyebrow {
+.elementor-trust-wrapper .footer-brand-link,
+.elementor-trust-wrapper .footer-logo-wrap,
+.elementor-trust-wrapper a.footer-brand-link,
+.elementor-trust-wrapper a.footer-logo-wrap,
+a.footer-brand-link {
   display: inline-block !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.12em !important;
-  text-transform: uppercase !important;
-  color: #606068 !important;
-}
-
-.elementor-trust-wrapper .partners-marquee-section {
-  position: relative !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow: hidden !important;
-  display: flex !important;
-  align-items: center !important;
-  padding: 0 !important;
-  border: none !important;
-  background: transparent !important;
-  scrollbar-width: none !important;
-}
-
-.elementor-trust-wrapper .partners-marquee-section::-webkit-scrollbar {
-  display: none !important;
-}
-
-.elementor-trust-wrapper .marquee-track {
-  display: flex !important;
-  width: max-content !important;
-  overflow: visible !important;
-  animation: marqueeScroll 26s linear infinite !important;
-}
-
-.elementor-trust-wrapper .marquee-group {
-  display: flex !important;
-  align-items: center !important;
+  margin-bottom: 24px !important;
+  text-decoration: none !important;
   flex-shrink: 0 !important;
+  max-width: 130px !important;
 }
 
-.elementor-trust-wrapper .marquee-brand-item {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0 42px !important;
-  height: 52px !important;
-  flex-shrink: 0 !important;
-}
-
-.elementor-trust-wrapper .marquee-brand-item img {
+.elementor-trust-wrapper .footer-logo-img,
+.elementor-trust-wrapper img.footer-logo-img,
+img.footer-logo-img {
   height: 38px !important;
-  max-height: 42px !important;
+  max-height: 38px !important;
   width: auto !important;
-  max-width: 160px !important;
+  max-width: 130px !important;
+  display: block !important;
   object-fit: contain !important;
-  opacity: 1 !important;
-  filter: none !important;
-  display: block !important;
-}
-
-/* Seamless Grid Rapet Protection */
-.elementor-trust-wrapper .services-seamless-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 0 !important;
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.elementor-trust-wrapper .service-seamless-col {
-  display: flex !important;
-  flex-direction: column !important;
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background-color: #ffffff !important;
-}
-
-.elementor-trust-wrapper .service-col-media {
-  width: 100% !important;
-  aspect-ratio: 1.50376 !important;
-  overflow: hidden !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.elementor-trust-wrapper .service-col-media img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  display: block !important;
-}
-
-@media (max-width: 1024px) {
-  .elementor-trust-wrapper .services-seamless-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .elementor-trust-wrapper .services-seamless-grid {
-    grid-template-columns: 1fr !important;
-  }
 }
 
 /* ==========================================================================
@@ -5244,359 +5049,79 @@ body.elementor-page,
 
 </style>
 
-<!-- Main Page HTML Markup (Content Only: No Nav Menu & No Footer) -->
-<div class="elementor-trust-wrapper elementor-content-only">
-<main class="contact-page-main">
-    <div class="contact-container">
-      
-      <!-- TOP SECTION: INTRO & 4 VALUE FEATURES -->
-      <section class="contact-hero-grid">
-        <div class="contact-hero-left">
-          <span class="contact-eyebrow">Contact Us</span>
-          <h1 class="contact-hero-title">
-            Partner To Propel Your<br />Business Forward
-          </h1>
-          <p class="contact-hero-desc">
-            Our team is ready to assist with efficient, dependable logistics solutions. Contact us today to explore how we can support your business every step of the way.
+<div class="elementor-trust-wrapper">
+<footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="/" class="footer-brand-logo" aria-label="TRUST Corporation Home" style="display:inline-flex !important; align-items:center !important; margin-bottom: 20px !important;">
+            <img src="https://htzaml-01.github.io/trust/asset/logo-trust.png" alt="TRUST EADYRA LINE" class="footer-logo-img" width="130" height="48" style="display:block !important; height:48px !important; width:auto !important; max-width:160px !important; object-fit:contain !important;" />
+          </a>
+          <p class="footer-brand-desc">
+            PT. Trust Eadyra Line delivers integrated marine logistics, tug &amp; barge chartering, bulk cargo transshipment, offshore DST well testing support, and certified ship management across Indonesia and international waters.
           </p>
-        </div>
-
-        <div class="contact-features-list">
-          <!-- Feature 1 -->
-          <div class="contact-feature-item">
-            <div class="contact-feature-icon-box">
-              <img src="https://htzaml-01.github.io/trust/asset/contact/icon-calendar.png" alt="Book Your Shipment" />
-            </div>
-            <div class="contact-feature-content">
-              <h3 class="contact-feature-title">Book Your Shipment</h3>
-              <p class="contact-feature-text">We assess shipment requirements, timelines, and routes to create an efficient logistics plan.</p>
-            </div>
-          </div>
-
-          <!-- Feature 2 -->
-          <div class="contact-feature-item">
-            <div class="contact-feature-icon-box">
-              <img src="https://htzaml-01.github.io/trust/asset/contact/icon-clipboard.png" alt="Pickup & Handling" />
-            </div>
-            <div class="contact-feature-content">
-              <h3 class="contact-feature-title">Pickup &amp; Handling</h3>
-              <p class="contact-feature-text">Cargo is collected and handled with care following safety and quality standards.</p>
-            </div>
-          </div>
-
-          <!-- Feature 3 -->
-          <div class="contact-feature-item">
-            <div class="contact-feature-icon-box">
-              <img src="https://htzaml-01.github.io/trust/asset/contact/icon-truck.png" alt="Transportation" />
-            </div>
-            <div class="contact-feature-content">
-              <h3 class="contact-feature-title">Transportation</h3>
-              <p class="contact-feature-text">Goods are transported using optimized routes and reliable transport networks for efficient delivery.</p>
-            </div>
-          </div>
-
-          <!-- Feature 4 -->
-          <div class="contact-feature-item">
-            <div class="contact-feature-icon-box">
-              <img src="https://htzaml-01.github.io/trust/asset/contact/icon-package.png" alt="On-Time Delivery" />
-            </div>
-            <div class="contact-feature-content">
-              <h3 class="contact-feature-title">On-Time Delivery</h3>
-              <p class="contact-feature-text">Shipments are delivered securely and on schedule to their final destination with complete reliability.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- BOTTOM SECTION: INFO ONLY (PLAIN TEXT - NO BUTTONS) -->
-      <section class="contact-form-grid" id="contact-details">
-        <!-- Left: Intro & Socials -->
-        <div class="contact-info-col">
-          <span class="contact-eyebrow">Get Started</span>
-          <h2 class="contact-info-title">Contact Us</h2>
-          <p class="contact-info-subtitle">Have questions or need a shipping quote? Our team is here to help you move forward.</p>
-
-          <div class="contact-social-row">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="contact-social-btn" aria-label="Instagram">
-              <img src="https://htzaml-01.github.io/trust/asset/contact/icon-instagram.png" alt="Instagram" />
+          <div class="footer-social-row">
+            <a href="#" class="footer-social-link" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="contact-social-btn" aria-label="Facebook">
-              <img src="https://htzaml-01.github.io/trust/asset/contact/icon-facebook.png" alt="Facebook" />
+            <a href="#" class="footer-social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="contact-social-btn" aria-label="Twitter">
-              <img src="https://htzaml-01.github.io/trust/asset/contact/icon-twitter.png" alt="Twitter" />
+            <a href="#" class="footer-social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- Right: Pure Text Contact Details -->
-        <div class="contact-details-col">
-          <h4 class="contact-details-heading" style="font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 24px;">More Contact Details :</h4>
-          
-          <div class="contact-detail-item" style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid #f1f5f9;">
-            <span class="contact-detail-label" style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; display: block; margin-bottom: 6px;">Address :</span>
-            <p class="contact-detail-val" style="font-size: 16px; color: #0f172a; line-height: 1.6; margin: 0;">
-              CEO Building, 7th Floor, Jl. TB Simatupang No. 18C, West Cilandak, South Jakarta 12430, Indonesia
-            </p>
-          </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/industries/">Industries</a></li>
+            <li><a href="/fleet/">Fleet</a></li>
+            <li><a href="/contact/">Contact Us</a></li>
+          </ul>
+        </div>
 
-          <div class="contact-detail-item" style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid #f1f5f9;">
-            <span class="contact-detail-label" style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; display: block; margin-bottom: 6px;">Direct Inquiries :</span>
-            <p class="contact-detail-val" style="font-size: 16px; color: #0f172a; line-height: 1.8; margin: 0;">
-              <strong>Phone:</strong> <a href="tel:+622175920000" style="color: #9e0013; text-decoration: none; font-weight: 700;">+62 (021) 7592-0000</a><br />
-              <strong>Email:</strong> <a href="mailto:operational@trusteadyraline.com" style="color: #0f172a; text-decoration: none; font-weight: 600;">operational@trusteadyraline.com</a>
-            </p>
-          </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Our Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="services.html#service-01">Tug &amp; Barge Chartering</a></li>
+            <li><a href="services.html#service-02">Bulk Transshipment</a></li>
+            <li><a href="services.html#service-03">Offshore DST Well Testing</a></li>
+            <li><a href="services.html#service-04">Integrated Ship Management</a></li>
+            <li><a href="services.html#service-05">Marine Infrastructure &amp; Shore Base</a></li>
+            <li><a href="services.html#service-06">Emergency Salvage Assistance</a></li>
+          </ul>
+        </div>
 
-          <div class="contact-detail-item">
-            <span class="contact-detail-label" style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; display: block; margin-bottom: 6px;">Office Hours :</span>
-            <p class="contact-detail-val" style="font-size: 15px; color: #475569; line-height: 1.6; margin: 0;">
-              Monday – Friday: 08:30 – 17:30 WIB<br />
-              24/7 Vessel AIS Monitoring &amp; Offshore Dispatch
-            </p>
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Contact &amp; Operations</h4>
+          <div class="footer-contact-info" style="color: #94a3b8; font-size: 14px; line-height: 1.6;">
+            <p style="margin-bottom: 12px;"><strong style="color:#ffffff;">Head Office:</strong><br />CEO Building, 7th Floor, Jl. TB Simatupang No. 18C, West Cilandak, South Jakarta 12430</p>
+            <p style="margin-bottom: 12px;"><strong style="color:#ffffff;">Operations Phone:</strong><br /><a href="tel:+622175920000" style="color:#ffffff; text-decoration:none;">+62 (021) 7592-0000</a></p>
+            <p style="margin-bottom: 12px;"><strong style="color:#ffffff;">Direct Email:</strong><br /><a href="mailto:operational@trusteadyraline.com" style="color:#ffffff; text-decoration:none;">operational@trusteadyraline.com</a></p>
+            <p style="margin: 0;"><strong style="color:#ffffff;">Monitoring:</strong><br />24/7 Vessel AIS &amp; Offshore Dispatch</p>
           </div>
         </div>
-      </section>
+      </div>
 
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 PT. Trust Eadyra Line (TRUST Corporation). All Rights Reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Safety &amp; Compliance</a>
+        </div>
+      </div>
     </div>
-  </main>
+  </footer>
 </div>
 
-<!-- Interactive Scripts (FAQ Accordion, Marquee, Video Autoplay, Forms) -->
 <script>
 (function() {
-/**
- * TRUST CORPORATION - INTERACTIONS
- * Sticky Navbar Handler | FAQ Accordion | Forms
- */
-
-document.addEventListener('DOMContentLoaded', () => {
-  // 1. STICKY NAVBAR ON SCROLL
-  const header = document.getElementById('siteHeader');
-  
-  function handleScroll() {
-    if (!header) return;
-    if (window.scrollY > 40) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  }
-
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  window.addEventListener('touchmove', handleScroll, { passive: true });
-  handleScroll(); // Trigger initial state
-
-  // 2. MOBILE MENU TOGGLE
-  const mobileToggle = document.getElementById('mobileToggle');
-  const navMenu = document.getElementById('navMenu');
-  const navBackdrop = document.getElementById('navBackdrop');
-
-  function closeMobileNav() {
-    navMenu?.classList.remove('open');
-    mobileToggle?.classList.remove('active');
-    header?.classList.remove('nav-open');
-    navBackdrop?.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  function openMobileNav() {
-    navMenu?.classList.add('open');
-    mobileToggle?.classList.add('active');
-    header?.classList.add('nav-open');
-    navBackdrop?.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function toggleMobileNav(e) {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    const isCurrentlyOpen = navMenu?.classList.contains('open');
-    if (isCurrentlyOpen) {
-      closeMobileNav();
-    } else {
-      openMobileNav();
-    }
-  }
-
-  if (mobileToggle) {
-    mobileToggle.addEventListener('click', toggleMobileNav);
-    // Add touch handler with passive: false for instant mobile tap response
-    mobileToggle.addEventListener('touchend', (e) => {
-      e.preventDefault();
-      toggleMobileNav(e);
-    }, { passive: false });
-  }
-
-  if (navBackdrop) {
-    navBackdrop.addEventListener('click', (e) => {
-      e.preventDefault();
-      closeMobileNav();
-    });
-    navBackdrop.addEventListener('touchend', (e) => {
-      e.preventDefault();
-      closeMobileNav();
-    }, { passive: false });
-  }
-
-  // Close mobile nav when clicking a link
-  navMenu?.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', closeMobileNav);
-  });
-
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navMenu?.classList.contains('open')) {
-      closeMobileNav();
-    }
-  });
-
-  // Query parameter support for testing / headless screenshot
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.has('menu')) {
-    toggleMobileNav();
-  }
-  if (urlParams.has('scrolled')) {
-    header?.classList.add('scrolled');
-  }
-  const scrollTarget = urlParams.get('scroll');
-  if (scrollTarget) {
-    const targetEl = document.getElementById(scrollTarget);
-    if (targetEl) {
-      targetEl.scrollIntoView({ behavior: 'instant' });
-      handleScroll();
-    }
-  }
-
-  // 3. FAQ ACCORDION (1 open at a time or toggle)
-  const accordionItems = document.querySelectorAll('.accordion-item');
-
-  accordionItems.forEach(item => {
-    const headerBtn = item.querySelector('.accordion-header');
-    if (headerBtn) {
-      headerBtn.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-
-        // Close all other accordion items
-        accordionItems.forEach(other => {
-          if (other !== item) {
-            other.classList.remove('active');
-            other.querySelector('.accordion-header')?.setAttribute('aria-expanded', 'false');
-          }
-        });
-
-        // Toggle current item
-        if (isActive) {
-          item.classList.remove('active');
-          headerBtn.setAttribute('aria-expanded', 'false');
-        } else {
-          item.classList.add('active');
-          headerBtn.setAttribute('aria-expanded', 'true');
-        }
-      });
-    }
-  });
-
-  // 4. CONTACT FORM SUBMISSION FEEDBACK
-  const contactForm = document.getElementById('contactForm');
-  const formStatus = document.getElementById('formStatus');
-
-  if (contactForm && formStatus) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Submitting...';
-      submitBtn.disabled = true;
-
-      setTimeout(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        formStatus.textContent = 'Thank you! Your interest has been submitted successfully. Our team will contact you shortly.';
-        formStatus.className = 'form-status success';
-        formStatus.style.display = 'block';
-        contactForm.reset();
-
-        setTimeout(() => {
-          formStatus.style.display = 'none';
-        }, 6000);
-      }, 700);
-    });
-  }
-
-  // 5. NEWSLETTER FORM FEEDBACK
-  const newsletterForm = document.getElementById('newsletterForm');
-  const newsletterStatus = document.getElementById('newsletterStatus');
-
-  if (newsletterForm && newsletterStatus) {
-    newsletterForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      newsletterStatus.textContent = 'Thank you for subscribing to our industry newsletter!';
-      newsletterStatus.style.display = 'block';
-      newsletterForm.reset();
-
-      setTimeout(() => {
-        newsletterStatus.style.display = 'none';
-      }, 5000);
-    });
-  }
-
-  // 6. VIDEO AUTOPLAY FALLBACK
-  const heroVideo = document.querySelector('.hero-video-bg');
-  if (heroVideo) {
-    heroVideo.play().catch(err => {
-      console.log('Autoplay muted playback initiated:', err);
-    });
-  }
-
-  // 7. BULLETPROOF INFINITE MARQUEE CAROUSEL RUNNER
-  function initMarqueeCarousel() {
-    const marquees = document.querySelectorAll('.partners-marquee-section');
-    marquees.forEach(section => {
-      const track = section.querySelector('.marquee-track');
-      if (!track || track.dataset.marqueeInitialized) return;
-      track.dataset.marqueeInitialized = 'true';
-
-      // Ensure no CSS animation conflicts with smooth JS runner
-      track.style.animation = 'none';
-      track.style.webkitAnimation = 'none';
-
-      const firstGroup = track.querySelector('.marquee-group');
-      if (!firstGroup) return;
-
-      let pos = 0;
-      let paused = false;
-      const speed = 0.9; // Smooth continuous scroll speed
-
-      track.addEventListener('mouseenter', () => { paused = true; });
-      track.addEventListener('mouseleave', () => { paused = false; });
-      track.addEventListener('touchstart', () => { paused = true; }, { passive: true });
-      track.addEventListener('touchend', () => { paused = false; }, { passive: true });
-
-      function step() {
-        if (!paused) {
-          pos += speed;
-          const groupWidth = firstGroup.offsetWidth;
-          if (groupWidth > 0 && pos >= groupWidth) {
-            pos = 0;
-          }
-          track.style.transform = 'translate3d(-' + pos + 'px, 0, 0)';
-          track.style.webkitTransform = 'translate3d(-' + pos + 'px, 0, 0)';
-        }
-        requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    });
-  }
-
-  // Initialize immediately and after window loads (ensuring all SVG dimensions are ready)
-  initMarqueeCarousel();
-  window.addEventListener('load', initMarqueeCarousel);
-});
-
-
-  // Newsletter handler
   const form = document.getElementById('newsletterForm');
   const status = document.getElementById('newsletterStatus');
   if (form && status) {
@@ -5606,39 +5131,6 @@ document.addEventListener('DOMContentLoaded', () => {
       status.style.color = '#10b981';
       status.textContent = 'Thank you for subscribing to TRUST Corporation updates!';
       form.reset();
-    });
-  }
-
-  // Contact Page Form handler
-  const contactForm = document.getElementById('contactPageForm');
-  const contactStatus = document.getElementById('contactPageStatus');
-  const submitBtn = document.getElementById('btnContactSubmit');
-
-  if (contactForm && contactStatus) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      if (submitBtn) {
-        submitBtn.textContent = 'Transmitting Dispatch Request...';
-        submitBtn.disabled = true;
-      }
-
-      setTimeout(function() {
-        if (submitBtn) {
-          submitBtn.textContent = 'Request Sent!';
-          submitBtn.style.background = '#059669';
-        }
-        contactStatus.style.display = 'block';
-        contactForm.reset();
-
-        setTimeout(function() {
-          if (submitBtn) {
-            submitBtn.textContent = 'Submit Formal Request';
-            submitBtn.disabled = false;
-            submitBtn.style.background = '';
-          }
-          contactStatus.style.display = 'none';
-        }, 6000);
-      }, 600);
     });
   }
 })();
