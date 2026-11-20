@@ -227,39 +227,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize immediately and after window loads (ensuring all SVG dimensions are ready)
   initMarqueeCarousel();
   window.addEventListener('load', initMarqueeCarousel);
-
-
-  // Smart Navigation Handler: Smooth scroll if section exists on current page, else follow href
-  document.querySelectorAll('.nav-link, .mobile-nav-link, .brand-logo').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (!href) return;
-
-      let targetId = '';
-      if (href === '/' || href === 'index.html' || href === '#hero' || href === '#' || href === '') {
-        targetId = 'hero';
-      } else {
-        const cleaned = href.replace(/^\/+|\/+$/g, '').replace(/\.html$/, '').replace(/^#/, '');
-        targetId = cleaned;
-      }
-
-      if (targetId) {
-        let targetEl = document.getElementById(targetId);
-        if (!targetEl && targetId === 'about') {
-          targetEl = document.getElementById('about-hero');
-        }
-        if (!targetEl && targetId === 'services') {
-          targetEl = document.getElementById('services-hero');
-        }
-
-        if (targetEl) {
-          e.preventDefault();
-          if (typeof closeMobileNav === 'function') closeMobileNav();
-          targetEl.scrollIntoView({ behavior: 'smooth' });
-          return;
-        }
-      }
-    });
-  });
-
 });
