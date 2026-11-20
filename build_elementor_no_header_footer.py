@@ -21,7 +21,7 @@ PAGES = [
     ("about.html", "04-PAGE-ABOUT.html", "About Us Page"),
     ("services.html", "05-PAGE-SERVICES.html", "Services Page"),
     ("industries.html", "06-PAGE-INDUSTRIES.html", "Industries Page"),
-    ("fleet.html", "07-PAGE-FLEET.html", "Fleet Page"),
+    ("blog.html", "07-PAGE-BLOG.html", "Blog Page"),
     ("contact.html", "08-PAGE-CONTACT.html", "Contact Page"),
 ]
 
@@ -52,7 +52,8 @@ def extract_main_content(html_file):
     content = re.sub(r'href=["\']about\.html["\']', 'href="/about/"', content)
     content = re.sub(r'href=["\']services\.html["\']', 'href="/services/"', content)
     content = re.sub(r'href=["\']industries\.html["\']', 'href="/industries/"', content)
-    content = re.sub(r'href=["\']fleet\.html["\']', 'href="/fleet/"', content)
+    content = re.sub(r'href=["\']blog\.html["\']', 'href="/blog/"', content)
+    content = re.sub(r'href=["\']fleet\.html["\']', 'href="/blog/"', content)
     content = re.sub(r'href=["\']contact\.html["\']', 'href="/contact/"', content)
     content = re.sub(r'href=["\']services\.html(#service-[0-9]+)["\']', r'href="/services/\1"', content)
 
@@ -772,7 +773,7 @@ body.admin-bar .mobile-nav-backdrop {{
         <a href="/about/" class="nav-link">About</a>
         <a href="/services/" class="nav-link">Services</a>
         <a href="/industries/" class="nav-link">Industries</a>
-        <a href="/fleet/" class="nav-link">Fleet</a>
+        <a href="/blog/" class="nav-link">Blog</a>
         <a href="/contact/" class="nav-link">Contact</a>
       </nav>
 
@@ -922,7 +923,8 @@ def generate_footer_template():
     footer_content = re.sub(r'href=["\']about\.html["\']', 'href="/about/"', footer_content)
     footer_content = re.sub(r'href=["\']services\.html["\']', 'href="/services/"', footer_content)
     footer_content = re.sub(r'href=["\']industries\.html["\']', 'href="/industries/"', footer_content)
-    footer_content = re.sub(r'href=["\']fleet\.html["\']', 'href="/fleet/"', footer_content)
+    footer_content = re.sub(r'href=["\']blog\.html["\']', 'href="/blog/"', footer_content)
+    footer_content = re.sub(r'href=["\']fleet\.html["\']', 'href="/blog/"', footer_content)
     footer_content = re.sub(r'href=["\']contact\.html["\']', 'href="/contact/"', footer_content)
 
     return f"""<!--
@@ -930,7 +932,7 @@ def generate_footer_template():
 TRUST CORPORATION - ELEMENTOR STANDALONE FOOTER TEMPLATE
 File: 02-FOOTER.html
 WordPress Clean Permalinks: Home (/), About (/about/), Services (/services/),
-Industries (/industries/), Fleet (/fleet/), Contact (/contact/)
+Industries (/industries/), Blog (/blog/), Contact (/contact/)
 All assets loaded via CDN: {CDN_BASE}
 ==============================================================================
 -->
