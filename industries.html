@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Industries We Serve | TRUST Corporation (PT. Trust Eadyra Line)</title>
-  <meta name="description" content="Specialized marine logistics, bulk barging, offshore engineering, and vessel chartering for mining, oil & gas, pulp & paper, heavy equipment, and maritime infrastructure." />
+  <title>Key Industries Served | TRUST Corporation (PT. Trust Eadyra Line)</title>
+  <meta name="description" content="Discover key industries served by TRUST Corporation: coal & nickel transshipment, offshore oil & gas, forestry timber, EPC heavy machinery, shore base, and salvage." />
 
   <!-- Favicon / Browser Tab Icon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -17,11 +17,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=18" />
+  <link rel="stylesheet" href="styles.css?v=25" />
 </head>
 <body>
 
-  <!-- STICKY NAVBAR (SOLID WHITE) -->
+  <!-- STICKY NAVBAR -->
   <header class="site-header header-solid" id="siteHeader">
     <div class="header-container">
       <a href="index.html" class="brand-logo" aria-label="TRUST Corporation Home" style="display:inline-flex !important; align-items:center !important; text-decoration:none !important; flex-shrink:0 !important;">
@@ -38,13 +38,11 @@
           <a href="contact.html" class="nav-link">Contact</a>
         </nav>
 
-        <div class="header-actions">
-          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
       </div>
     </div>
   </header>
@@ -52,9 +50,26 @@
   <!-- Mobile Drawer Backdrop -->
   <div class="mobile-nav-backdrop" id="navBackdrop"></div>
 
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <img src="asset/logo-trust.png" alt="TRUST" height="32" />
+      <button class="mobile-drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="mobile-drawer-nav">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="industries.html" class="mobile-nav-link active">Industries</a>
+      <a href="fleet.html" class="mobile-nav-link">Fleet</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </nav>
+  </div>
+
   <main class="industries-main">
-    <!-- HERO HEADER -->
-    <section class="industries-hero-section">
+    
+    <!-- HERO HEADER (WITH 140PX TOP PADDING - NEVER CUT OFF BY HEADER) -->
+    <section class="industries-hero-section" style="padding: 140px 0 60px; background: #ffffff; border-bottom: 1px solid #e2e8f0;">
       <div class="container">
         <div class="industries-header text-center">
           <span class="industries-eyebrow">SECTORS &amp; EXPERTISE</span>
@@ -68,292 +83,273 @@
       </div>
     </section>
 
-    <!-- 6 CORE INDUSTRY SECTOR CARDS -->
-    <section class="industries-grid-section">
-      <div class="container">
-        <div class="industries-cards-grid">
+    <!-- 6 CORE INDUSTRY SECTOR CARDS (RAPET - SEAMLESS GAP 0 - EXACT 1:1 LIKE SERVICES) -->
+    <section class="section section-services" style="padding: 0; background-color: #ffffff;">
+      <div class="services-seamless-grid">
 
-          <!-- INDUSTRY 1: MINING & MINERALS -->
-          <article class="industry-card">
-            <div class="industry-card-image-wrap">
-              <img src="asset/trust/trust_p1_img0_595x288.jpeg" alt="Coal and Nickel Ore Marine Barging" class="industry-card-img" loading="lazy" />
-              <span class="industry-tag">Mining &amp; Minerals</span>
+        <!-- INDUSTRY 1: MINING & MINERALS -->
+        <article class="service-seamless-col" id="coal-nickel">
+          <div class="service-col-media">
+            <img src="asset/trust/trust_p1_img0_595x288.jpeg" alt="Coal and Nickel Ore Marine Barging" loading="lazy" />
+          </div>
+          <div class="service-col-content">
+            <div class="service-col-head">
+              <h3 class="service-col-title">Coal, Nickel Ore &amp; Mineral Barging</h3>
             </div>
-            <div class="industry-card-body">
-              <h2 class="industry-card-title">Coal, Nickel Ore &amp; Mineral Barging</h2>
-              <p class="industry-card-desc">
-                High-capacity bulk transportation of thermal coal, nickel ore, iron ore, and industrial limestone across domestic inter-island routes and offshore transshipment anchorages. Operating high-side 300ft deck cargo barges capable of moving up to 10,000 DWT per shipment.
-              </p>
-              <ul class="industry-feature-list">
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>300ft Barges &amp; High-Power Tugboats (BKI / ABS Classed)</span>
-                </li>
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Transshipment to Panamax &amp; Capesize Mother Vessels</span>
-                </li>
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Multi-Year Contract of Affreightment (COA) &amp; Spot Charters</span>
-                </li>
-              </ul>
-              <div class="industry-card-footer">
-                <a href="contact.html" class="btn btn-outline-dark btn-sm">Consult Mining Solutions &rarr;</a>
-              </div>
-            </div>
-          </article>
+            <p class="service-col-desc">
+              High-capacity bulk transportation of thermal coal, nickel ore, iron ore, and industrial limestone across domestic inter-island routes and offshore transshipment anchorages. Operating high-side 300ft deck cargo barges capable of moving up to 10,000 DWT per shipment.
+            </p>
+            <a href="contact.html" class="circle-action-btn" aria-label="Inquire about Coal and Nickel Ore Marine Barging">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
 
-          <!-- INDUSTRY 2: OIL, GAS & OFFSHORE -->
-          <article class="industry-card">
-            <div class="industry-card-image-wrap">
-              <img src="asset/trust/trust_p4_img2_907x524.jpeg" alt="Offshore Well Testing and Marine Support" class="industry-card-img" loading="lazy" />
-              <span class="industry-tag">Energy &amp; Offshore</span>
+        <!-- INDUSTRY 2: OIL & GAS OFFSHORE -->
+        <article class="service-seamless-col" id="offshore-oil-gas">
+          <div class="service-col-media">
+            <img src="asset/trust/trust_p4_img2_907x524.jpeg" alt="Oil, Gas and Offshore Marine Support" loading="lazy" />
+          </div>
+          <div class="service-col-content">
+            <div class="service-col-head">
+              <h3 class="service-col-title">Oil, Gas &amp; Offshore Marine Support</h3>
             </div>
-            <div class="industry-card-body">
-              <h2 class="industry-card-title">Oil, Gas &amp; Offshore Marine Support</h2>
-              <p class="industry-card-desc">
-                Comprehensive offshore marine operations in strategic alliance with Schlumberger (SLB). Providing DST offshore well testing barges, wireline platforms, cementing units, AHTS, supply vessels, and crew transfer boats for upstream exploration and production.
-              </p>
-              <ul class="industry-feature-list">
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>DST Offshore Well Testing Barges &amp; Work Barges</span>
-                </li>
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>AHTS (Anchor Handling), Supply Vessels &amp; Crew Boats</span>
-                </li>
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Strict SKT Migas, IMO ISM &amp; OHSAS 18001 Compliance</span>
-                </li>
-              </ul>
-              <div class="industry-card-footer">
-                <a href="contact.html" class="btn btn-outline-dark btn-sm">Consult Offshore Solutions &rarr;</a>
-              </div>
-            </div>
-          </article>
+            <p class="service-col-desc">
+              Comprehensive offshore marine operations in strategic alliance with Schlumberger (SLB). Providing DST offshore well testing barges, wireline platforms, cementing units, AHTS, supply vessels, and crew transfer boats for upstream exploration and production.
+            </p>
+            <a href="contact.html" class="circle-action-btn" aria-label="Inquire about Oil, Gas and Offshore Marine Support">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
 
-          <!-- INDUSTRY 3: PULP, PAPER & FORESTRY -->
-          <article class="industry-card">
-            <div class="industry-card-image-wrap">
-              <img src="asset/trust/trust_p5_img0_1159x1102.jpeg" alt="Plantation Logs and Pulpwood Transport" class="industry-card-img" loading="lazy" />
-              <span class="industry-tag">Forestry &amp; Paper</span>
+        <!-- INDUSTRY 3: PULP, PAPER & FORESTRY -->
+        <article class="service-seamless-col" id="forestry-pulp">
+          <div class="service-col-media">
+            <img src="asset/trust/trust_p5_img0_1159x1102.jpeg" alt="Plantation Logs and Pulpwood Carrier" loading="lazy" />
+          </div>
+          <div class="service-col-content">
+            <div class="service-col-head">
+              <h3 class="service-col-title">Plantation Logs &amp; Pulpwood Carrier</h3>
             </div>
-            <div class="industry-card-body">
-              <h2 class="industry-card-title">Plantation Logs &amp; Pulpwood Transport</h2>
-              <p class="industry-card-desc">
-                Dedicated fleet of heavy-duty log carrier barges customized for moving harvested acacia, gemelina, and mixed forest timber from remote river concessions directly to world-class pulp and paper manufacturing mills such as APRIL Group and RAPP.
-              </p>
-              <ul class="industry-feature-list">
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Specialized Heavy Stanchion Log Carrier Barges</span>
-                </li>
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Shallow-Draft Tug Fleet for Inshore Concession Rivers</span>
-                </li>
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>High-Frequency Cycle Deliveries to Minimize Mill Downtime</span>
-                </li>
-              </ul>
-              <div class="industry-card-footer">
-                <a href="contact.html" class="btn btn-outline-dark btn-sm">Consult Forestry Logistics &rarr;</a>
-              </div>
-            </div>
-          </article>
+            <p class="service-col-desc">
+              Specialized coastal and river barging for industrial plantation timber (acacia, gemelina, mixed hardwood) serving Indonesia's largest pulp and paper producers (APRIL, RAPP, TEL) with strict on-time delivery.
+            </p>
+            <a href="contact.html" class="circle-action-btn" aria-label="Inquire about Plantation Logs and Pulpwood Carrier">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
 
-          <!-- INDUSTRY 4: HEAVY EQUIPMENT & PROJECT CARGO -->
-          <article class="industry-card">
-            <div class="industry-card-image-wrap">
-              <img src="asset/trust/trust_p7_img0_1811x1102.jpeg" alt="Heavy Machinery and Project Cargo Transport" class="industry-card-img" loading="lazy" />
-              <span class="industry-tag">Heavy Cargo &amp; EPC</span>
+        <!-- INDUSTRY 4: HEAVY MACHINERY & EPC -->
+        <article class="service-seamless-col" id="heavy-cargo">
+          <div class="service-col-media">
+            <img src="asset/trust/trust_p7_img0_1811x1102.jpeg" alt="Heavy Machinery and EPC Project Cargo" loading="lazy" />
+          </div>
+          <div class="service-col-content">
+            <div class="service-col-head">
+              <h3 class="service-col-title">Heavy Machinery &amp; EPC Project Cargo</h3>
             </div>
-            <div class="industry-card-body">
-              <h2 class="industry-card-title">Heavy Equipment &amp; Project Cargo</h2>
-              <p class="industry-card-desc">
-                Engineered marine mobilization of super-heavy mining machinery, giant hydraulic excavators, drilling rigs, oilfield casing pipes, and large industrial steel structures for major national strategic projects across remote islands in Indonesia.
-              </p>
-              <ul class="industry-feature-list">
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Reinforced Ro-Ro (Roll-on/Roll-off) Heavy Deck Barges</span>
-                </li>
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Marine Cargo Lashing &amp; Naval Architecture Stability Plans</span>
-                </li>
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Ballast Water Management for Precision Tidal Loading</span>
-                </li>
-              </ul>
-              <div class="industry-card-footer">
-                <a href="contact.html" class="btn btn-outline-dark btn-sm">Consult Project Cargo &rarr;</a>
-              </div>
-            </div>
-          </article>
+            <p class="service-col-desc">
+              Roll-on/Roll-off (RoRo) barging and heavy-lift logistics for excavators, dump trucks, mining crushers, power plant transformers, and prefabricated refinery modules requiring precise ballasting and load distribution.
+            </p>
+            <a href="contact.html" class="circle-action-btn" aria-label="Inquire about Heavy Machinery and EPC Project Cargo">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
 
-          <!-- INDUSTRY 5: PORTS & SHORE BASE INFRASTRUCTURE -->
-          <article class="industry-card">
-            <div class="industry-card-image-wrap">
-              <img src="asset/trust/trust_p8_img0_907x565.jpeg" alt="Shore Base Logistics and Port Infrastructure" class="industry-card-img" loading="lazy" />
-              <span class="industry-tag">Ports &amp; Terminals</span>
+        <!-- INDUSTRY 5: SHORE BASE LOGISTICS -->
+        <article class="service-seamless-col" id="shore-base">
+          <div class="service-col-media">
+            <img src="asset/trust/trust_p8_img0_907x565.jpeg" alt="Shore Base Logistics and Port Terminals" loading="lazy" />
+          </div>
+          <div class="service-col-content">
+            <div class="service-col-head">
+              <h3 class="service-col-title">Shore Base Logistics &amp; Port Terminals</h3>
             </div>
-            <div class="industry-card-body">
-              <h2 class="industry-card-title">Shore Base Logistics &amp; Transshipment Hubs</h2>
-              <p class="industry-card-desc">
-                Integrated port agency, marine terminal management, and shore base logistics support. We manage coastal stockpiles, private jetty coordination, licensed stevedoring, marine provisioning, and coastal transshipment facilities with complete accountability.
-              </p>
-              <ul class="industry-feature-list">
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Shore Base Warehousing &amp; Cargo Staging Areas</span>
-                </li>
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Stockpile Coordination &amp; Anchorage Transshipment</span>
-                </li>
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Port Agency, Berthing Clearance &amp; Stevedoring Services</span>
-                </li>
-              </ul>
-              <div class="industry-card-footer">
-                <a href="contact.html" class="btn btn-outline-dark btn-sm">Consult Terminal Services &rarr;</a>
-              </div>
-            </div>
-          </article>
+            <p class="service-col-desc">
+              Full-service shore base facilities, open stockpile management, berthing facilities, and dedicated bonded warehousing designed for marine equipment staging, fuel bunkering, and pipe storage.
+            </p>
+            <a href="contact.html" class="circle-action-btn" aria-label="Inquire about Shore Base Logistics and Port Terminals">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
 
-          <!-- INDUSTRY 6: SALVAGE & EMERGENCY MARINE -->
-          <article class="industry-card">
-            <div class="industry-card-image-wrap">
-              <img src="asset/trust/trust_p9_img1_741x380.jpeg" alt="Marine Salvage and Emergency Assistance" class="industry-card-img" loading="lazy" />
-              <span class="industry-tag">Salvage &amp; Support</span>
+        <!-- INDUSTRY 6: SALVAGE & EMERGENCY -->
+        <article class="service-seamless-col" id="salvage-rescue">
+          <div class="service-col-media">
+            <img src="asset/trust/trust_p9_img1_741x380.jpeg" alt="Marine Salvage and Emergency Response" loading="lazy" />
+          </div>
+          <div class="service-col-content">
+            <div class="service-col-head">
+              <h3 class="service-col-title">Marine Salvage &amp; Emergency Response</h3>
             </div>
-            <div class="industry-card-body">
-              <h2 class="industry-card-title">Marine Salvage &amp; Technical Management</h2>
-              <p class="industry-card-desc">
-                Trusted regional partner to Svitzer Salvage BV for emergency marine salvage, refloating of stranded vessels, ocean towage, and emergency spill response. Providing end-to-end technical ship management, BKI/ABS docking supervision, and certified maritime crewing.
-              </p>
-              <ul class="industry-feature-list">
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Svitzer Global Alliance for Marine Salvage &amp; Emergency Towing</span>
-                </li>
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Ship Management, Preventive Maintenance &amp; Class Docking</span>
-                </li>
-                <li>
-                  <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>24/7 Marine Emergency Response Fleet on Standby</span>
-                </li>
-              </ul>
-              <div class="industry-card-footer">
-                <a href="contact.html" class="btn btn-outline-dark btn-sm">Consult Marine Services &rarr;</a>
-              </div>
-            </div>
-          </article>
+            <p class="service-col-desc">
+              Certified salvage assistance and emergency rescue operations in partnership with Svitzer Salvage, BV. Rapid deployment for grounded vessels, towage assistance, wreck removal, and offshore containment across Southeast Asia.
+            </p>
+            <a href="contact.html" class="circle-action-btn" aria-label="Inquire about Marine Salvage and Emergency Response">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+            </a>
+          </div>
+        </article>
 
-        </div>
       </div>
     </section>
 
-    <!-- TRUSTED CLIENTS & STRATEGIC PARTNERS BRAND CAROUSEL -->
-    <section class="section-brand-carousel" style="padding: 64px 0 54px; background: #ffffff; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; overflow: hidden; width: 100%;">
-      <div class="container text-center" style="margin-bottom: 28px;">
-        <span class="eyebrow">TRUSTED BY INDUSTRY LEADERS</span>
-        <h2 class="section-title" style="font-size: 32px; margin-bottom: 10px;">Strategic Partners &amp; Enterprise Clients</h2>
-        <p class="section-subtitle" style="max-width: 680px; margin: 0 auto; color: #64748b;">
-          Leading energy operators, mining conglomerates, and international paper corporations entrust their maritime supply chain to TRUST Corporation.
-        </p>
+    <!-- STRATEGIC PARTNERS MARQUEE SECTION -->
+    <section class="section section-brand-carousel" style="padding: 60px 0; background-color: #ffffff; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+      <div class="container text-center partners-title-wrap">
+        <span class="eyebrow partners-eyebrow">TRUSTED BY INDUSTRY LEADERS</span>
+        <h2 class="section-title" style="font-size: 32px; margin-top: 8px;">Strategic Partners &amp; Enterprise Clients</h2>
+        <p class="contact-subtitle" style="margin: 0 auto 36px auto;">Leading energy operators, mining conglomerates, and international paper corporations entrust their maritime supply chain to TRUST Corporation.</p>
       </div>
 
-      <div class="partners-marquee-section" aria-label="Trusted by leading industry partners" style="border: none; padding: 10px 0; background: transparent;" style="position: relative !important; width: 100% !important; max-width: 100% !important; overflow: hidden !important; padding: 20px 0 !important; background: transparent !important; scrollbar-width: none !important;">
-        <div class="marquee-track">
+      <div class="partners-marquee-section">
+        <div class="marquee-track" id="partnersMarqueeTrack">
           <div class="marquee-group">
-            <div class="marquee-brand-item"><img src="asset/brand_logos/pertamina.svg" alt="Pertamina" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/brand_logos/chevron.svg" alt="Chevron" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/brand_logos/slb.svg" alt="SLB Schlumberger" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/brand_logos/total.svg" alt="Total" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/brand_logos/conocophillips.svg" alt="ConocoPhillips" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/brand_logos/bp.svg" alt="BP" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/brand_logos/cnooc.svg" alt="CNOOC" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/brand_logos/maersk.svg" alt="Maersk" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/brand_logos/mitsui.svg" alt="Mitsui O.S.K. Lines" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/logos/svitzer.svg" alt="Svitzer Salvage" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/logos/bki.svg" alt="Biro Klasifikasi Indonesia" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="asset/brand_logos/pertamina.svg" alt="Pertamina" loading="lazy" /></div>
+            <div class="marquee-brand-item"><img src="asset/brand_logos/conocophillips.svg" alt="ConocoPhillips" loading="lazy" /></div>
+            <div class="marquee-brand-item"><img src="asset/brand_logos/bp.svg" alt="bp" loading="lazy" /></div>
+            <div class="marquee-brand-item"><img src="asset/brand_logos/maersk.svg" alt="Maersk" loading="lazy" /></div>
+            <div class="marquee-brand-item"><img src="asset/brand_logos/mitsui.svg" alt="MOL Mitsui O.S.K. Lines" loading="lazy" /></div>
+            <div class="marquee-brand-item"><img src="asset/brand_logos/svitzer.svg" alt="Svitzer" loading="lazy" /></div>
+            <div class="marquee-brand-item"><img src="asset/brand_logos/bki.svg" alt="Biro Klasifikasi Indonesia" loading="lazy" /></div>
           </div>
           <div class="marquee-group" aria-hidden="true">
-            <div class="marquee-brand-item"><img src="asset/brand_logos/pertamina.svg" alt="Pertamina" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/brand_logos/chevron.svg" alt="Chevron" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/brand_logos/slb.svg" alt="SLB Schlumberger" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/brand_logos/total.svg" alt="Total" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/brand_logos/conocophillips.svg" alt="ConocoPhillips" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/brand_logos/bp.svg" alt="BP" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/brand_logos/cnooc.svg" alt="CNOOC" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/brand_logos/maersk.svg" alt="Maersk" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/brand_logos/mitsui.svg" alt="Mitsui O.S.K. Lines" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/logos/svitzer.svg" alt="Svitzer Salvage" loading="lazy"></div>
-            <div class="marquee-brand-item"><img src="asset/logos/bki.svg" alt="Biro Klasifikasi Indonesia" loading="lazy"></div>
+            <div class="marquee-brand-item"><img src="asset/brand_logos/pertamina.svg" alt="Pertamina" loading="lazy" /></div>
+            <div class="marquee-brand-item"><img src="asset/brand_logos/conocophillips.svg" alt="ConocoPhillips" loading="lazy" /></div>
+            <div class="marquee-brand-item"><img src="asset/brand_logos/bp.svg" alt="bp" loading="lazy" /></div>
+            <div class="marquee-brand-item"><img src="asset/brand_logos/maersk.svg" alt="Maersk" loading="lazy" /></div>
+            <div class="marquee-brand-item"><img src="asset/brand_logos/mitsui.svg" alt="MOL Mitsui O.S.K. Lines" loading="lazy" /></div>
+            <div class="marquee-brand-item"><img src="asset/brand_logos/svitzer.svg" alt="Svitzer" loading="lazy" /></div>
+            <div class="marquee-brand-item"><img src="asset/brand_logos/bki.svg" alt="Biro Klasifikasi Indonesia" loading="lazy" /></div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- DIRECT CONTACT INFO (PLAIN TEXT) -->
+    <section class="section" style="padding: 70px 0 90px; background-color: #ffffff;">
+      <div class="container">
+        <div class="contact-two-col-grid">
+          <div>
+            <span class="eyebrow">DIRECT MARITIME CONSULTATION</span>
+            <h2 class="section-title" style="font-size: 32px;">Consult Your Maritime Supply Chain</h2>
+            <p style="color: #64748b; font-size: 15.5px; line-height: 1.6; max-width: 460px; margin-bottom: 24px;">
+              Whether you need long-term Contract of Affreightment (COA) rates for coal barging, dedicated offshore DST work barges, or specialized project cargo transport, our operations desk is ready to consult.
+            </p>
+            <div class="contact-socials-row">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Facebook">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Twitter">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="meta-heading" style="font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 24px;">Commercial Operations Desk :</h4>
+            
+            <div class="meta-item" style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid #f1f5f9;">
+              <span class="meta-label" style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; display: block; margin-bottom: 6px;">Head Office :</span>
+              <p class="meta-value" style="font-size: 16px; color: #0f172a; line-height: 1.6; margin: 0;">
+                CEO Building, 7th Floor, Jl. TB Simatupang No. 18C, West Cilandak, South Jakarta 12430, Indonesia
+              </p>
+            </div>
+
+            <div class="meta-item" style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid #f1f5f9;">
+              <span class="meta-label" style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; display: block; margin-bottom: 6px;">Direct Inquiries :</span>
+              <p class="meta-value" style="font-size: 16px; color: #0f172a; line-height: 1.8; margin: 0;">
+                <strong>Phone:</strong> <a href="tel:+622175920000" style="color: #9e0013; text-decoration: none; font-weight: 700;">+62 (021) 7592-0000</a><br />
+                <strong>Email:</strong> <a href="mailto:operational@trusteadyraline.com" style="color: #0f172a; text-decoration: none; font-weight: 600;">operational@trusteadyraline.com</a>
+              </p>
+            </div>
+
+            <div class="meta-item">
+              <span class="meta-label" style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; display: block; margin-bottom: 6px;">Office Hours :</span>
+              <p class="meta-value" style="font-size: 15px; color: #475569; line-height: 1.6; margin: 0;">
+                Monday – Friday: 08:30 – 17:30 WIB<br />
+                24/7 Vessel AIS Monitoring &amp; Offshore Dispatch
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-container">
+    <div class="container">
       <div class="footer-grid">
-        <div class="footer-left-col">
-          <a href="index.html" class="footer-brand-link" aria-label="TRUST Corporation Home" style="display:inline-block !important; text-decoration:none !important; flex-shrink:0 !important;">
-            <img src="asset/logo-trust.png" alt="TRUST Corporation" class="footer-logo-img" width="102" height="38" style="display:block !important; height:38px !important; max-height:38px !important; width:auto !important; max-width:130px !important; object-fit:contain !important;" />
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-brand-logo" aria-label="TRUST Corporation Home" style="display:inline-flex !important; align-items:center !important; margin-bottom: 20px !important;">
+            <img src="asset/logo-trust.png" alt="TRUST EADYRA LINE" class="footer-logo-img" width="130" height="48" style="display:block !important; height:48px !important; width:auto !important; max-width:160px !important; object-fit:contain !important;" />
           </a>
-          
-          <div class="footer-quick-links">
-            <h4 class="footer-links-title">Quick Links</h4>
-            <ul class="footer-nav-list">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="industries.html">Industries</a></li>
-              <li><a href="fleet.html">Fleet</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
+          <p class="footer-brand-desc">
+            PT. Trust Eadyra Line delivers integrated marine logistics, tug &amp; barge chartering, bulk cargo transshipment, offshore DST well testing support, and certified ship management across Indonesia and international waters.
+          </p>
+          <div class="footer-social-row">
+            <a href="#" class="footer-social-link" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
           </div>
-
-          <div class="footer-legal-row">
-            <a href="#">Privacy Policy</a>
-            <span class="legal-separator">|</span>
-            <a href="#">Terms And Conditions</a>
-          </div>
-
-          <p class="footer-copyright">© 2026 PT. Trust Eadyra Line (TRUST Corporation). All rights reserved.</p>
         </div>
 
-        <div class="footer-right-col">
-          <div class="footer-contact-info-row">
-            <div class="footer-contact-box">
-              <span class="footer-box-label">Phone</span>
-              <p class="footer-box-val">(021)-7592-0000</p>
-            </div>
-            <div class="footer-contact-box">
-              <span class="footer-box-label">Email</span>
-              <p class="footer-box-val">operational@trusteadyraline.com</p>
-            </div>
-          </div>
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="fleet.html">Fleet</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
 
-                    <div class="footer-newsletter-wrap">
-            <h3 class="newsletter-title">PT. Trust Eadyra Line</h3>
-            <p style="color: #94a3b8; font-size: 14px; line-height: 1.6; margin-top: 10px;">
-              Integrated marine logistics, large-scale bulk cargo ocean barging, and offshore engineering support with international safety standards across Indonesia.
-            </p>
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Our Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="services.html#service-01">Tug &amp; Barge Chartering</a></li>
+            <li><a href="services.html#service-02">Bulk Transshipment</a></li>
+            <li><a href="services.html#service-03">Offshore DST Well Testing</a></li>
+            <li><a href="services.html#service-04">Integrated Ship Management</a></li>
+            <li><a href="services.html#service-05">Marine Infrastructure &amp; Shore Base</a></li>
+            <li><a href="services.html#service-06">Emergency Salvage Assistance</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading">Contact &amp; Operations</h4>
+          <div class="footer-contact-info" style="color: #94a3b8; font-size: 14px; line-height: 1.6;">
+            <p style="margin-bottom: 12px;"><strong style="color:#ffffff;">Head Office:</strong><br />CEO Building, 7th Floor, Jl. TB Simatupang No. 18C, West Cilandak, South Jakarta 12430</p>
+            <p style="margin-bottom: 12px;"><strong style="color:#ffffff;">Operations Phone:</strong><br /><a href="tel:+622175920000" style="color:#ffffff; text-decoration:none;">+62 (021) 7592-0000</a></p>
+            <p style="margin-bottom: 12px;"><strong style="color:#ffffff;">Direct Email:</strong><br /><a href="mailto:operational@trusteadyraline.com" style="color:#ffffff; text-decoration:none;">operational@trusteadyraline.com</a></p>
+            <p style="margin: 0;"><strong style="color:#ffffff;">Monitoring:</strong><br />24/7 Vessel AIS &amp; Offshore Dispatch</p>
           </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">&copy; 2026 PT. Trust Eadyra Line (TRUST Corporation). All Rights Reserved.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Safety &amp; Compliance</a>
         </div>
       </div>
     </div>
