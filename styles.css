@@ -3058,6 +3058,8 @@ img.footer-logo-img {
   justify-content: center;
   transition: all 0.25s ease;
   margin-top: auto;
+  text-decoration: none !important;
+  cursor: pointer !important;
 }
 
 .blog-circle-btn svg {
