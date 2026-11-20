@@ -3754,18 +3754,19 @@ textarea.form-field-input {
 /* CTA Section */
 .industries-cta-section {
   padding: 90px 0;
-  background: linear-gradient(135deg, #111113 0%, #1e293b 100%);
-  color: #ffffff;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  color: #0f172a;
 }
 
 .eyebrow-light {
-  color: #f87171 !important;
+  color: #9e0013 !important;
 }
 
 .cta-title {
   font-size: 38px;
   font-weight: 800;
-  color: #ffffff;
+  color: #0f172a;
   margin-bottom: 16px;
   letter-spacing: -0.01em;
 }
@@ -3773,7 +3774,7 @@ textarea.form-field-input {
 .cta-subtitle {
   font-size: 16px;
   line-height: 1.6;
-  color: #cbd5e1;
+  color: #475569;
   max-width: 680px;
   margin: 0 auto 36px;
 }
@@ -3792,17 +3793,17 @@ textarea.form-field-input {
   padding: 14px 28px;
   font-size: 14px;
   font-weight: 700;
-  color: #ffffff;
+  color: #0f172a;
   background: transparent;
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border: 1.5px solid #0f172a;
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.25s ease;
 }
 
 .btn-outline-light:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: #ffffff;
+  background: #0f172a;
+  color: #ffffff;
 }
 
 /* Responsive */
@@ -3839,6 +3840,39 @@ textarea.form-field-input {
   .cta-buttons-wrap .btn {
     width: 100%;
   }
+}
+
+.partners-title-wrap {
+  margin-bottom: 18px;
+}
+
+.partners-eyebrow {
+  margin-bottom: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.marquee-brand-item img {
+  height: 42px !important;
+  max-height: 42px !important;
+  width: auto !important;
+  max-width: 170px !important;
+  object-fit: contain !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+.elementor-trust-wrapper .marquee-brand-item img {
+  height: 42px !important;
+  max-height: 42px !important;
+  width: auto !important;
+  max-width: 170px !important;
+  display: block !important;
+  object-fit: contain !important;
+  opacity: 1 !important;
 }
 
 
@@ -3906,6 +3940,9 @@ textarea.form-field-input {
 
     <!-- CLIENTS & STRATEGIC PARTNERS BRAND CAROUSEL (LOGOS ONLY) -->
     <div class="partners-marquee-section" id="partners" aria-label="Trusted by leading industry partners">
+      <div class="container text-center partners-title-wrap">
+        <span class="eyebrow partners-eyebrow">TRUSTED BY GLOBAL ENERGY &amp; MARINE LEADERS</span>
+      </div>
       <div class="marquee-track">
         <div class="marquee-group">
           <div class="marquee-brand-item"><img src="https://htzaml-01.github.io/trust/asset/brand_logos/pertamina.svg" alt="Pertamina" loading="lazy"></div>
@@ -4083,73 +4120,6 @@ textarea.form-field-input {
 
             <div class="about-cta-wrap">
               <a href="about.html" class="btn btn-primary btn-about">About Us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY US BANNER (FULL-BLEED PHOTO + STATS) -->
-    <section class="banner-why-us" id="why-us">
-      <div class="banner-why-overlay"></div>
-      <div class="container banner-why-container">
-        <div class="banner-why-grid">
-          <div class="banner-why-left">
-            <span class="banner-why-eyebrow">Why US</span>
-            <h2 class="banner-why-title">A Reliable Logistics Partner You Can Trust</h2>
-            <p class="banner-why-desc">
-              We combine smart logistics planning with real-time visibility to keep your shipments moving smoothly. Faster deliveries, fewer delays, and dependable results.
-            </p>
-            <a href="#contact" class="circle-action-btn" aria-label="Why Choose TRUST Logistics">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
-            </a>
-          </div>
-
-          <div class="banner-why-right">
-            <div class="banner-why-certs-grid">
-              <!-- CERTIFICATE 1: ISO 9001 -->
-              <div class="banner-cert-box">
-                <div class="cert-box-logo">
-                  <img src="https://htzaml-01.github.io/trust/asset/logos/iso-9001.png" alt="ISO 9001:2008 Certified" loading="lazy">
-                </div>
-                <div class="cert-box-content">
-                  <div class="cert-box-title">ISO 9001:2008</div>
-                  <div class="cert-box-sub">Quality Management System</div>
-                </div>
-              </div>
-
-              <!-- CERTIFICATE 2: ISO 14001 -->
-              <div class="banner-cert-box">
-                <div class="cert-box-logo">
-                  <img src="https://htzaml-01.github.io/trust/asset/logos/iso-14001.png" alt="ISO 14001:2004 Environmental" loading="lazy">
-                </div>
-                <div class="cert-box-content">
-                  <div class="cert-box-title">ISO 14001:2004</div>
-                  <div class="cert-box-sub">Environmental Management</div>
-                </div>
-              </div>
-
-              <!-- CERTIFICATE 3: OHSAS 18001 -->
-              <div class="banner-cert-box">
-                <div class="cert-box-logo">
-                  <img src="https://htzaml-01.github.io/trust/asset/logos/ohsas-18001.png" alt="OHSAS 18001 Health & Safety" loading="lazy">
-                </div>
-                <div class="cert-box-content">
-                  <div class="cert-box-title">OHSAS 18001</div>
-                  <div class="cert-box-sub">Occupational Health &amp; Safety</div>
-                </div>
-              </div>
-
-              <!-- CERTIFICATE 4: IMO ISM CODE & SKT MIGAS -->
-              <div class="banner-cert-box">
-                <div class="cert-box-logo">
-                  <img src="https://htzaml-01.github.io/trust/asset/logos/imo.png" alt="IMO ISM Code & SKT Migas" loading="lazy">
-                </div>
-                <div class="cert-box-content">
-                  <div class="cert-box-title">IMO ISM Code</div>
-                  <div class="cert-box-sub">Maritime Safety &amp; SKT Migas</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -4420,7 +4390,7 @@ textarea.form-field-input {
       <div class="footer-grid">
         <div class="footer-left-col">
           <a href="#hero" class="footer-brand-link" aria-label="TRUST Corporation Home" style="display:inline-block !important; text-decoration:none !important; flex-shrink:0 !important;">
-            <img src="https://htzaml-01.github.io/trust/asset/logo-trust-white.png" alt="TRUST Corporation" class="footer-logo-img" width="102" height="38" style="display:block !important; height:38px !important; max-height:38px !important; width:auto !important; max-width:130px !important; object-fit:contain !important;" />
+            <img src="https://htzaml-01.github.io/trust/asset/logo-trust.png" alt="TRUST Corporation" class="footer-logo-img" width="102" height="38" style="display:block !important; height:38px !important; max-height:38px !important; width:auto !important; max-width:130px !important; object-fit:contain !important;" />
           </a>
           
           <div class="footer-quick-links">
