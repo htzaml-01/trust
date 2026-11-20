@@ -52,6 +52,48 @@ Note: Footer is separated in elementor-footer.html
   display: block !important;
 }
 
+
+/* Elementor Strict Marquee Protection */
+.elementor-trust-wrapper .section-brand-carousel,
+.elementor-trust-wrapper .partners-marquee-section {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+}
+.elementor-trust-wrapper .partners-marquee-section::-webkit-scrollbar {
+  display: none !important;
+}
+.elementor-trust-wrapper .marquee-track {
+  display: flex !important;
+  width: max-content !important;
+  overflow: visible !important;
+}
+.elementor-trust-wrapper .marquee-group {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+.elementor-trust-wrapper .marquee-brand-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 42px !important;
+  height: 52px !important;
+  flex-shrink: 0 !important;
+}
+.elementor-trust-wrapper .marquee-brand-item img {
+  height: 38px !important;
+  max-height: 42px !important;
+  width: auto !important;
+  max-width: 160px !important;
+  object-fit: contain !important;
+  opacity: 1 !important;
+  filter: none !important;
+  display: block !important;
+}
+
 /* Protection for Client Logos */
 .elementor-trust-wrapper .client-logo-item img,
 .elementor-trust-wrapper .marquee-brand-item img {
@@ -3864,6 +3906,91 @@ textarea.form-field-input {
   opacity: 1 !important;
 }
 
+/* Marquee & Brand Carousel Enhancements */
+.section-brand-carousel {
+  position: relative;
+  width: 100%;
+}
+
+.partners-marquee-section {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-track {
+  display: flex !important;
+  width: max-content !important;
+  animation: marqueeScroll 26s linear infinite !important;
+  will-change: transform !important;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused !important;
+}
+
+.marquee-group {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+.marquee-brand-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 36px !important;
+  height: 52px !important;
+  flex-shrink: 0 !important;
+}
+
+.marquee-brand-item img {
+  height: 38px !important;
+  max-height: 42px !important;
+  width: auto !important;
+  max-width: 160px !important;
+  object-fit: contain !important;
+  opacity: 1 !important;
+  filter: none !important;
+  display: block !important;
+  transition: transform 0.25s ease !important;
+}
+
+.marquee-brand-item:hover img {
+  transform: scale(1.08) !important;
+}
+
+/* STRICT NO SCROLLBAR & OVERFLOW HIDDEN FOR CAROUSEL */
+.section-brand-carousel,
+.partners-marquee-section {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.section-brand-carousel::-webkit-scrollbar,
+.partners-marquee-section::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.marquee-track {
+  display: flex !important;
+  width: max-content !important;
+  overflow: visible !important;
+  cursor: grab;
+}
+
+.marquee-track:active {
+  cursor: grabbing;
+}
+
 
 </style>
 
@@ -4153,6 +4280,51 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Autoplay muted playback initiated:', err);
     });
   }
+
+  // 7. BULLETPROOF INFINITE MARQUEE CAROUSEL RUNNER
+  function initMarqueeCarousel() {
+    const marquees = document.querySelectorAll('.partners-marquee-section');
+    marquees.forEach(section => {
+      const track = section.querySelector('.marquee-track');
+      if (!track || track.dataset.marqueeInitialized) return;
+      track.dataset.marqueeInitialized = 'true';
+
+      // Ensure no CSS animation conflicts with smooth JS runner
+      track.style.animation = 'none';
+      track.style.webkitAnimation = 'none';
+
+      const firstGroup = track.querySelector('.marquee-group');
+      if (!firstGroup) return;
+
+      let pos = 0;
+      let paused = false;
+      const speed = 0.9; // Smooth continuous scroll speed
+
+      track.addEventListener('mouseenter', () => { paused = true; });
+      track.addEventListener('mouseleave', () => { paused = false; });
+      track.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+      track.addEventListener('touchend', () => { paused = false; }, { passive: true });
+
+      function step() {
+        if (!paused) {
+          pos += speed;
+          const groupWidth = firstGroup.offsetWidth;
+          if (groupWidth > 0 && pos >= groupWidth) {
+            pos = 0;
+          }
+          track.style.transform = 'translate3d(-' + pos + 'px, 0, 0)';
+          track.style.webkitTransform = 'translate3d(-' + pos + 'px, 0, 0)';
+        }
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  // Initialize immediately and after window loads (ensuring all SVG dimensions are ready)
+  initMarqueeCarousel();
+  window.addEventListener('load', initMarqueeCarousel);
+
 });
 
 })();

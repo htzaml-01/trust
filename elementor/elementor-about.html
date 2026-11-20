@@ -52,6 +52,48 @@ Note: Footer is separated in elementor-footer.html
   display: block !important;
 }
 
+
+/* Elementor Strict Marquee Protection */
+.elementor-trust-wrapper .section-brand-carousel,
+.elementor-trust-wrapper .partners-marquee-section {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+}
+.elementor-trust-wrapper .partners-marquee-section::-webkit-scrollbar {
+  display: none !important;
+}
+.elementor-trust-wrapper .marquee-track {
+  display: flex !important;
+  width: max-content !important;
+  overflow: visible !important;
+}
+.elementor-trust-wrapper .marquee-group {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+.elementor-trust-wrapper .marquee-brand-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 42px !important;
+  height: 52px !important;
+  flex-shrink: 0 !important;
+}
+.elementor-trust-wrapper .marquee-brand-item img {
+  height: 38px !important;
+  max-height: 42px !important;
+  width: auto !important;
+  max-width: 160px !important;
+  object-fit: contain !important;
+  opacity: 1 !important;
+  filter: none !important;
+  display: block !important;
+}
+
 /* Protection for Client Logos */
 .elementor-trust-wrapper .client-logo-item img,
 .elementor-trust-wrapper .marquee-brand-item img {
@@ -3864,6 +3906,91 @@ textarea.form-field-input {
   opacity: 1 !important;
 }
 
+/* Marquee & Brand Carousel Enhancements */
+.section-brand-carousel {
+  position: relative;
+  width: 100%;
+}
+
+.partners-marquee-section {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-track {
+  display: flex !important;
+  width: max-content !important;
+  animation: marqueeScroll 26s linear infinite !important;
+  will-change: transform !important;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused !important;
+}
+
+.marquee-group {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+.marquee-brand-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 36px !important;
+  height: 52px !important;
+  flex-shrink: 0 !important;
+}
+
+.marquee-brand-item img {
+  height: 38px !important;
+  max-height: 42px !important;
+  width: auto !important;
+  max-width: 160px !important;
+  object-fit: contain !important;
+  opacity: 1 !important;
+  filter: none !important;
+  display: block !important;
+  transition: transform 0.25s ease !important;
+}
+
+.marquee-brand-item:hover img {
+  transform: scale(1.08) !important;
+}
+
+/* STRICT NO SCROLLBAR & OVERFLOW HIDDEN FOR CAROUSEL */
+.section-brand-carousel,
+.partners-marquee-section {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.section-brand-carousel::-webkit-scrollbar,
+.partners-marquee-section::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.marquee-track {
+  display: flex !important;
+  width: max-content !important;
+  overflow: visible !important;
+  cursor: grab;
+}
+
+.marquee-track:active {
+  cursor: grabbing;
+}
+
 
 </style>
 
@@ -3872,8 +3999,10 @@ textarea.form-field-input {
 <!-- STICKY NAVBAR (SOLID WHITE FOR WHITE-TOP PAGE) -->
   <header class="site-header header-solid" id="siteHeader">
     <div class="header-container">
-      <a href="index.html" class="brand-logo" aria-label="TRUST Corporation Home" style="display:inline-flex !important; align-items:center !important; text-decoration:none !important; flex-shrink:0 !important;">
-        <img src="https://htzaml-01.github.io/trust/asset/logo-trust.png" alt="TRUST EADYRA LINE" class="logo-img" width="102" height="38" style="display:block !important; height:38px !important; max-height:38px !important; width:auto !important; max-width:130px !important; object-fit:contain !important;" />
+      <a href="index.html" class="brand-logo" aria-label="TRUST Corporation Home"
+        style="display:inline-flex !important; align-items:center !important; text-decoration:none !important; flex-shrink:0 !important;">
+        <img src="https://htzaml-01.github.io/trust/asset/logo-trust.png" alt="TRUST EADYRA LINE" class="logo-img" width="102" height="38"
+          style="display:block !important; height:38px !important; max-height:38px !important; width:auto !important; max-width:130px !important; object-fit:contain !important;" />
       </a>
 
       <div class="header-right">
@@ -3915,10 +4044,16 @@ textarea.form-field-input {
 
           <div class="about-intro-desc-grid">
             <p class="about-desc-p">
-              PT. Trust Eadyra Line (TRUST Corporation) is an integrated maritime logistics and offshore support company established in 2010 in Jakarta, Indonesia. Dedicated to service excellence, we deliver large-scale ocean bulk cargo transportation, a reliable fleet of tugboats &amp; 300ft barges, and international-standard offshore well testing support.
+              PT. Trust Eadyra Line (TRUST Corporation) is an integrated maritime logistics and offshore support company
+              established in 2010 in Jakarta, Indonesia. Dedicated to service excellence, we deliver large-scale ocean
+              bulk cargo transportation, a reliable fleet of tugboats &amp; 300ft barges, and international-standard
+              offshore well testing support.
             </p>
             <p class="about-desc-p">
-              Guided by our motto "Innovate &amp; Transform to Deliver", we combine seasoned maritime expertise with world-class safety certifications (BKI, ABS, ISO, IMO ISM Code). Through strategic alliances with industry leaders Schlumberger and Svitzer, TRUST is committed to keeping national energy and industrial supply chains moving forward seamlessly.
+              Guided by our motto "Innovate &amp; Transform to Deliver", we combine seasoned maritime expertise with
+              world-class safety certifications (BKI, ABS, ISO, IMO ISM Code). Through strategic alliances with industry
+              leaders Schlumberger and Svitzer, TRUST is committed to keeping national energy and industrial supply
+              chains moving forward seamlessly.
             </p>
           </div>
         </div>
@@ -3926,10 +4061,12 @@ textarea.form-field-input {
         <!-- 2 SIDE-BY-SIDE MEDIA BOXES (VIDEO + IMAGE) -->
         <div class="about-media-grid">
           <div class="about-media-box">
-            <video src="https://htzaml-01.github.io/trust/asset/about/hero-train-video.mp4" class="about-media-video" autoplay loop muted playsinline></video>
+            <video src="https://htzaml-01.github.io/trust/asset/about/hero-train-video.mp4" class="about-media-video" autoplay loop muted
+              playsinline></video>
           </div>
           <div class="about-media-box">
-            <img src="https://htzaml-01.github.io/trust/asset/about/hero-crane-sunset.png" alt="Harbor gantry crane container operations" class="about-media-img" loading="lazy" />
+            <img src="https://htzaml-01.github.io/trust/asset/about/hero-crane-sunset.png" alt="Harbor gantry crane container operations"
+              class="about-media-img" loading="lazy" />
           </div>
         </div>
       </div>
@@ -3950,7 +4087,8 @@ textarea.form-field-input {
 
         <div class="about-values-content-grid">
           <div class="about-values-media-box">
-            <img src="https://htzaml-01.github.io/trust/asset/about/values-industrial-facility.png" alt="Industrial logistics & storage terminal" loading="lazy" />
+            <img src="https://htzaml-01.github.io/trust/asset/about/values-industrial-facility.png" alt="Industrial logistics & storage terminal"
+              loading="lazy" />
           </div>
 
           <div class="values-four-grid">
@@ -3958,13 +4096,14 @@ textarea.form-field-input {
             <div class="value-item">
               <div class="value-icon-badge">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z" fill="#ffffff"/>
-                  <path d="M10 15.5l-3.5-3.5 1.41-1.41L10 12.67l6.09-6.09L17.5 8l-7.5 7.5z" fill="#940e11"/>
+                  <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z" fill="#ffffff" />
+                  <path d="M10 15.5l-3.5-3.5 1.41-1.41L10 12.67l6.09-6.09L17.5 8l-7.5 7.5z" fill="#940e11" />
                 </svg>
               </div>
               <h3 class="value-item-title">Innovation &amp; Speed</h3>
               <p class="value-item-desc">
-                Deploying cutting-edge maritime technologies and voyage route efficiencies to keep industrial supply chains agile, swift, and dependable.
+                Deploying cutting-edge maritime technologies and voyage route efficiencies to keep industrial supply
+                chains agile, swift, and dependable.
               </p>
             </div>
 
@@ -3972,13 +4111,14 @@ textarea.form-field-input {
             <div class="value-item">
               <div class="value-icon-badge">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z" fill="#ffffff"/>
-                  <path d="M10 15.5l-3.5-3.5 1.41-1.41L10 12.67l6.09-6.09L17.5 8l-7.5 7.5z" fill="#940e11"/>
+                  <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z" fill="#ffffff" />
+                  <path d="M10 15.5l-3.5-3.5 1.41-1.41L10 12.67l6.09-6.09L17.5 8l-7.5 7.5z" fill="#940e11" />
                 </svg>
               </div>
               <h3 class="value-item-title">Safety &amp; Zero Accident</h3>
               <p class="value-item-desc">
-                An unwavering commitment to workplace safety (Zero Accident), directly overseen by the Board of Directors and certified under OHSAS 18001 and IMO ISM Code.
+                An unwavering commitment to workplace safety (Zero Accident), directly overseen by the Board of
+                Directors and certified under OHSAS 18001 and IMO ISM Code.
               </p>
             </div>
 
@@ -3986,13 +4126,14 @@ textarea.form-field-input {
             <div class="value-item">
               <div class="value-icon-badge">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z" fill="#ffffff"/>
-                  <path d="M10 15.5l-3.5-3.5 1.41-1.41L10 12.67l6.09-6.09L17.5 8l-7.5 7.5z" fill="#940e11"/>
+                  <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z" fill="#ffffff" />
+                  <path d="M10 15.5l-3.5-3.5 1.41-1.41L10 12.67l6.09-6.09L17.5 8l-7.5 7.5z" fill="#940e11" />
                 </svg>
               </div>
               <h3 class="value-item-title">Integrity &amp; Unity</h3>
               <p class="value-item-desc">
-                Upholding enduring business ethics, robust corporate governance (GCG), and collaborative synergy alongside our strategic global partners and clients.
+                Upholding enduring business ethics, robust corporate governance (GCG), and collaborative synergy
+                alongside our strategic global partners and clients.
               </p>
             </div>
 
@@ -4000,13 +4141,14 @@ textarea.form-field-input {
             <div class="value-item">
               <div class="value-icon-badge">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z" fill="#ffffff"/>
-                  <path d="M10 15.5l-3.5-3.5 1.41-1.41L10 12.67l6.09-6.09L17.5 8l-7.5 7.5z" fill="#940e11"/>
+                  <path d="M12 2L3 6v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V6l-9-4z" fill="#ffffff" />
+                  <path d="M10 15.5l-3.5-3.5 1.41-1.41L10 12.67l6.09-6.09L17.5 8l-7.5 7.5z" fill="#940e11" />
                 </svg>
               </div>
               <h3 class="value-item-title">Operational Reliability</h3>
               <p class="value-item-desc">
-                Ensuring mission-ready fleets with scheduled dry-docking maintenance, proactive technical management, and compliance with official BKI and ABS classifications.
+                Ensuring mission-ready fleets with scheduled dry-docking maintenance, proactive technical management,
+                and compliance with official BKI and ABS classifications.
               </p>
             </div>
           </div>
@@ -4021,7 +4163,8 @@ textarea.form-field-input {
           <span class="about-team-eyebrow">Our Team</span>
           <h2 class="about-team-title">Our Dedicated Team</h2>
           <p class="about-team-subtitle">
-            A dedicated team of seasoned maritime professionals, certified nautical officers, and marine engineering specialists committed to the operational excellence of every voyage.
+            A dedicated team of seasoned maritime professionals, certified nautical officers, and marine engineering
+            specialists committed to the operational excellence of every voyage.
           </p>
         </div>
 
@@ -4257,6 +4400,51 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Autoplay muted playback initiated:', err);
     });
   }
+
+  // 7. BULLETPROOF INFINITE MARQUEE CAROUSEL RUNNER
+  function initMarqueeCarousel() {
+    const marquees = document.querySelectorAll('.partners-marquee-section');
+    marquees.forEach(section => {
+      const track = section.querySelector('.marquee-track');
+      if (!track || track.dataset.marqueeInitialized) return;
+      track.dataset.marqueeInitialized = 'true';
+
+      // Ensure no CSS animation conflicts with smooth JS runner
+      track.style.animation = 'none';
+      track.style.webkitAnimation = 'none';
+
+      const firstGroup = track.querySelector('.marquee-group');
+      if (!firstGroup) return;
+
+      let pos = 0;
+      let paused = false;
+      const speed = 0.9; // Smooth continuous scroll speed
+
+      track.addEventListener('mouseenter', () => { paused = true; });
+      track.addEventListener('mouseleave', () => { paused = false; });
+      track.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+      track.addEventListener('touchend', () => { paused = false; }, { passive: true });
+
+      function step() {
+        if (!paused) {
+          pos += speed;
+          const groupWidth = firstGroup.offsetWidth;
+          if (groupWidth > 0 && pos >= groupWidth) {
+            pos = 0;
+          }
+          track.style.transform = 'translate3d(-' + pos + 'px, 0, 0)';
+          track.style.webkitTransform = 'translate3d(-' + pos + 'px, 0, 0)';
+        }
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  // Initialize immediately and after window loads (ensuring all SVG dimensions are ready)
+  initMarqueeCarousel();
+  window.addEventListener('load', initMarqueeCarousel);
+
 });
 
 })();

@@ -183,4 +183,49 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Autoplay muted playback initiated:', err);
     });
   }
+
+  // 7. BULLETPROOF INFINITE MARQUEE CAROUSEL RUNNER
+  function initMarqueeCarousel() {
+    const marquees = document.querySelectorAll('.partners-marquee-section');
+    marquees.forEach(section => {
+      const track = section.querySelector('.marquee-track');
+      if (!track || track.dataset.marqueeInitialized) return;
+      track.dataset.marqueeInitialized = 'true';
+
+      // Ensure no CSS animation conflicts with smooth JS runner
+      track.style.animation = 'none';
+      track.style.webkitAnimation = 'none';
+
+      const firstGroup = track.querySelector('.marquee-group');
+      if (!firstGroup) return;
+
+      let pos = 0;
+      let paused = false;
+      const speed = 0.9; // Smooth continuous scroll speed
+
+      track.addEventListener('mouseenter', () => { paused = true; });
+      track.addEventListener('mouseleave', () => { paused = false; });
+      track.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+      track.addEventListener('touchend', () => { paused = false; }, { passive: true });
+
+      function step() {
+        if (!paused) {
+          pos += speed;
+          const groupWidth = firstGroup.offsetWidth;
+          if (groupWidth > 0 && pos >= groupWidth) {
+            pos = 0;
+          }
+          track.style.transform = 'translate3d(-' + pos + 'px, 0, 0)';
+          track.style.webkitTransform = 'translate3d(-' + pos + 'px, 0, 0)';
+        }
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  // Initialize immediately and after window loads (ensuring all SVG dimensions are ready)
+  initMarqueeCarousel();
+  window.addEventListener('load', initMarqueeCarousel);
+
 });
