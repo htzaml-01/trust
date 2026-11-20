@@ -484,19 +484,15 @@ body.admin-bar .mobile-nav-backdrop {
 
   let lastToggleTime = 0;
   function toggleMobileNav(e) {
-    const now = Date.now();
-    if (now - lastToggleTime < 350) {
-      if (e) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-      return;
-    }
-    lastToggleTime = now;
     if (e) {
       e.preventDefault();
       e.stopPropagation();
+      if (e.stopImmediatePropagation) e.stopImmediatePropagation();
     }
+    const now = Date.now();
+    if (now - lastToggleTime < 350) return;
+    lastToggleTime = now;
+
     if (navMenu?.classList.contains('open')) {
       closeMobileNav();
     } else {
@@ -505,8 +501,9 @@ body.admin-bar .mobile-nav-backdrop {
   }
 
   if (mobileToggle) {
-    mobileToggle.addEventListener('click', toggleMobileNav);
-    mobileToggle.addEventListener('touchend', toggleMobileNav, { passive: false });
+    // capture: true intercepts the click FIRST and terminates duplicate listeners with stopImmediatePropagation
+    mobileToggle.addEventListener('click', toggleMobileNav, { capture: true });
+    mobileToggle.addEventListener('touchend', toggleMobileNav, { capture: true, passive: false });
   }
 
   if (navBackdrop) {

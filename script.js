@@ -43,19 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let lastToggleTime = 0;
   function toggleMobileNav(e) {
-    const now = Date.now();
-    if (now - lastToggleTime < 350) {
-      if (e) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-      return;
-    }
-    lastToggleTime = now;
     if (e) {
       e.preventDefault();
       e.stopPropagation();
+      if (e.stopImmediatePropagation) e.stopImmediatePropagation();
     }
+    const now = Date.now();
+    if (now - lastToggleTime < 350) return;
+    lastToggleTime = now;
+
     const isCurrentlyOpen = navMenu?.classList.contains('open');
     if (isCurrentlyOpen) {
       closeMobileNav();
@@ -65,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (mobileToggle) {
-    mobileToggle.addEventListener('click', toggleMobileNav);
-    mobileToggle.addEventListener('touchend', toggleMobileNav, { passive: false });
+    mobileToggle.addEventListener('click', toggleMobileNav, { capture: true });
+    mobileToggle.addEventListener('touchend', toggleMobileNav, { capture: true, passive: false });
   }
 
   if (navBackdrop) {

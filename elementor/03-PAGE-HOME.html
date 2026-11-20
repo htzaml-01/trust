@@ -5956,127 +5956,16 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button {
   </main>
 </div>
 
-<!-- Interactive Scripts (FAQ Accordion, Marquee, Video Autoplay, Forms) -->
+<!-- Interactive Content Scripts (FAQ Accordion, Marquee Carousel, Forms - Header Excluded) -->
 <script>
 (function() {
-/**
- * TRUST CORPORATION - INTERACTIONS
- * Sticky Navbar Handler | FAQ Accordion | Forms
- */
-
-document.addEventListener('DOMContentLoaded', () => {
-  // 1. STICKY NAVBAR ON SCROLL
-  const header = document.getElementById('siteHeader');
-  
-  function handleScroll() {
-    if (!header) return;
-    if (window.scrollY > 40) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  }
-
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  window.addEventListener('touchmove', handleScroll, { passive: true });
-  handleScroll(); // Trigger initial state
-
-  // 2. MOBILE MENU TOGGLE
-  const mobileToggle = document.getElementById('mobileToggle');
-  const navMenu = document.getElementById('navMenu');
-  const navBackdrop = document.getElementById('navBackdrop');
-
-  function closeMobileNav() {
-    navMenu?.classList.remove('open');
-    mobileToggle?.classList.remove('active');
-    header?.classList.remove('nav-open');
-    navBackdrop?.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  function openMobileNav() {
-    navMenu?.classList.add('open');
-    mobileToggle?.classList.add('active');
-    header?.classList.add('nav-open');
-    navBackdrop?.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  let lastToggleTime = 0;
-  function toggleMobileNav(e) {
-    const now = Date.now();
-    if (now - lastToggleTime < 350) {
-      if (e) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-      return;
-    }
-    lastToggleTime = now;
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    const isCurrentlyOpen = navMenu?.classList.contains('open');
-    if (isCurrentlyOpen) {
-      closeMobileNav();
-    } else {
-      openMobileNav();
-    }
-  }
-
-  if (mobileToggle) {
-    mobileToggle.addEventListener('click', toggleMobileNav);
-    mobileToggle.addEventListener('touchend', toggleMobileNav, { passive: false });
-  }
-
-  if (navBackdrop) {
-    navBackdrop.addEventListener('click', (e) => {
-      e.preventDefault();
-      closeMobileNav();
-    });
-    navBackdrop.addEventListener('touchend', (e) => {
-      e.preventDefault();
-      closeMobileNav();
-    }, { passive: false });
-  }
-
-  // Close mobile nav when clicking a link
-  navMenu?.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', closeMobileNav);
-  });
-
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navMenu?.classList.contains('open')) {
-      closeMobileNav();
-    }
-  });
-
-  // Query parameter support for testing / headless screenshot
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.has('menu')) {
-    toggleMobileNav();
-  }
-  if (urlParams.has('scrolled')) {
-    header?.classList.add('scrolled');
-  }
-  const scrollTarget = urlParams.get('scroll');
-  if (scrollTarget) {
-    const targetEl = document.getElementById(scrollTarget);
-    if (targetEl) {
-      targetEl.scrollIntoView({ behavior: 'instant' });
-      handleScroll();
-    }
-  }
-
-  // 3. FAQ ACCORDION (1 open at a time or toggle)
+  // 1. FAQ ACCORDION (1 open at a time or toggle)
   const accordionItems = document.querySelectorAll('.accordion-item');
-
   accordionItems.forEach(item => {
     const headerBtn = item.querySelector('.accordion-header');
     if (headerBtn) {
-      headerBtn.addEventListener('click', () => {
+      headerBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         const isActive = item.classList.contains('active');
 
         // Close all other accordion items
@@ -6099,59 +5988,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 4. CONTACT FORM SUBMISSION FEEDBACK
-  const contactForm = document.getElementById('contactForm');
-  const formStatus = document.getElementById('formStatus');
-
-  if (contactForm && formStatus) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Submitting...';
-      submitBtn.disabled = true;
-
-      setTimeout(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        formStatus.textContent = 'Thank you! Your interest has been submitted successfully. Our team will contact you shortly.';
-        formStatus.className = 'form-status success';
-        formStatus.style.display = 'block';
-        contactForm.reset();
-
-        setTimeout(() => {
-          formStatus.style.display = 'none';
-        }, 6000);
-      }, 700);
-    });
-  }
-
-  // 5. NEWSLETTER FORM FEEDBACK
-  const newsletterForm = document.getElementById('newsletterForm');
-  const newsletterStatus = document.getElementById('newsletterStatus');
-
-  if (newsletterForm && newsletterStatus) {
-    newsletterForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      newsletterStatus.textContent = 'Thank you for subscribing to our industry newsletter!';
-      newsletterStatus.style.display = 'block';
-      newsletterForm.reset();
-
-      setTimeout(() => {
-        newsletterStatus.style.display = 'none';
-      }, 5000);
-    });
-  }
-
-  // 6. VIDEO AUTOPLAY FALLBACK
-  const heroVideo = document.querySelector('.hero-video-bg');
-  if (heroVideo) {
-    heroVideo.play().catch(err => {
-      console.log('Autoplay muted playback initiated:', err);
-    });
-  }
-
-  // 7. BULLETPROOF INFINITE MARQUEE CAROUSEL RUNNER
+  // 2. BULLETPROOF INFINITE MARQUEE CAROUSEL RUNNER
   function initMarqueeCarousel() {
     const marquees = document.querySelectorAll('.partners-marquee-section');
     marquees.forEach(section => {
@@ -6159,16 +5996,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!track || track.dataset.marqueeInitialized) return;
       track.dataset.marqueeInitialized = 'true';
 
-      // Ensure no CSS animation conflicts with smooth JS runner
-      track.style.animation = 'none';
-      track.style.webkitAnimation = 'none';
+      const groups = track.querySelectorAll('.marquee-group');
+      if (groups.length === 1) {
+        track.appendChild(groups[0].cloneNode(true));
+      }
 
-      const firstGroup = track.querySelector('.marquee-group');
-      if (!firstGroup) return;
-
-      let pos = 0;
       let paused = false;
-      const speed = 0.9; // Smooth continuous scroll speed
+      let pos = 0;
+      const speed = 0.9;
 
       track.addEventListener('mouseenter', () => { paused = true; });
       track.addEventListener('mouseleave', () => { paused = false; });
@@ -6178,26 +6013,22 @@ document.addEventListener('DOMContentLoaded', () => {
       function step() {
         if (!paused) {
           pos += speed;
-          const groupWidth = firstGroup.offsetWidth;
-          if (groupWidth > 0 && pos >= groupWidth) {
-            pos = 0;
+          const firstGroup = track.querySelector('.marquee-group');
+          const groupWidth = firstGroup ? firstGroup.offsetWidth : 1200;
+          if (pos >= groupWidth) {
+            pos -= groupWidth;
           }
-          track.style.transform = 'translate3d(-' + pos + 'px, 0, 0)';
-          track.style.webkitTransform = 'translate3d(-' + pos + 'px, 0, 0)';
+          track.style.transform = 'translate3d(' + (-pos) + 'px, 0, 0)';
         }
         requestAnimationFrame(step);
       }
       requestAnimationFrame(step);
     });
   }
-
-  // Initialize immediately and after window loads (ensuring all SVG dimensions are ready)
   initMarqueeCarousel();
   window.addEventListener('load', initMarqueeCarousel);
-});
 
-
-  // Newsletter handler
+  // 3. NEWSLETTER FORM FEEDBACK
   const form = document.getElementById('newsletterForm');
   const status = document.getElementById('newsletterStatus');
   if (form && status) {
@@ -6210,7 +6041,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Contact Page Form handler
+  // 4. CONTACT PAGE FORM HANDLER
   const contactForm = document.getElementById('contactPageForm');
   const contactStatus = document.getElementById('contactPageStatus');
   const submitBtn = document.getElementById('btnContactSubmit');

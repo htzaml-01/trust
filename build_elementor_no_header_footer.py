@@ -343,12 +343,79 @@ body {{
 {body_content}
 </div>
 
-<!-- Interactive Scripts (FAQ Accordion, Marquee, Video Autoplay, Forms) -->
+<!-- Interactive Content Scripts (FAQ Accordion, Marquee Carousel, Forms - Header Excluded) -->
 <script>
 (function() {{
-{js_content}
+  // 1. FAQ ACCORDION (1 open at a time or toggle)
+  const accordionItems = document.querySelectorAll('.accordion-item');
+  accordionItems.forEach(item => {{
+    const headerBtn = item.querySelector('.accordion-header');
+    if (headerBtn) {{
+      headerBtn.addEventListener('click', (e) => {{
+        e.preventDefault();
+        const isActive = item.classList.contains('active');
 
-  // Newsletter handler
+        // Close all other accordion items
+        accordionItems.forEach(other => {{
+          if (other !== item) {{
+            other.classList.remove('active');
+            other.querySelector('.accordion-header')?.setAttribute('aria-expanded', 'false');
+          }}
+        }});
+
+        // Toggle current item
+        if (isActive) {{
+          item.classList.remove('active');
+          headerBtn.setAttribute('aria-expanded', 'false');
+        }} else {{
+          item.classList.add('active');
+          headerBtn.setAttribute('aria-expanded', 'true');
+        }}
+      }});
+    }}
+  }});
+
+  // 2. BULLETPROOF INFINITE MARQUEE CAROUSEL RUNNER
+  function initMarqueeCarousel() {{
+    const marquees = document.querySelectorAll('.partners-marquee-section');
+    marquees.forEach(section => {{
+      const track = section.querySelector('.marquee-track');
+      if (!track || track.dataset.marqueeInitialized) return;
+      track.dataset.marqueeInitialized = 'true';
+
+      const groups = track.querySelectorAll('.marquee-group');
+      if (groups.length === 1) {{
+        track.appendChild(groups[0].cloneNode(true));
+      }}
+
+      let paused = false;
+      let pos = 0;
+      const speed = 0.9;
+
+      track.addEventListener('mouseenter', () => {{ paused = true; }});
+      track.addEventListener('mouseleave', () => {{ paused = false; }});
+      track.addEventListener('touchstart', () => {{ paused = true; }}, {{ passive: true }});
+      track.addEventListener('touchend', () => {{ paused = false; }}, {{ passive: true }});
+
+      function step() {{
+        if (!paused) {{
+          pos += speed;
+          const firstGroup = track.querySelector('.marquee-group');
+          const groupWidth = firstGroup ? firstGroup.offsetWidth : 1200;
+          if (pos >= groupWidth) {{
+            pos -= groupWidth;
+          }}
+          track.style.transform = 'translate3d(' + (-pos) + 'px, 0, 0)';
+        }}
+        requestAnimationFrame(step);
+      }}
+      requestAnimationFrame(step);
+    }});
+  }}
+  initMarqueeCarousel();
+  window.addEventListener('load', initMarqueeCarousel);
+
+  // 3. NEWSLETTER FORM FEEDBACK
   const form = document.getElementById('newsletterForm');
   const status = document.getElementById('newsletterStatus');
   if (form && status) {{
@@ -361,7 +428,7 @@ body {{
     }});
   }}
 
-  // Contact Page Form handler
+  // 4. CONTACT PAGE FORM HANDLER
   const contactForm = document.getElementById('contactPageForm');
   const contactStatus = document.getElementById('contactPageStatus');
   const submitBtn = document.getElementById('btnContactSubmit');
@@ -890,19 +957,15 @@ body.admin-bar .mobile-nav-backdrop {{
 
   let lastToggleTime = 0;
   function toggleMobileNav(e) {{
-    const now = Date.now();
-    if (now - lastToggleTime < 350) {{
-      if (e) {{
-        e.preventDefault();
-        e.stopPropagation();
-      }}
-      return;
-    }}
-    lastToggleTime = now;
     if (e) {{
       e.preventDefault();
       e.stopPropagation();
+      if (e.stopImmediatePropagation) e.stopImmediatePropagation();
     }}
+    const now = Date.now();
+    if (now - lastToggleTime < 350) return;
+    lastToggleTime = now;
+
     if (navMenu?.classList.contains('open')) {{
       closeMobileNav();
     }} else {{
@@ -911,8 +974,9 @@ body.admin-bar .mobile-nav-backdrop {{
   }}
 
   if (mobileToggle) {{
-    mobileToggle.addEventListener('click', toggleMobileNav);
-    mobileToggle.addEventListener('touchend', toggleMobileNav, {{ passive: false }});
+    // capture: true intercepts the click FIRST and terminates duplicate listeners with stopImmediatePropagation
+    mobileToggle.addEventListener('click', toggleMobileNav, {{ capture: true }});
+    mobileToggle.addEventListener('touchend', toggleMobileNav, {{ capture: true, passive: false }});
   }}
 
   if (navBackdrop) {{
