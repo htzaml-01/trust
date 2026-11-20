@@ -1,9 +1,10 @@
 <!--
 ==============================================================================
-TRUST CORPORATION - ELEMENTOR READY HTML TEMPLATE
+TRUST CORPORATION - ELEMENTOR PAGE TEMPLATE (SEPARATE FROM FOOTER)
 Page: about.html
 Created for: WordPress Elementor HTML Widget (Elementor Canvas template recommended)
 All assets (images/videos/logos) loaded via CDN: https://htzaml-01.github.io/trust/
+Note: Footer is separated in elementor-footer.html
 ==============================================================================
 -->
 
@@ -30,7 +31,7 @@ All assets (images/videos/logos) loaded via CDN: https://htzaml-01.github.io/tru
   box-sizing: border-box;
 }
 
-/* Bulletproof Protection against WordPress Theme / Elementor core image expansions */
+/* Protection for Header Logo */
 .elementor-trust-wrapper .brand-logo,
 .elementor-trust-wrapper a.brand-logo {
   display: inline-flex !important;
@@ -51,36 +52,22 @@ All assets (images/videos/logos) loaded via CDN: https://htzaml-01.github.io/tru
   display: block !important;
 }
 
-.elementor-trust-wrapper .footer-brand-link,
-.elementor-trust-wrapper .footer-logo-wrap,
-.elementor-trust-wrapper a.footer-brand-link,
-.elementor-trust-wrapper a.footer-logo-wrap {
-  display: inline-block !important;
-  margin-bottom: 24px !important;
-  text-decoration: none !important;
-  flex-shrink: 0 !important;
-  max-width: 130px !important;
-}
-
-.elementor-trust-wrapper .footer-logo-img,
-.elementor-trust-wrapper img.footer-logo-img {
+/* Protection for Client Logos */
+.elementor-trust-wrapper .client-logo-item img,
+.elementor-trust-wrapper .marquee-brand-item img {
   height: 38px !important;
-  max-height: 38px !important;
+  max-height: 40px !important;
   width: auto !important;
-  max-width: 130px !important;
+  max-width: 160px !important;
   display: block !important;
   object-fit: contain !important;
+  opacity: 1 !important;
+  filter: none !important;
 }
 
 @media (max-width: 1024px) {
   .elementor-trust-wrapper .logo-img,
   .elementor-trust-wrapper img.logo-img {
-    height: 32px !important;
-    max-height: 32px !important;
-    max-width: 110px !important;
-  }
-  .elementor-trust-wrapper .footer-logo-img,
-  .elementor-trust-wrapper img.footer-logo-img {
     height: 32px !important;
     max-height: 32px !important;
     max-width: 110px !important;
@@ -3731,24 +3718,26 @@ textarea.form-field-input {
 }
 
 .client-logo-item {
-  height: 44px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.8;
-  filter: grayscale(100%);
-  transition: opacity 0.3s ease, filter 0.3s ease;
+  opacity: 1 !important;
+  filter: none !important;
+  transition: transform 0.25s ease;
 }
 
 .client-logo-item:hover {
-  opacity: 1;
-  filter: grayscale(0%);
+  transform: scale(1.08);
 }
 
 .client-logo-item img {
-  max-height: 40px;
-  max-width: 140px;
-  object-fit: contain;
+  height: 38px !important;
+  max-height: 40px !important;
+  width: auto !important;
+  max-width: 150px !important;
+  object-fit: contain !important;
+  display: block !important;
 }
 
 /* CTA Section */
@@ -3878,7 +3867,7 @@ textarea.form-field-input {
 
 </style>
 
-<!-- Main Page HTML Markup -->
+<!-- Main Page HTML Markup (Without Footer) -->
 <div class="elementor-trust-wrapper">
 <!-- STICKY NAVBAR (SOLID WHITE FOR WHITE-TOP PAGE) -->
   <header class="site-header header-solid" id="siteHeader">
@@ -4078,61 +4067,6 @@ textarea.form-field-input {
   </main>
 
   <!-- FOOTER (DARK OBSIDIAN #111113) -->
-  <footer class="site-footer">
-    <div class="container footer-container">
-      <div class="footer-grid">
-        <div class="footer-left-col">
-          <a href="index.html" class="footer-brand-link" aria-label="TRUST Corporation Home" style="display:inline-block !important; text-decoration:none !important; flex-shrink:0 !important;">
-            <img src="https://htzaml-01.github.io/trust/asset/logo-trust.png" alt="TRUST Corporation" class="footer-logo-img" width="102" height="38" style="display:block !important; height:38px !important; max-height:38px !important; width:auto !important; max-width:130px !important; object-fit:contain !important;" />
-          </a>
-          
-          <div class="footer-quick-links">
-            <h4 class="footer-links-title">Quick Links</h4>
-            <ul class="footer-nav-list">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="industries.html">Industries</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-legal-row">
-            <a href="#">Privacy Policy</a>
-            <span class="legal-separator">|</span>
-            <a href="#">Terms And Conditions</a>
-          </div>
-
-          <p class="footer-copyright">© 2026 PT. Trust Eadyra Line (TRUST Corporation). All rights reserved.</p>
-        </div>
-
-        <div class="footer-right-col">
-          <div class="footer-contact-info-row">
-            <div class="footer-contact-box">
-              <span class="footer-box-label">Phone</span>
-              <p class="footer-box-val">(021)-7592-0000</p>
-            </div>
-            <div class="footer-contact-box">
-              <span class="footer-box-label">Email</span>
-              <p class="footer-box-val">operational@trusteadyraline.com</p>
-            </div>
-          </div>
-
-          <div class="footer-newsletter-wrap">
-            <h3 class="newsletter-title">Join Our Newsletter</h3>
-            <form id="newsletterForm" class="newsletter-underline-form">
-              <div class="newsletter-input-group">
-                <input type="email" placeholder="Email" required aria-label="Email Address for newsletter" />
-                <button type="submit" class="btn btn-primary btn-newsletter">Submit</button>
-              </div>
-              <div id="newsletterStatus" class="newsletter-status" style="display:none;"></div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
 </div>
 
 <!-- Interactive Scripts (Mobile Drawer, FAQ Accordion, Navigation) -->
