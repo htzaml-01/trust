@@ -21,7 +21,7 @@ PAGES = [
     ("about.html", "04-PAGE-ABOUT.html", "About Us Page"),
     ("services.html", "05-PAGE-SERVICES.html", "Services Page"),
     ("industries.html", "06-PAGE-INDUSTRIES.html", "Industries Page"),
-    ("fleet.html", "07-PAGE-FLEET.html", "Fleet Page"),
+    ("blog.html", "07-PAGE-BLOG.html", "Blog Page"),
     ("contact.html", "08-PAGE-CONTACT.html", "Contact Page"),
 ]
 
@@ -40,6 +40,15 @@ def extract_main_content(html_file):
         content = re.sub(r'<div[^>]*class=["\'][^"\']*mobile-drawer[^"\']*["\'][^>]*>.*?</div>', '', content, flags=re.DOTALL)
         content = re.sub(r'<footer[^>]*>.*?</footer>', '', content, flags=re.DOTALL)
 
+    # Strip red circle action buttons on all pages except blog
+    if html_file != "blog.html":
+        content = re.sub(
+            r'<a\s+[^>]*class=["\'][^"\']*(?:circle-action-btn|circle-action-btn-red|circle-action-btn-white)[^"\']*["\'][^>]*>.*?</a>\s*',
+            '',
+            content,
+            flags=re.DOTALL
+        )
+
     content = re.sub(r'<script\s+src="script\.js[^"]*"[^>]*></script>', '', content)
 
     content = re.sub(
@@ -53,6 +62,7 @@ def extract_main_content(html_file):
     content = re.sub(r'href=["\']services\.html["\']', 'href="/services/"', content)
     content = re.sub(r'href=["\']industries\.html["\']', 'href="/industries/"', content)
     content = re.sub(r'href=["\']fleet\.html["\']', 'href="/fleet/"', content)
+    content = re.sub(r'href=["\']blog\.html["\']', 'href="/blog/"', content)
     content = re.sub(r'href=["\']contact\.html["\']', 'href="/contact/"', content)
     content = re.sub(r'href=["\']services\.html(#service-[0-9]+)["\']', r'href="/services/\1"', content)
 
@@ -67,7 +77,7 @@ TRUST CORPORATION - ELEMENTOR CONTENT TEMPLATE (NO HEADER, NO FOOTER)
 File: {out_name} ({title_desc})
 100% Edge-to-Edge Full Bleed | Zero White Edge Gaps | Content Only
 Clean Permalinks: Home (/), About (/about/), Services (/services/),
-Industries (/industries/), Fleet (/fleet/), Contact (/contact/)
+Industries (/industries/), Blog (/blog/), Contact (/contact/)
 All assets loaded via CDN: {CDN_BASE}
 Paste into: Page Editor (Elementor Full Width)
 ==============================================================================
@@ -772,7 +782,7 @@ body.admin-bar .mobile-nav-backdrop {{
         <a href="/about/" class="nav-link">About</a>
         <a href="/services/" class="nav-link">Services</a>
         <a href="/industries/" class="nav-link">Industries</a>
-        <a href="/fleet/" class="nav-link">Fleet</a>
+        <a href="/blog/" class="nav-link">Blog</a>
         <a href="/contact/" class="nav-link">Contact</a>
       </nav>
 
@@ -923,14 +933,16 @@ def generate_footer_template():
     footer_content = re.sub(r'href=["\']services\.html["\']', 'href="/services/"', footer_content)
     footer_content = re.sub(r'href=["\']industries\.html["\']', 'href="/industries/"', footer_content)
     footer_content = re.sub(r'href=["\']fleet\.html["\']', 'href="/fleet/"', footer_content)
+    footer_content = re.sub(r'href=["\']blog\.html["\']', 'href="/blog/"', footer_content)
     footer_content = re.sub(r'href=["\']contact\.html["\']', 'href="/contact/"', footer_content)
+    footer_content = re.sub(r'href=["\']services\.html(#service-[0-9]+)["\']', r'href="/services/\1"', footer_content)
 
     return f"""<!--
 ==============================================================================
 TRUST CORPORATION - ELEMENTOR STANDALONE FOOTER TEMPLATE
 File: 02-FOOTER.html
 WordPress Clean Permalinks: Home (/), About (/about/), Services (/services/),
-Industries (/industries/), Fleet (/fleet/), Contact (/contact/)
+Industries (/industries/), Blog (/blog/), Contact (/contact/)
 All assets loaded via CDN: {CDN_BASE}
 ==============================================================================
 -->
@@ -1014,6 +1026,16 @@ def main():
     print("=" * 70)
     print("BUILDING CLEAN ELEMENTOR PACK (EXACTLY 8 NUMBERED FILES)")
     print("=" * 70)
+
+    # Clean existing elementor/ dir of obsolete files
+    valid_names = {"01-HEADER.html", "02-FOOTER.html", "03-PAGE-HOME.html", "04-PAGE-ABOUT.html", 
+                   "05-PAGE-SERVICES.html", "06-PAGE-INDUSTRIES.html", "07-PAGE-BLOG.html", "08-PAGE-CONTACT.html"}
+    for f in os.listdir("elementor"):
+        if f not in valid_names:
+            target_path = os.path.join("elementor", f)
+            if os.path.isfile(target_path):
+                os.remove(target_path)
+                print(f"Removed outdated file: elementor/{f}")
 
     # 1. Header
     with open("elementor/01-HEADER.html", "w", encoding="utf-8") as f:
