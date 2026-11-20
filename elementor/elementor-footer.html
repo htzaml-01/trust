@@ -3923,6 +3923,50 @@ textarea.form-field-input {
 }
 
 
+
+/* Responsive Contact & Text Protection */
+.meta-value,
+.contact-detail-val {
+  word-break: break-word !important;
+  overflow-wrap: anywhere !important;
+}
+
+.meta-value a,
+.contact-detail-val a {
+  word-break: break-word !important;
+  overflow-wrap: anywhere !important;
+}
+
+@media (max-width: 992px) {
+  .contact-two-col-grid,
+  .contact-form-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    padding-top: 48px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-two-col-grid,
+  .contact-form-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding-top: 32px !important;
+  }
+
+  .contact-info-title {
+    font-size: 32px !important;
+  }
+
+  .meta-heading,
+  .contact-details-heading {
+    font-size: 19px !important;
+    margin-bottom: 18px !important;
+  }
+}
+
 </style>
 
 <div class="elementor-trust-wrapper">
