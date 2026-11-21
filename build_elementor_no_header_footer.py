@@ -1172,7 +1172,7 @@ def main():
     # Clean existing elementor/ dir of obsolete files
     valid_names = {"01-HEADER.html", "02-FOOTER.html", "03-PAGE-HOME.html", "04-PAGE-ABOUT.html", 
                    "05-PAGE-SERVICES.html", "06-PAGE-INDUSTRIES.html", "07-PAGE-BLOG.html", "08-PAGE-CONTACT.html",
-                   "09-TEMPLATE-ARTICLE.html"}
+                   "09-TEMPLATE-ARTICLE.html", "10-THEME-BUILDER-SINGLE-POST.html"}
     for f in os.listdir("elementor"):
         if f not in valid_names:
             target_path = os.path.join("elementor", f)

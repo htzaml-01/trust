@@ -1,0 +1,796 @@
+<!--
+==============================================================================
+TRUST CORPORATION - ROYAL ADDONS THEME BUILDER SINGLE POST TEMPLATE
+File: 10-THEME-BUILDER-SINGLE-POST.html
+Digunakan pada: WP Admin > Royal Addons > Theme Builder > Tab "Single" > Edit Template ("Post")
+Fungsi:
+  Secara OTOMATIS mendesain & melengkapi SEMUA artikel blog di trusteadyraline.id!
+  Setiap kali Anda membuat artikel baru di WordPress (Pos > Tambah Baru),
+  artikel tersebut akan otomatis tampil mewah, rapi, dan profesional tanpa perlu
+  didesain ulang satu per satu!
+==============================================================================
+FITUR OTOMATIS:
+  1. Breadcrumbs Otomatis: Home / Blog / [Judul Artikel]
+  2. Badge Kategori Otomatis: "Maritime & Logistics Insight"
+  3. Tipografi H1 Judul Artikel Mewah (Manrope, 40px, Dark Slate)
+  4. Meta Bar Otomatis: Author Avatar, Nama Penulis, Tanggal Terbit, Estimasi Menit Baca
+  5. Hero Image Cantik: Rasio 16:9, Rounded Border 16px, Box Shadow Halus
+  6. Kontainer Baca Nyaman: Max-width 860px (tidak melebar ke samping layar)
+  7. Tipografi Konten Lengkap: Styling otomatis untuk Paragraf, H2 (aksen garis merah),
+     H3, Blockquote kutipan, List peluru, Tabel, & Gambar di dalam artikel
+  8. Tombol Share Otomatis: WhatsApp, LinkedIn, Twitter / X, dan Salin Link Instan
+  9. Kotak Profil Penulis (Author Bio PT Trust Eadyra Line)
+  10. High-Conversion CTA Banner: Mengajak pembaca minta penawaran sewa kapal / kargo (/contact/)
+  11. Rekomendasi 3 Artikel Terkait
+==============================================================================
+CARA PASANG DI THEME BUILDER (HANYA 1 KALI SAJA):
+  1. Buka WordPress Admin > Royal Addons > Theme Builder > Tab "Single".
+  2. Pada baris template "Post", klik tombol "Edit Template".
+  3. Di halaman editor Elementor:
+     - Klik ikon Gerigi (Pengaturan / Settings) di pojok kiri bawah.
+     - Ubah "Tata Letak Halaman" (Page Layout) menjadi: "Elementor Lebar Penuh" (Full Width).
+     - Pastikan di halaman sudah ada widget bawaan Single Post:
+       * Judul Pos (Post Title)
+       * Konten Pos (Post Content)
+     - Tarik widget "HTML" ke dalam halaman (bisa ditaruh di bawah atau di mana saja).
+     - Paste SELURUH KODE di bawah ini ke dalam widget HTML tersebut.
+  4. Klik "Update" (Perbarui).
+  5. Selesai! Semua artikel di website Anda langsung otomatis tampil sempurna!
+==============================================================================
+-->
+
+<!-- Google Fonts: Manrope -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   RESET & CONTAINER MAX-WIDTH READABILITY (860px)
+   ========================================================================== */
+.elementor-108,
+[data-elementor-type="wpr-theme-builder"],
+.single-post-wrapper {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  padding: 40px 20px 80px !important;
+  box-sizing: border-box !important;
+}
+
+/* Batasi lebar seluruh kontainer Single Post agar nyaman dibaca di layar lebar */
+.elementor-108 .e-con,
+.elementor-108 .e-con-inner,
+[data-elementor-type="wpr-theme-builder"] .e-con,
+[data-elementor-type="wpr-theme-builder"] .e-con-inner,
+.elementor-108 .elementor-container {
+  max-width: 860px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* ==========================================================================
+   1. BREADCRUMBS & BADGE KATEGORI
+   ========================================================================== */
+.trust-injected-breadcrumbs {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  font-size: 14px !important;
+  color: #64748b !important;
+  margin-bottom: 16px !important;
+  line-height: 1.5 !important;
+}
+
+.trust-injected-breadcrumbs a {
+  color: #64748b !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: color 0.2s ease !important;
+}
+
+.trust-injected-breadcrumbs a:hover {
+  color: #ba141a !important;
+}
+
+.trust-injected-breadcrumbs .sep {
+  color: #cbd5e1 !important;
+}
+
+.trust-injected-breadcrumbs .curr {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+
+.trust-injected-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background-color: #fef2f2 !important;
+  color: #ba141a !important;
+  border: 1px solid #fee2e2 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  padding: 5px 12px !important;
+  border-radius: 9999px !important;
+  margin-bottom: 18px !important;
+}
+
+.trust-injected-badge::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ba141a;
+}
+
+/* ==========================================================================
+   2. STYLING WIDGET JUDUL POS (wpr-post-title)
+   ========================================================================== */
+.wpr-post-title,
+.elementor-widget-wpr-post-title h1,
+.single-post h1.entry-title {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 38px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  color: #0f172a !important;
+  margin: 0 0 20px 0 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Meta Bar Penulis & Waktu Baca */
+.trust-injected-meta {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+  padding: 16px 0 !important;
+  margin-bottom: 28px !important;
+  border-top: 1px solid #e2e8f0 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.trust-meta-author {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.trust-author-badge {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background-color: #ba141a !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.trust-meta-author-text {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.trust-author-name {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+}
+
+.trust-author-role {
+  font-size: 12px !important;
+  color: #64748b !important;
+}
+
+.trust-meta-stats {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  font-size: 13px !important;
+  color: #64748b !important;
+}
+
+/* ==========================================================================
+   3. STYLING FEATURED HERO IMAGE (wpr-post-media)
+   ========================================================================== */
+.wpr-featured-media-wrap,
+.elementor-widget-wpr-post-media {
+  margin: 0 0 36px 0 !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+}
+
+.wpr-featured-media-image img,
+.elementor-widget-wpr-post-media img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 480px !important;
+  object-fit: cover !important;
+  border-radius: 16px !important;
+  display: block !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ==========================================================================
+   4. STYLING KONTEN ARTIKEL (wpr-post-content)
+   ========================================================================== */
+.wpr-post-content,
+.elementor-widget-wpr-post-content {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 17.5px !important;
+  line-height: 1.85 !important;
+  color: #334155 !important;
+}
+
+.wpr-post-content p {
+  margin-bottom: 24px !important;
+}
+
+.wpr-post-content h2 {
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 48px 0 20px 0 !important;
+  padding-bottom: 12px !important;
+  border-bottom: 2px solid #f1f5f9 !important;
+  position: relative !important;
+  letter-spacing: -0.01em !important;
+}
+
+.wpr-post-content h2::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 0 !important;
+  width: 60px !important;
+  height: 2px !important;
+  background-color: #ba141a !important;
+}
+
+.wpr-post-content h3 {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin: 36px 0 16px 0 !important;
+}
+
+.wpr-post-content strong {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+.wpr-post-content blockquote {
+  position: relative !important;
+  margin: 36px 0 !important;
+  padding: 24px 28px 24px 44px !important;
+  background-color: #fef2f2 !important;
+  border-left: 5px solid #ba141a !important;
+  border-radius: 0 12px 12px 0 !important;
+  font-size: 18px !important;
+  font-style: italic !important;
+  color: #1e293b !important;
+  line-height: 1.7 !important;
+}
+
+.wpr-post-content blockquote::before {
+  content: "“" !important;
+  position: absolute !important;
+  top: 10px !important;
+  left: 14px !important;
+  font-size: 50px !important;
+  color: #ba141a !important;
+  line-height: 1 !important;
+  font-family: Georgia, serif !important;
+}
+
+.wpr-post-content ul,
+.wpr-post-content ol {
+  margin: 0 0 28px 0 !important;
+  padding-left: 24px !important;
+}
+
+.wpr-post-content li {
+  margin-bottom: 10px !important;
+}
+
+/* ==========================================================================
+   5. TOMBOL SHARE, AUTHOR BIO, CTA, & RELATED POSTS
+   ========================================================================== */
+.trust-article-footer-addons {
+  margin-top: 50px !important;
+  padding-top: 36px !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+/* Share Bar */
+.trust-share-box {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+  background: #f8fafc !important;
+  padding: 18px 24px !important;
+  border-radius: 12px !important;
+  border: 1px solid #e2e8f0 !important;
+  margin-bottom: 40px !important;
+}
+
+.trust-share-title {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+}
+
+.trust-share-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+.trust-btn-share {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 8px 16px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  border: none !important;
+  transition: transform 0.2s ease, opacity 0.2s ease !important;
+}
+
+.trust-btn-share:hover {
+  transform: translateY(-2px) !important;
+  opacity: 0.9 !important;
+}
+
+.trust-btn-wa { background: #25d366 !important; color: #ffffff !important; }
+.trust-btn-in { background: #0077b5 !important; color: #ffffff !important; }
+.trust-btn-x  { background: #0f1419 !important; color: #ffffff !important; }
+.trust-btn-cp { background: #e2e8f0 !important; color: #1e293b !important; }
+
+/* Author Bio Card */
+.trust-author-card {
+  display: flex !important;
+  gap: 20px !important;
+  align-items: center !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 14px !important;
+  padding: 24px 28px !important;
+  margin-bottom: 44px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+}
+
+.trust-bio-emblem {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 50% !important;
+  background: #ba141a !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  flex-shrink: 0 !important;
+}
+
+.trust-bio-info h4 {
+  margin: 0 0 6px 0 !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+}
+
+.trust-bio-info p {
+  margin: 0 !important;
+  font-size: 14px !important;
+  color: #64748b !important;
+  line-height: 1.6 !important;
+}
+
+/* High-Impact CTA Banner */
+.trust-single-cta {
+  background: linear-gradient(135deg, #1a1a1c 0%, #2a2a2e 100%) !important;
+  border-radius: 16px !important;
+  padding: 40px 32px !important;
+  color: #ffffff !important;
+  text-align: center !important;
+  margin-bottom: 50px !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12) !important;
+}
+
+.trust-cta-badge {
+  display: inline-block !important;
+  background: rgba(186, 20, 26, 0.3) !important;
+  color: #fca5a5 !important;
+  border: 1px solid rgba(186, 20, 26, 0.5) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  padding: 4px 12px !important;
+  border-radius: 9999px !important;
+  margin-bottom: 14px !important;
+}
+
+.trust-single-cta h3 {
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 0 12px 0 !important;
+  line-height: 1.3 !important;
+}
+
+.trust-single-cta p {
+  font-size: 15px !important;
+  color: #cbd5e1 !important;
+  max-width: 580px !important;
+  margin: 0 auto 24px auto !important;
+  line-height: 1.6 !important;
+}
+
+.trust-cta-actions {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 14px !important;
+}
+
+.trust-btn-cta-red {
+  background-color: #ba141a !important;
+  color: #ffffff !important;
+  padding: 12px 26px !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.trust-btn-cta-red:hover {
+  background-color: #991015 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(186, 20, 26, 0.35) !important;
+}
+
+.trust-btn-cta-outline {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding: 12px 22px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.trust-btn-cta-outline:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Related Posts Section */
+.trust-related-wrap {
+  margin-top: 50px !important;
+}
+
+.trust-related-top {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-end !important;
+  margin-bottom: 20px !important;
+}
+
+.trust-related-top h3 {
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 0 !important;
+}
+
+.trust-related-top a {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #ba141a !important;
+  text-decoration: none !important;
+}
+
+.trust-related-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 18px !important;
+}
+
+.trust-rel-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: all 0.25s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.trust-rel-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08) !important;
+  border-color: #cbd5e1 !important;
+}
+
+.trust-rel-img {
+  width: 100% !important;
+  height: 150px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.trust-rel-body {
+  padding: 14px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+}
+
+.trust-rel-cat {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #ba141a !important;
+  text-transform: uppercase !important;
+  margin-bottom: 6px !important;
+}
+
+.trust-rel-title {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  line-height: 1.4 !important;
+  margin: 0 0 10px 0 !important;
+}
+
+.trust-rel-more {
+  margin-top: auto !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #ba141a !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .elementor-108,
+  [data-elementor-type="wpr-theme-builder"] {
+    padding: 24px 16px 60px !important;
+  }
+
+  .wpr-post-title,
+  .elementor-widget-wpr-post-title h1 {
+    font-size: 28px !important;
+  }
+
+  .trust-meta-stats {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+
+  .trust-share-box {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .trust-author-card {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+
+  .trust-related-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .trust-single-cta {
+    padding: 30px 18px !important;
+  }
+
+  .trust-single-cta h3 {
+    font-size: 21px !important;
+  }
+}
+</style>
+
+<!-- ==========================================================================
+     ELEMEN PELENGKAP ARTIKEL (DI-INJECT OTOMATIS)
+     ========================================================================== -->
+<div id="trustArticleAddons" class="trust-article-footer-addons">
+
+  <!-- 1. SHARE BUTTONS -->
+  <div class="trust-share-box">
+    <span class="trust-share-title">Bagikan artikel ini:</span>
+    <div class="trust-share-links">
+      <a id="trustShareWa" href="#" target="_blank" rel="noopener noreferrer" class="trust-btn-share trust-btn-wa">
+        WhatsApp
+      </a>
+      <a id="trustShareLi" href="#" target="_blank" rel="noopener noreferrer" class="trust-btn-share trust-btn-in">
+        LinkedIn
+      </a>
+      <a id="trustShareTw" href="#" target="_blank" rel="noopener noreferrer" class="trust-btn-share trust-btn-x">
+        X / Twitter
+      </a>
+      <button type="button" class="trust-btn-share trust-btn-cp" onclick="trustCopyPostLink(this)">
+        Salin Link
+      </button>
+    </div>
+  </div>
+
+  <!-- 2. AUTHOR BIO CARD -->
+  <div class="trust-author-card">
+    <div class="trust-bio-emblem">TR</div>
+    <div class="trust-bio-info">
+      <h4>Ditulis oleh Tim Editorial PT. Trust Eadyra Line</h4>
+      <p>
+        Divisi Riset & Komunikasi Korporat TRUST Corporation. Berdedikasi menyajikan wawasan mendalam seputar industri logistik maritim, operasional armada kapal kargo curah, sewa tongkang (tug & barge), dan tren rantai pasok modern di Indonesia.
+      </p>
+    </div>
+  </div>
+
+  <!-- 3. HIGH-CONVERSION CTA BANNER -->
+  <div class="trust-single-cta">
+    <span class="trust-cta-badge">Solusi Maritim Terpercaya</span>
+    <h3>Siap Mengoptimalkan Pengiriman Kargo Bisnis Anda?</h3>
+    <p>
+      Konsultasikan kebutuhan armada kapal kargo curah, tongkang, atau rekayasa logistik lepas pantai Anda langsung bersama tim spesialis TRUST Corporation.
+    </p>
+    <div class="trust-cta-actions">
+      <a href="/contact/" class="trust-btn-cta-red">Hubungi Tim Ahli Kami &rarr;</a>
+      <a href="/services/" class="trust-btn-cta-outline">Lihat Solusi Armada</a>
+    </div>
+  </div>
+
+  <!-- 4. REKOMENDASI ARTIKEL LAINNYA -->
+  <div class="trust-related-wrap">
+    <div class="trust-related-top">
+      <h3>Artikel Terkait Lainnya</h3>
+      <a href="/blog/">Lihat Semua &rarr;</a>
+    </div>
+    <div class="trust-related-grid">
+      <!-- Card 1 -->
+      <a href="/the-future-era-of-smart-logistics-solutions/" class="trust-rel-card">
+        <img src="https://htzaml-01.github.io/trust/asset/blog/blog-card-01.jpg" alt="Smart Logistics" class="trust-rel-img">
+        <div class="trust-rel-body">
+          <span class="trust-rel-cat">Smart Logistics</span>
+          <h4 class="trust-rel-title">The Future Era of Smart Logistics Solutions</h4>
+          <span class="trust-rel-more">Baca Selengkapnya &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="/warehousing-best-practices-for-businesses/" class="trust-rel-card">
+        <img src="https://htzaml-01.github.io/trust/asset/blog/blog-card-02.jpg" alt="Warehousing" class="trust-rel-img">
+        <div class="trust-rel-body">
+          <span class="trust-rel-cat">Warehousing</span>
+          <h4 class="trust-rel-title">Warehousing Best Practices for Businesses</h4>
+          <span class="trust-rel-more">Baca Selengkapnya &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="/understanding-last-mile-delivery-challenges/" class="trust-rel-card">
+        <img src="https://htzaml-01.github.io/trust/asset/blog/blog-card-03.jpg" alt="Last Mile" class="trust-rel-img">
+        <div class="trust-rel-body">
+          <span class="trust-rel-cat">Delivery</span>
+          <h4 class="trust-rel-title">Understanding Last-Mile Delivery Challenges</h4>
+          <span class="trust-rel-more">Baca Selengkapnya &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==========================================================================
+     SCRIPT OTOMATIS: BREADCRUMBS, META BAR, & LINK SHARE
+     ========================================================================== -->
+<script>
+(function() {
+  function initTrustArticleEnhancements() {
+    const postTitle = document.querySelector('.wpr-post-title, .elementor-widget-wpr-post-title h1, h1.entry-title');
+    if (!postTitle || postTitle.dataset.trustInitialized) return;
+    postTitle.dataset.trustInitialized = 'true';
+
+    const titleText = postTitle.textContent.trim();
+    const currentUrl = window.location.href;
+
+    // 1. Injeksi Breadcrumbs & Category Badge Tepat di Atas Judul
+    const headerMetaWrap = document.createElement('div');
+    headerMetaWrap.className = 'trust-injected-top-wrap';
+    headerMetaWrap.innerHTML = `
+      <nav class="trust-injected-breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="sep">/</span>
+        <a href="/blog/">Blog</a>
+        <span class="sep">/</span>
+        <span class="curr">${titleText}</span>
+      </nav>
+      <div class="trust-injected-badge">Maritime & Logistics Insight</div>
+    `;
+    postTitle.parentNode.insertBefore(headerMetaWrap, postTitle);
+
+    // 2. Injeksi Meta Bar (Penulis & Waktu Baca) Tepat di Bawah Judul
+    const contentEl = document.querySelector('.wpr-post-content, .elementor-widget-wpr-post-content');
+    const wordCount = contentEl ? contentEl.textContent.trim().split(/\s+/).length : 500;
+    const readMinutes = Math.max(2, Math.ceil(wordCount / 200));
+
+    const metaBar = document.createElement('div');
+    metaBar.className = 'trust-injected-meta';
+    metaBar.innerHTML = `
+      <div class="trust-meta-author">
+        <div class="trust-author-badge">TR</div>
+        <div class="trust-meta-author-text">
+          <span class="trust-author-name">PT. Trust Eadyra Line</span>
+          <span class="trust-author-role">Corporate Communications</span>
+        </div>
+      </div>
+      <div class="trust-meta-stats">
+        <span>⏱️ ${readMinutes} Menit Baca</span>
+        <span>🚢 Insight Maritim</span>
+      </div>
+    `;
+    postTitle.parentNode.insertBefore(metaBar, postTitle.nextSibling);
+
+    // 3. Konfigurasi Link Share Media Sosial
+    const shareWa = document.getElementById('trustShareWa');
+    const shareLi = document.getElementById('trustShareLi');
+    const shareTw = document.getElementById('trustShareTw');
+
+    if (shareWa) shareWa.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(titleText + ' - ' + currentUrl)}`;
+    if (shareLi) shareLi.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`;
+    if (shareTw) shareTw.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(titleText)}&url=${encodeURIComponent(currentUrl)}`;
+
+    // 4. Pastikan Addons Footer (Share, Bio, CTA, Related) Tampil Tepat di Bawah Konten Artikel
+    const addons = document.getElementById('trustArticleAddons');
+    if (addons && contentEl && addons.parentNode !== contentEl.parentNode) {
+      contentEl.parentNode.appendChild(addons);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTrustArticleEnhancements);
+  } else {
+    initTrustArticleEnhancements();
+  }
+})();
+
+// Fungsi Tombol Salin Link
+function trustCopyPostLink(btn) {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = 'Tersalin!';
+    btn.style.backgroundColor = '#10b981';
+    btn.style.color = '#ffffff';
+    setTimeout(() => {
+      btn.textContent = orig;
+      btn.style.backgroundColor = '';
+      btn.style.color = '';
+    }, 2500);
+  });
+}
+</script>
