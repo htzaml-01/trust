@@ -76,9 +76,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: false });
   }
 
-  // Close mobile nav when clicking a link
+  // Only close mobile nav if the link is a hash anchor (#service-1).
+  // For page URLs (/services/, /about/, etc.), allow native browser navigation!
   navMenu?.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', closeMobileNav);
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        closeMobileNav();
+      }
+    });
   });
 
   // Close on Escape key

@@ -808,12 +808,24 @@ Dynamic Active Page Detection | WP Admin Bar Compatible
 
   .site-header .nav-link {{
     color: #1a1a1c !important;
-    font-size: 16px;
-    font-weight: 500;
-    width: auto;
-    align-self: flex-start;
-    justify-content: flex-start;
-    padding: 6px 0;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    touch-action: manipulation !important;
+  }}
+
+  .site-header .nav-link:hover,
+  .site-header .nav-link:active {{
+    background-color: #f1f5f9 !important;
+    color: #ba141a !important;
   }}
 
   .site-header .nav-link::after {{
@@ -990,8 +1002,15 @@ body.admin-bar .mobile-nav-backdrop {{
     }}, {{ passive: false }});
   }}
 
+  // Only close mobile nav if the link is a hash anchor (#service-1).
+  // For page URLs (/services/, /about/, etc.), allow native browser navigation without premature hiding!
   header.querySelectorAll('.nav-link').forEach(link => {{
-    link.addEventListener('click', closeMobileNav);
+    link.addEventListener('click', function(e) {{
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {{
+        closeMobileNav();
+      }}
+    }});
   }});
 
   document.addEventListener('keydown', function(e) {{
