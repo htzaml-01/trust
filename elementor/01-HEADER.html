@@ -502,7 +502,8 @@ body.admin-bar .mobile-nav-backdrop {
       if (e.stopImmediatePropagation) e.stopImmediatePropagation();
     }
     const now = Date.now();
-    if (now - lastToggleTime < 350) return;
+    // 450ms cooldown prevents mobile touchend + synthetic click double-fire
+    if (now - lastToggleTime < 450) return;
     lastToggleTime = now;
 
     if (navMenu?.classList.contains('open')) {
@@ -529,16 +530,40 @@ body.admin-bar .mobile-nav-backdrop {
     }, { passive: false });
   }
 
-  // Only close mobile nav if the link is a hash anchor (#service-1).
-  // For page URLs (/services/, /about/, etc.), allow native browser navigation without premature hiding!
-  header.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href && href.startsWith('#')) {
+  // 5. BULLETPROOF LINK NAVIGATION (CAPTURE PHASE)
+  // Intercepts any click on .nav-link in capture phase BEFORE any page script can hide the menu or cancel navigation!
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest('#siteHeader .nav-link, #navMenu .nav-link, .site-header .nav-link');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    // In-page hash anchor (#services, #contact)
+    if (href.startsWith('#')) {
+      closeMobileNav();
+      return;
+    }
+
+    // If clicking current page: just close drawer
+    try {
+      const targetUrl = new URL(link.href, window.location.origin);
+      const currentUrl = new URL(window.location.href);
+      if (targetUrl.pathname.replace(/\/+$/, '') === currentUrl.pathname.replace(/\/+$/, '')) {
         closeMobileNav();
+        return;
       }
-    });
-  });
+    } catch(err) {}
+
+    // For page navigation (/about/, /services/, /contact/, etc.):
+    // STOP all conflicting scripts from running or hiding the menu prematurely!
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+
+    // Directly navigate without hindrance
+    window.location.href = link.href;
+  }, true); // TRUE = CAPTURE PHASE! Runs FIRST before ANY other listener!
 
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && navMenu?.classList.contains('open')) {
