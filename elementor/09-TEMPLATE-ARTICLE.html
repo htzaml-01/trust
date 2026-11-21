@@ -1,0 +1,1207 @@
+<!--
+==============================================================================
+TRUST CORPORATION - TEMPLATE ARTIKEL BLOG / POST RESMI
+File: 09-TEMPLATE-ARTICLE.html
+Desain: Modern, Elegan, 100% Responsif (Mobile, Tablet, Desktop)
+Fitur Lengkap:
+  - Breadcrumbs & Category Badge
+  - Judul H1 & Author Meta Bar (Nama, Tanggal, Estimasi Waktu Baca)
+  - Hero Image dengan Caption
+  - Executive Summary / Lead Paragraph
+  - Kotak Poin Kunci (Key Takeaways)
+  - Daftar Isi Interaktif (Table of Contents / Smooth Scroll)
+  - Tipografi Heading H2, H3, Paragraf Bersih
+  - Grid Metrik & Statistik Kunci (Data Callout)
+  - Blockquote / Kutipan Profesional
+  - Kotak Info / Pro-Tip Praktis
+  - Tag Artikel & Tombol Share (WhatsApp, LinkedIn, Twitter/X, Salin Link)
+  - Kotak Profil Penulis (Author Bio)
+  - Banner CTA Konversi Konsultasi Armada (Hubungi TRUST)
+  - Rekomendasi Artikel Terkait (3 Card Grid)
+==============================================================================
+CARA PAKAI DI WORDPRESS / ELEMENTOR:
+1. Buat Pos Baru di WordPress (Pos > Tambah Baru) atau Edit Pos yang sudah ada.
+2. Edit dengan Elementor (pilih Layout Halaman: Elementor Lebar Penuh / Full Width).
+3. Tarik widget "HTML" ke dalam halaman, lalu paste seluruh isi file ini ke dalamnya.
+4. Ganti teks judul, isi paragraf, dan link gambar sesuai artikel yang ingin Anda tulis.
+==============================================================================
+-->
+
+<!-- Google Fonts: Manrope -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   RESET & SCOPED STYLES
+   ========================================================================== */
+.trust-article-wrapper {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1e293b;
+  background-color: #ffffff;
+  padding: 40px 20px 80px;
+  line-height: 1.8;
+  box-sizing: border-box;
+}
+
+.trust-article-wrapper *,
+.trust-article-wrapper *::before,
+.trust-article-wrapper *::after {
+  box-sizing: border-box;
+}
+
+.trust-article-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   1. BREADCRUMBS & CATEGORY
+   ========================================================================== */
+.article-header {
+  margin-bottom: 36px;
+}
+
+.article-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 18px;
+}
+
+.article-breadcrumbs a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.article-breadcrumbs a:hover {
+  color: #ba141a;
+}
+
+.article-breadcrumbs .separator {
+  color: #cbd5e1;
+}
+
+.article-breadcrumbs .current {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.article-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #fef2f2;
+  color: #ba141a;
+  border: 1px solid #fee2e2;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  margin-bottom: 20px;
+}
+
+.article-badge::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ba141a;
+}
+
+/* ==========================================================================
+   2. TITLE & META INFO
+   ========================================================================== */
+.article-title {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #0f172a;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.02em;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #ba141a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.author-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.author-role {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.article-stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.stat-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-item svg {
+  width: 16px;
+  height: 16px;
+  color: #94a3b8;
+}
+
+/* ==========================================================================
+   3. HERO IMAGE
+   ========================================================================== */
+.article-featured-image {
+  margin: 36px 0 44px 0;
+}
+
+.article-featured-image img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.image-caption {
+  font-size: 13px;
+  color: #64748b;
+  text-align: center;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   4. EXECUTIVE SUMMARY & CALLOUT BOXES
+   ========================================================================== */
+.article-lead {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #334155;
+  margin-bottom: 32px;
+}
+
+.key-takeaways-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid #ba141a;
+  border-radius: 12px;
+  padding: 26px 30px;
+  margin: 36px 0;
+}
+
+.key-takeaways-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.key-takeaways-header svg {
+  color: #ba141a;
+  width: 22px;
+  height: 22px;
+}
+
+.key-takeaways-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.key-takeaways-list li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 15px;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.key-takeaways-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #ba141a;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+/* ==========================================================================
+   5. TABLE OF CONTENTS
+   ========================================================================== */
+.table-of-contents {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin: 36px 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.toc-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toc-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toc-list a {
+  color: #475569;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.toc-list a:hover {
+  color: #ba141a;
+  transform: translateX(4px);
+}
+
+.toc-list a::before {
+  content: "→";
+  color: #ba141a;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   6. ARTICLE BODY TYPOGRAPHY
+   ========================================================================== */
+.article-body {
+  font-size: 17px;
+  color: #334155;
+  line-height: 1.85;
+}
+
+.article-body h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 48px 0 20px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f1f5f9;
+  position: relative;
+  letter-spacing: -0.01em;
+}
+
+.article-body h2::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background-color: #ba141a;
+}
+
+.article-body h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 36px 0 16px 0;
+}
+
+.article-body p {
+  margin: 0 0 24px 0;
+}
+
+.article-body strong {
+  color: #0f172a;
+}
+
+.article-body ul, 
+.article-body ol {
+  margin: 0 0 28px 0;
+  padding-left: 24px;
+}
+
+.article-body li {
+  margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   7. METRIC CARDS GRID
+   ========================================================================== */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 36px 0;
+}
+
+.metric-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.metric-number {
+  font-size: 38px;
+  font-weight: 800;
+  color: #ba141a;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.metric-desc {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   8. PULLQUOTE / BLOCKQUOTE
+   ========================================================================== */
+.article-quote {
+  position: relative;
+  margin: 40px 0;
+  padding: 28px 32px 28px 48px;
+  background-color: #fef2f2;
+  border-left: 5px solid #ba141a;
+  border-radius: 0 12px 12px 0;
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 500;
+  color: #1e293b;
+  line-height: 1.7;
+}
+
+.article-quote::before {
+  content: "“";
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  font-size: 54px;
+  color: #ba141a;
+  line-height: 1;
+  font-family: Georgia, serif;
+}
+
+.quote-author {
+  display: block;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 14px;
+}
+
+.quote-role {
+  font-weight: 400;
+  color: #64748b;
+}
+
+/* ==========================================================================
+   9. PRO-TIP CALLOUT BOX
+   ========================================================================== */
+.pro-tip-box {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-left: 5px solid #16a34a;
+  border-radius: 12px;
+  padding: 22px 26px;
+  margin: 32px 0;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.pro-tip-icon {
+  width: 28px;
+  height: 28px;
+  color: #16a34a;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pro-tip-content h4 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #14532d;
+}
+
+.pro-tip-content p {
+  margin: 0;
+  font-size: 15px;
+  color: #166534;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   10. TAGS & SOCIAL SHARE
+   ========================================================================== */
+.article-engagement {
+  margin: 50px 0;
+  padding-top: 32px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.article-tags-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.tag-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.tag-pill {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  background-color: #f1f5f9;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.tag-pill:hover {
+  background-color: #ba141a;
+  color: #ffffff;
+}
+
+.share-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #f8fafc;
+  padding: 18px 24px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.share-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.share-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.share-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-wa {
+  background-color: #25d366;
+  color: #ffffff;
+}
+
+.btn-linkedin {
+  background-color: #0077b5;
+  color: #ffffff;
+}
+
+.btn-twitter {
+  background-color: #0f1419;
+  color: #ffffff;
+}
+
+.btn-copy {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+/* ==========================================================================
+   11. AUTHOR BIO BOX
+   ========================================================================== */
+.author-bio-card {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 28px;
+  margin: 40px 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.bio-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #ba141a;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.bio-content h4 {
+  margin: 0 0 6px 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.bio-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   12. HIGH-CONVERSION CTA BANNER
+   ========================================================================== */
+.article-cta-banner {
+  background: linear-gradient(135deg, #1a1a1c 0%, #2a2a2e 100%);
+  border-radius: 16px;
+  padding: 44px 36px;
+  color: #ffffff;
+  text-align: center;
+  margin: 50px 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+.article-cta-banner::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(186, 20, 26, 0.4) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-tag {
+  display: inline-block;
+  background: rgba(186, 20, 26, 0.3);
+  color: #fca5a5;
+  border: 1px solid rgba(186, 20, 26, 0.5);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+}
+
+.cta-heading {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 14px 0;
+  line-height: 1.3;
+}
+
+.cta-subtext {
+  font-size: 16px;
+  color: #cbd5e1;
+  max-width: 600px;
+  margin: 0 auto 28px auto;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.btn-primary-cta {
+  background-color: #ba141a;
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary-cta:hover {
+  background-color: #991015;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(186, 20, 26, 0.35);
+}
+
+.btn-secondary-cta {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary-cta:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   13. RELATED ARTICLES GRID
+   ========================================================================== */
+.related-section {
+  margin-top: 60px;
+}
+
+.related-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.related-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.related-all-link {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ba141a;
+  text-decoration: none;
+}
+
+.related-all-link:hover {
+  text-decoration: underline;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.related-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+.related-thumb {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.related-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.related-category {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ba141a;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.related-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.4;
+  margin: 0 0 10px 0;
+}
+
+.related-readmore {
+  margin-top: auto;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ba141a;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .trust-article-wrapper {
+    padding: 24px 16px 60px;
+  }
+
+  .article-title {
+    font-size: 28px;
+  }
+
+  .article-lead {
+    font-size: 17px;
+  }
+
+  .article-body h2 {
+    font-size: 23px;
+  }
+
+  .article-body h3 {
+    font-size: 19px;
+  }
+
+  .metric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .article-quote {
+    padding: 20px 20px 20px 36px;
+    font-size: 16px;
+  }
+
+  .share-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .author-bio-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-cta-banner {
+    padding: 32px 20px;
+  }
+
+  .cta-heading {
+    font-size: 22px;
+  }
+}
+</style>
+
+<!-- ==========================================================================
+     STRUKTUR UTAMA KONTEN ARTIKEL
+     ========================================================================== -->
+<article class="trust-article-wrapper">
+  <div class="trust-article-container">
+
+    <!-- 1. HEADER ARTIKEL -->
+    <header class="article-header">
+      <nav class="article-breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="separator">/</span>
+        <a href="/blog/">Blog</a>
+        <span class="separator">/</span>
+        <span class="current">Smart Logistics</span>
+      </nav>
+
+      <!-- Badge Kategori (Bisa diganti: Smart Logistics, Maritime Insight, Fleet Management, Supply Chain) -->
+      <div class="article-badge">Maritime & Logistics Insight</div>
+
+      <!-- Judul Artikel H1 -->
+      <h1 class="article-title">The Future Era of Smart Logistics Solutions: Transformasi Modern Efisiensi Rantai Pasok Maritim</h1>
+
+      <!-- Meta Info: Penulis, Tanggal, Waktu Baca -->
+      <div class="article-meta">
+        <div class="author-info">
+          <div class="author-avatar">TR</div>
+          <div class="author-details">
+            <span class="author-name">PT Trust Eadyra Line</span>
+            <span class="author-role">Corporate Communications & Logistics Insight</span>
+          </div>
+        </div>
+
+        <div class="article-stats">
+          <span class="stat-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            21 November 2026
+          </span>
+          <span class="stat-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            5 Menit Baca
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. HERO IMAGE ARTIKEL -->
+    <figure class="article-featured-image">
+      <img src="https://htzaml-01.github.io/trust/asset/blog/blog-card-01.jpg" alt="Smart Logistics Solutions TRUST Corporation" width="860" height="480">
+      <figcaption class="image-caption">Operasional kargo maritim modern dengan integrasi sistem pelacakan digital terintegrasi.</figcaption>
+    </figure>
+
+    <!-- 3. LEAD PARAGRAPH (RINGKASAN EKSEKUTIF) -->
+    <p class="article-lead">
+      Dunia logistik dan rantai pasok maritim sedang berada di puncak transformasi digital terbesar dalam satu dekade terakhir. <strong>Smart Logistics</strong> bukan lagi sekadar pilihan inovasi, melainkan keharusan strategis bagi korporasi yang ingin memastikan kepastian pengiriman, efisiensi bahan bakar armada, dan transparansi distribusi kargo secara menyeluruh.
+    </p>
+
+    <!-- 4. KOTAK POIN-POIN UTAMA (KEY TAKEAWAYS) -->
+    <div class="key-takeaways-card">
+      <div class="key-takeaways-header">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        Poin-Poin Utama Artikel Ini
+      </div>
+      <ul class="key-takeaways-list">
+        <li><strong>Real-Time Tracking Armada:</strong> Pengawasan pergerakan kapal kargo dan tongkang 24/7 meningkatkan akurasi estimasi tiba (ETA) hingga 99.4%.</li>
+        <li><strong>Automated Route Optimization:</strong> Analisis cuaca dan navigasi pintar menghemat konsumsi bahan bakar armada maritim hingga 18%.</li>
+        <li><strong>Manajemen Risiko Proaktif:</strong> Deteksi dini potensi hambatan pelabuhan mencegah biaya demurrage yang tidak terduga.</li>
+        <li><strong>Integritas Data Kargo:</strong> Dokumentasi digital terpusat memangkas waktu birokrasi verifikasi muatan di pelabuhan singgah.</li>
+      </ul>
+    </div>
+
+    <!-- 5. DAFTAR ISI INTERAKTIF (TABLE OF CONTENTS) -->
+    <div class="table-of-contents">
+      <div class="toc-title">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+        Daftar Isi Artikel
+      </div>
+      <div class="toc-list">
+        <a href="#section-1">1. Mengapa Rantai Pasok Konvensional Perlu Beralih ke Smart Logistics</a>
+        <a href="#section-2">2. Empat Pilar Utama Infrastruktur Logistik Cerdas Modern</a>
+        <a href="#section-3">3. Analisis Dampak Terhadap Efisiensi Waktu & Biaya Operasional</a>
+        <a href="#section-4">4. Studi Kasus Implementasi di Jalur Pelayaran Nusantara</a>
+        <a href="#section-5">5. Kesimpulan & Rekomendasi Tindakan untuk Manajemen Bisnis</a>
+      </div>
+    </div>
+
+    <!-- 6. ISI UTAMA ARTIKEL (BODY CONTENT) -->
+    <div class="article-body">
+
+      <!-- SUB-BAGIAN 1 -->
+      <h2 id="section-1">1. Mengapa Rantai Pasok Konvensional Perlu Beralih ke Smart Logistics</h2>
+      <p>
+        Dalam lanskap perdagangan antar-pulau Indonesia yang memiliki karakteristik geografis kepulauan unik, tantangan logistik maritim selalu berkutat pada ketidakpastian cuaca, keterbatasan fasilitas sandar pelabuhan tertentu, dan hambatan koordinasi data lintas pihak.
+      </p>
+      <p>
+        Sistem konvensional yang mengandalkan pembaruan manual via radio atau pesan teks terbukti rentan terhadap keterlambatan informasi. Ketika kargo bernilai tinggi seperti hasil tambang nikel, semen curah, atau alat berat mengalami keterlambatan tanpa pemberitahuan dini, efek domino terhadap lini produksi pabrik di darat menjadi sangat merugikan.
+      </p>
+
+      <!-- DATA METRIC GRID -->
+      <div class="metric-grid">
+        <div class="metric-card">
+          <div class="metric-number">35%</div>
+          <p class="metric-desc">Rata-rata penurunan waktu henti (idle time) armada dengan sistem dispatch otomatis.</p>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">99.4%</div>
+          <p class="metric-desc">Akurasi status kargo dan telemetri armada yang terpantau secara real-time.</p>
+        </div>
+      </div>
+
+      <!-- SUB-BAGIAN 2 -->
+      <h2 id="section-2">2. Empat Pilar Utama Infrastruktur Logistik Cerdas Modern</h2>
+      <p>
+        Untuk mencapai tingkat efisiensi kelas dunia, <strong>TRUST Corporation (PT. Trust Eadyra Line)</strong> mengintegrasikan teknologi logistik modern ke dalam operasional armadanya:
+      </p>
+
+      <h3>A. Telemetri & IoT Maritim (Internet of Things)</h3>
+      <p>
+        Setiap kapal kargo dan armada tongkang dilengkapi sensor cerdas yang memantau performa mesin, kestabilan muatan kargo curah, serta konsumsi bahan bakar secara langsung. Data dikirim via satelit maritim ke pusat kendali operasional secara kontinu.
+      </p>
+
+      <h3>B. Dynamic Route Optimization</h3>
+      <p>
+        Perangkat lunak navigasi modern mampu menghitung rute alternatif tercepat berdasarkan pemodelan arus laut, pasang surut pelabuhan muara, dan prediksi cuaca maritim BMKG terkini.
+      </p>
+
+      <!-- PULLQUOTE / KUTIPAN KUNCI -->
+      <blockquote class="article-quote">
+        “Keberhasilan logistik masa kini tidak lagi ditentukan semata oleh besarnya tonase kapal, tetapi oleh seberapa cepat dan akurat data dialirkan dari geladak kapal ke meja pengambil keputusan.”
+        <span class="quote-author">Direksi Operasional Maritim — <span class="quote-role">TRUST Corporation</span></span>
+      </blockquote>
+
+      <h3>C. Portal Pelanggan Terintegrasi (Client Dashboard)</h3>
+      <p>
+        Klien korporat memiliki akses mandiri untuk melihat posisi kargo mereka di peta digital interaktif, mengunduh salinan <em>Bill of Lading</em> (BL), serta menerima notifikasi otomatis saat kapal tiba di area pelabuhan tujuan.
+      </p>
+
+      <!-- KOTAK PRO-TIP PRAKTIS -->
+      <div class="pro-tip-box">
+        <svg class="pro-tip-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <div class="pro-tip-content">
+          <h4>Tips Strategis untuk Pengirim Kargo Korporat</h4>
+          <p>Selalu prioritaskan mitra penyedia jasa kapal yang memiliki sertifikasi kepatuhan ISM Code dan menyediakan sistem notifikasi berbasis API. Hal ini mempermudah integrasi status muatan langsung ke sistem ERP internal perusahaan Anda.</p>
+        </div>
+      </div>
+
+      <!-- SUB-BAGIAN 3 -->
+      <h2 id="section-3">3. Analisis Dampak Terhadap Efisiensi Waktu & Biaya Operasional</h2>
+      <p>
+        Berdasarkan data operasional lintas sektor industri selama 24 bulan terakhir, transformasi ke model <em>Smart Logistics</em> menghasilkan penghematan biaya langsung yang signifikan bagi pemilik kargo:
+      </p>
+      <ul>
+        <li><strong>Reduksi Biaya Demurrage:</strong> Penjadwalan sandar yang terkoordinasi secara digital memangkas antrean kapal di area lego jangkar pelabuhan padat hingga 40%.</li>
+        <li><strong>Transparansi Audit:</strong> Riwayat waktu tempuh, titik pengisian bunker bahan bakar, dan dokumen manifes tersimpan digital secara permanen, mempermudah pelaporan kepatuhan pajak dan bea cukai.</li>
+        <li><strong>Mitigasi Kerugian Kargo:</strong> Sensor getaran dan kelembaban menjaga kargo bernilai tinggi tetap berada dalam batas toleransi keselamatan maritim standar internasional.</li>
+      </ul>
+
+      <!-- SUB-BAGIAN 4 -->
+      <h2 id="section-4">4. Studi Kasus Implementasi di Jalur Pelayaran Nusantara</h2>
+      <p>
+        Pada proyek pengangkutan mineral curah di kawasan Indonesia Timur, implementasi integrasi data GPS satelit dan komunikasi dermaga terbukti memangkas siklus pelayaran (<em>voyage cycle</em>) dari 14 hari menjadi 11 hari. Penghematan waktu selama 3 hari per siklus ini memungkinkan armada menyelesaikan 2 kali perjalanan tambahan per kuartal.
+      </p>
+
+      <!-- SUB-BAGIAN 5 -->
+      <h2 id="section-5">5. Kesimpulan & Rekomendasi Tindakan untuk Manajemen Bisnis</h2>
+      <p>
+        Era logistik maritim yang lambat dan mengandalkan estimasi manual sudah resmi berakhir. Perusahaan yang bergerak di bidang energi, pertambangan, manufaktur, dan perkebunan harus mengevaluasi kembali rantai pasok mereka untuk memastikan keandalan distribusi.
+      </p>
+      <p>
+        Bermitra dengan penyedia jasa pengangkutan maritim modern yang memadukan armada tangguh dan infrastruktur pemantauan cerdas adalah investasi fundamental demi pertumbuhan bisnis jangka panjang.
+      </p>
+
+    </div>
+
+    <!-- 7. TAGS ARTIKEL & SOCIAL SHARE -->
+    <div class="article-engagement">
+      <div class="article-tags-wrap">
+        <span class="tag-label">Tags Terkait:</span>
+        <a href="/blog/" class="tag-pill">#SmartLogistics</a>
+        <a href="/blog/" class="tag-pill">#SupplyChain</a>
+        <a href="/blog/" class="tag-pill">#MaritimeFleet</a>
+        <a href="/blog/" class="tag-pill">#CargoVessel</a>
+        <a href="/blog/" class="tag-pill">#TrustEadyraLine</a>
+      </div>
+
+      <div class="share-section">
+        <span class="share-title">Bagikan wawasan ini:</span>
+        <div class="share-buttons">
+          <a href="https://api.whatsapp.com/send?text=The%20Future%20Era%20of%20Smart%20Logistics%20Solutions%20-%20https://trusteadyraline.id/the-future-era-of-smart-logistics-solutions/" target="_blank" rel="noopener noreferrer" class="share-btn btn-wa">
+            WhatsApp
+          </a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://trusteadyraline.id/the-future-era-of-smart-logistics-solutions/" target="_blank" rel="noopener noreferrer" class="share-btn btn-linkedin">
+            LinkedIn
+          </a>
+          <a href="https://twitter.com/intent/tweet?text=The%20Future%20Era%20of%20Smart%20Logistics%20Solutions&url=https://trusteadyraline.id/the-future-era-of-smart-logistics-solutions/" target="_blank" rel="noopener noreferrer" class="share-btn btn-twitter">
+            X / Twitter
+          </a>
+          <button type="button" class="share-btn btn-copy" onclick="copyArticleUrl(this)">
+            Salin Link
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. PROFIL PENULIS (AUTHOR BIO) -->
+    <div class="author-bio-card">
+      <div class="bio-avatar">TR</div>
+      <div class="bio-content">
+        <h4>Ditulis oleh Tim Editorial PT. Trust Eadyra Line</h4>
+        <p>
+          Divisi Riset & Komunikasi Korporat TRUST Corporation. Berdedikasi menyajikan wawasan mendalam seputar industri maritim, operasional armada kargo curah, rekayasa logistik lepas pantai, dan tren manajemen rantai pasok modern di Indonesia.
+        </p>
+      </div>
+    </div>
+
+    <!-- 9. HIGH-CONVERSION CTA BANNER -->
+    <div class="article-cta-banner">
+      <span class="cta-tag">Solusi Maritim Terpercaya</span>
+      <h3 class="cta-heading">Siap Mengoptimalkan Pengiriman Kargo Bisnis Anda?</h3>
+      <p class="cta-subtext">
+        Konsultasikan kebutuhan armada kapal kargo, sewa tongkang (tug & barge), hingga manajemen logistik lepas pantai Anda bersama tim ahli TRUST Corporation.
+      </p>
+      <div class="cta-buttons">
+        <a href="/contact/" class="btn-primary-cta">
+          Minta Penawaran Kargo
+          <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+        <a href="/services/" class="btn-secondary-cta">Jelajahi Solusi Armada</a>
+      </div>
+    </div>
+
+    <!-- 10. REKOMENDASI ARTIKEL TERKAIT -->
+    <section class="related-section">
+      <div class="related-header">
+        <h3 class="related-title">Artikel Terkait Lainnya</h3>
+        <a href="/blog/" class="related-all-link">Lihat Semua Artikel &rarr;</a>
+      </div>
+
+      <div class="related-grid">
+        <!-- Card 1 -->
+        <a href="/warehousing-best-practices-for-businesses/" class="related-card">
+          <img src="https://htzaml-01.github.io/trust/asset/blog/blog-card-02.jpg" alt="Warehousing Best Practices" class="related-thumb">
+          <div class="related-content">
+            <span class="related-category">Warehousing</span>
+            <h4 class="related-card-title">Warehousing Best Practices for Businesses</h4>
+            <span class="related-readmore">Baca Selengkapnya &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="/understanding-last-mile-delivery-challenges/" class="related-card">
+          <img src="https://htzaml-01.github.io/trust/asset/blog/blog-card-03.jpg" alt="Last Mile Delivery" class="related-thumb">
+          <div class="related-content">
+            <span class="related-category">Delivery</span>
+            <h4 class="related-card-title">Understanding Last-Mile Delivery Challenges</h4>
+            <span class="related-readmore">Baca Selengkapnya &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="/services/" class="related-card">
+          <img src="https://htzaml-01.github.io/trust/asset/blog/blog-card-01.jpg" alt="Fleet Services" class="related-thumb">
+          <div class="related-content">
+            <span class="related-category">Fleet & Cargo</span>
+            <h4 class="related-card-title">Armada Kapal Kargo & Tongkang TRUST</h4>
+            <span class="related-readmore">Jelajahi Armada &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</article>
+
+<script>
+// Fungsi tombol Salin Link artikel
+function copyArticleUrl(buttonEl) {
+  const currentUrl = window.location.href;
+  navigator.clipboard.writeText(currentUrl).then(() => {
+    const originalText = buttonEl.textContent;
+    buttonEl.textContent = 'Tersalin!';
+    buttonEl.style.backgroundColor = '#10b981';
+    buttonEl.style.color = '#ffffff';
+
+    setTimeout(() => {
+      buttonEl.textContent = originalText;
+      buttonEl.style.backgroundColor = '';
+      buttonEl.style.color = '';
+    }, 2500);
+  }).catch(err => {
+    console.warn('Gagal menyalin URL:', err);
+  });
+}
+</script>
